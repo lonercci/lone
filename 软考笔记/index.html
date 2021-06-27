@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>软考笔记 - Lone&#39;s Blog</title><meta name="Description" content=""><meta property="og:title" content="软考笔记" />
+<meta property="og:description" content="软考笔记 计算机基础理论与安全 网络安全 MAcro.xxx，表明是宏病毒，主要感染目标是Word或Excel文件。 Worm. xxx，蠕虫病毒，通过网络或" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0/" /><meta property="og:image" content="http://example.org/"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-03-28T21:57:20&#43;08:00" />
+<meta property="article:modified_time" content="2021-03-28T21:57:20&#43;08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://example.org/"/>
+
+<meta name="twitter:title" content="软考笔记"/>
+<meta name="twitter:description" content="软考笔记 计算机基础理论与安全 网络安全 MAcro.xxx，表明是宏病毒，主要感染目标是Word或Excel文件。 Worm. xxx，蠕虫病毒，通过网络或"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="https://gitee.com/lonercci/picbed/raw/master/img/20210626110236.jpg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0/" /><link rel="prev" href="http://example.org/java%E4%B9%8B%E5%8F%8D%E5%B0%84/" /><link rel="next" href="http://example.org/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%AC%E5%9C%B0%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%B6%E4%BD%9C/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.a12cacf4b5b41234196cb89042b24a70.css" integrity="md5-oSys9LW0EjQZbLiQQrJKcA=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.26386564b5cf1594be24059af1cd0db9.css" integrity="md5-JjhlZLXPFZS&#43;JAWa8c0NuQ=="><link rel="stylesheet" href="/lib/animate/animate.min.43d6b8fdf324505f0ceb7ea698d0b7a5.css" integrity="md5-Q9a4/fMkUF8M636mmNC3pQ=="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "软考笔记",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0\/"
+        },"genre": "posts","keywords": "笔记, 网络工程","wordcount":  9864 ,
+        "url": "http:\/\/example.org\/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0\/","datePublished": "2021-03-28T21:57:20+08:00","dateModified": "2021-03-28T21:57:20+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Lone"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Lone&#39;s Blog">Lone&#39;s Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 全部文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Lone&#39;s Blog">Lone&#39;s Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">全部文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">软考笔记</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Lone</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0/"><i class="far fa-folder fa-fw"></i>软考笔记</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-03-28">2021-03-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 9864 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 20 分钟&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lonercci/picbed/raw/master/img/20210329150853.jpg"
+        data-srcset="https://gitee.com/lonercci/picbed/raw/master/img/20210329150853.jpg, https://gitee.com/lonercci/picbed/raw/master/img/20210329150853.jpg 1.5x, https://gitee.com/lonercci/picbed/raw/master/img/20210329150853.jpg 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lonercci/picbed/raw/master/img/20210329150853.jpg"
+        title="https://gitee.com/lonercci/picbed/raw/master/img/20210329150853.jpg" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#计算机基础理论与安全">计算机基础理论与安全</a>
+      <ul>
+        <li><a href="#网络安全">网络安全</a></li>
+      </ul>
+    </li>
+    <li><a href="#网络基础理论与安全">网络基础理论与安全</a>
+      <ul>
+        <li><a href="#网络体系结构">网络体系结构</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="软考笔记">软考笔记</h1>
+<h2 id="计算机基础理论与安全">计算机基础理论与安全</h2>
+<h3 id="网络安全">网络安全</h3>
+<ol>
+<li>
+<p><strong>MAcro</strong>.xxx，表明是<strong>宏病毒</strong>，主要感染目标是<strong>Word或Excel</strong>文件。</p>
+<p><strong>Worm</strong>. xxx，<strong>蠕虫病毒</strong>，通过网络或漏洞进行自主传播，向外发送带毒的邮件或通过及时通讯工具（QQ，MSN）发送带病毒的文件。</p>
+<p><strong>Trojan</strong>.xxx，<strong>木马</strong>，木马通常伪装成有用的程序诱骗用户主动激活，或利用系统漏洞入侵用户计算机。计算机感染特洛伊木马之后的典型表现就是有未知的程序试图建立网路连接。</p>
+<p><strong>Win32、PE</strong>、 <strong>文件型病毒</strong>。感染可执行文件（如exe, .com, .dll等。</p>
+<p><strong>Win95,w32,w95</strong>  或<strong>系统病毒</strong>。若与其他前缀连用，则表示病毒的运行平台。（如Backdoor.Win32.PcClient.al，表示运行在32为Windows平台上的后门。）</p>
+</li>
+<li>
+<p>在 公钥体系中，<strong>私钥用于解密和签名</strong>，<strong>公钥用于加密和验证</strong>。</p>
+</li>
+<li>
+<p>数字签名的基本过程如下:</p>
+<p>(1) A使用&quot;摘要&quot;算法(如SHA-1、MD5等)对发送信息进行摘要。</p>
+<p>(2) 使用A的私钥对消息摘要进行加密运算，将加密摘要和原文一并发给B验证签名的基本过程:</p>
+<ul>
+<li>
+<p>B接收到加密摘要和原文后，使用和A同样的&quot;摘要&quot;算法对原文再次摘要，生成新摘要。</p>
+</li>
+<li>
+<p>使用A公钥对加密摘要解密,还原成原摘要。</p>
+</li>
+</ul>
+<p>(3) 两个摘要对比，一致则说明由A发出且没有经过任何复改。由此可见，数字签名功能有信息身份认证、信息完整性检查、信息发送不可否认性，但不提供原文信息加密，不能保证对方能收到消息，也不对接收方身份进行验证。</p>
+</li>
+<li>
+<p>Kerberos 是一种<strong>网络认证协议</strong>。它采用的加密算法是DES。</p>
+</li>
+<li>
+<p>**物理安全：**机房安全；**网络安全：**入侵检测；**应用安全：**数据库安全；**系统安全：**漏洞补丁。</p>
+</li>
+<li>
+<p>SMTP协议和POP协议是邮件服务器的两个重要协议。<strong>SMTP</strong>协议用于<strong>邮件的发送</strong>，<strong>端口是25</strong>。<strong>POP/POP3</strong>协议用于<strong>邮件的接收</strong>，端口是110。<strong>Foxmail</strong>是一种<strong>常用的桌面邮件客户端</strong>，使用该软件时，需设置相应的发送邮件服务器和接收邮件服务器地址。</p>
+</li>
+<li>
+<p><strong>主动攻击</strong>包含攻击者访问他所需信息的故意行为。</p>
+<p><strong>重放攻击</strong>(Replay Attacks)又称重播攻击、回放攻击或新鲜性攻击(Freshness Attacks)，是指攻击者发送一个目的主机已接收过的包， 特别是在认证的过程
+中，用于认证用户身份所接收的包，来达到欺骗系统的目的，主要用于身份认证过程，破坏认证的安全性。</p>
+<p><strong>IP地址欺骗</strong>是指行动产生的IP数据包为伪造的源IP地址，以便冒充其他系统或发件人的身份。
+<strong>拒绝服务攻击</strong>只要能够对目标造成麻烦，使某些服务被暂停甚至主机死机，都属于拒绝服务攻击。</p>
+</li>
+<li>
+<p><strong>CSMA/CD</strong> (Carrier Sense Multiple Access with Collision Detection)即带冲突检测的载波监听多路访问技术(载波监听多点接入/碰撞检测)。</p>
+<p>它的<strong>工作原理</strong>是: 在发送数据前，先监听总线是否空闲。若总线忙，则不发送。若总线空闲，则把准备好的数据发送到总线上。在发送数据的过程中，工作站边发送边检测总线，是否自己发送的数据有冲突。若无冲突则继续发送直到发完全部数据;若有冲突，则立即停止发送数据，但是要发送个加强冲突的JAM信号， 以便使网络上所有工作站都知道网 上发生了冲突，然后，等待一个预定的随机时间，且在总线为空闲时，再重新发送未发完的数据。</p>
+</li>
+<li>
+<p><strong>CSMA/CD</strong>的基本原理为一边发送，一边监听，一旦冲突立即后退停止，因此<strong>冲突越多，后退的时间越长</strong>，当通信负载越大，冲突更容易发生，因此后退的次数与时延平均值与负载相关，当<strong>重传16次</strong>不成功，就<strong>丢弃该帧，传输失败</strong>。</p>
+</li>
+<li>
+<p>以太网中<strong>出现冲突</strong>后，发送方什么时候可以<strong>再次尝试发送</strong>? 在<strong>JAM信号停止并等待一段随机</strong>时间后。</p>
+</li>
+<li>
+<p>IPSec 用于增强 IP 网络的安全性。在传输模式下，<strong>IPsec</strong>报头<strong>增加在原IP包头和数据之间</strong>，在整个传输层报文段的后面和签名添加一些控制字段，构成IPsec数据报。隧道模式是对整个IP数据包提供安全传输机制。是在一个IP数据报的后面和前面都添加一些控制字段，构成IPsec数据报。</p>
+</li>
+<li>
+<p>在建立TCP连接的过程中，</p>
+<p>SYN：对顺序号进行同步，用于连接的建立。</p>
+<p><strong>RST</strong>：连接复位为初始状态，用于连接<strong>故障后的恢复</strong>。</p>
+<p>FIN：数据发送完，连接可以释放。</p>
+<p>ACK：应答顺序号有效。</p>
+</li>
+<li>
+<p>当发现主机受到ARP攻击时需<strong>清除ARP缓存</strong>，使用的命令是 <strong>arp-d</strong> 。<strong>arp-s 网关ip地址/网关MAC地址</strong> 命令来<strong>静态绑定</strong>。</p>
+</li>
+<li>
+<p><strong>直通交换</strong>，存在<strong>坏帧传播</strong>的风险。</p>
+</li>
+<li>
+<p>采用CSMA/CD协议的基带总线，段长为1000M，数据速率为10Mb/s，信号传播速度为200m/us， 则该网络上的最小帧长应为多少比特。</p>
+<p>解：简单计算即可，确保<strong>发送时间=两倍端到端的传播时间</strong>。</p>
+<p>设帧长为Xbit。数据速率为10Mb/s=10bit/us  则 发送时间为t = xbit/(10bit/us)=x/10us。</p>
+<p>两倍端到端的传播时间为T = 2*(1000m/200m/us)=10us   t = T   解得，X= 100bit</p>
+</li>
+<li>
+<p><strong>入侵检测</strong>的常用的检测方法有:</p>
+<p>**模式匹配法：**是常常被用于入侵检测技术中。它是通过把收集到的信息与网络入侵和系统误用模式数据库中的已知信息进行比较，从而对违背安全策的行为进行发现。模式匹配法可以显著地减少系统负担，有较高的检测率和准确率。</p>
+<p>**专家系统法：**这个方法的思想是把安全专家的知识表示成规则知识库，再用推理算法检测入侵。主要是针对有特征的入侵行为。</p>
+<p>**基于状态转移分析的检测法：**该方法的基本思想是将攻击看成一一个连续的、分步骤的并且各个步骤之间有一-定的关联的过程。
+而漏洞扫描不是。</p>
+</li>
+</ol>
+<blockquote>
+<p>3.28日 做到第20题。</p>
+</blockquote>
+<ol start="19">
+<li>
+<p>按<strong>总线争用协议</strong>来分类，CSMA有<strong>3 种</strong>类型的监听算法:</p>
+<ol>
+<li>
+<p><strong>非坚持CSMA</strong>。 一个站点在发送数据帧之前，先要对媒体进行检测。如果没有其它站点在发送数据，则该站点开始发送数据。如果媒体被占用，则该站点不会持续监听媒体，而等待一个随机的延迟时间之后再监听。采用随机的监听延迟时间可以减少冲突的可能性，但其<strong>缺点</strong>也是很明显的:即使有多个站点有数据要发送，因为此时所有站点可能都在等待各自的随机延迟时间，而媒体仍然可能处于空闲状态，这样就使得<strong>媒体的利用率较为低下</strong>。</p>
+</li>
+<li>
+<p><strong>1-坚持CSMA</strong>。 当一个站点要发送数据帧时，它就监听媒体，判断当前时刻是否有其他站点正在传输数据。如果媒体忙的话，该站点<strong>等待直至媒体空闲</strong>。一旦该站点检测到媒体空闲，它就立即发送数据帧。如果<strong>产生冲突，则等待一个随机时间再监听</strong>。 之所以叫“1-坚持”，是因为当一个站点发现媒体空闲的时候， 它传输数据帧的<strong>概率是1</strong>。1-坚持CSMA的<strong>优点</strong>是:只要媒体空闲，站点就立即发送;它的<strong>缺点</strong>在于:假如有两个或两个以上的站点有数据要发送，冲突就不可避免。</p>
+</li>
+<li>
+<p><strong>P-坚持CSMA</strong>。 P-坚持CSMA是非坚持CSMA和1-坚持CSMA的折中。P-坚持CSMA<strong>应用于划分时槽的媒体</strong>，其工作过程如下:当一个站点要发送数据帧的时候，它先检测媒体。若媒体空闲，则该站点<strong>按照概率P的可能性</strong>发送数据，而有<strong>1-P的概率</strong>会把要发送数据帧的任务<strong>延迟到下一个时槽</strong>。按照这样的规则，若下一个时槽也是空闲的，则站点同样有P的概率发送数据帧。</p>
+</li>
+</ol>
+</li>
+<li>
+<p>网络加密的方式有四种：</p>
+<p><strong>链路加密</strong>：是在<strong>数据链路层</strong>加密，通信设备需要<strong>安装特殊的安全单元</strong>。</p>
+<p><strong>端-端加密</strong>：是把加密设备放在<strong>网络层和传输层</strong>之间，只加密传输层的数据单元，数据在发送端进行加密，到达接收端才解密，<strong>中间节点不参与加解密过程</strong>。</p>
+<p><strong>节点加密</strong>：时，节点中的数据是
+以密文形式存在，但要求在<strong>每个节点加装安全单元</strong>，需要公共网络提供配合</p>
+<p><strong>混合加密</strong>：</p>
+</li>
+<li>
+<p>数字证书采用公钥体制进行加密和解密。X.509数字证书中的签名字段是指<strong>发证机构对用户证书的签名</strong>。来自不同CA的用户如果需要进行<strong>验证，安全通信</strong>的话，需要通过CA之间的<strong>证书链</strong>进行。</p>
+</li>
+<li>
+<p>RMON MIB组织成很多功能组，其中:</p>
+<p><strong>警报组</strong>(Alarm) :设置一定的时间间隔和报警阈值，<strong>定期</strong>从探测器的采样并与所设置的阈值相<strong>比较</strong>。</p>
+<p><strong>事件组</strong>(Event) :提供关于RMON代理所产生的所有<strong>事件</strong>。</p>
+<p><strong>主机组</strong>(Host) :包括网络上发现的与每个主机相关的<strong>统计值</strong>。</p>
+<p><strong>过滤组</strong>(Filter) :允许监视器观测符合一定过滤条件的数据包。由于<strong>捕获数据包</strong>需要<strong>识别数据包</strong>，那么就必须有过滤器(Filter)的支持。</p>
+</li>
+<li>
+<p><strong>IDEA</strong>在密码学中属于<strong>数据块加密算法</strong>，<strong>IDEA的明文和密文均为64位</strong>，<strong>密钥长度为128位</strong>。还要注意典型的Des的相关参数，还有md5, sha-1的输出位数等，都是一个知识点的概念。</p>
+</li>
+<li>
+<p>典型的<strong>公钥密码</strong>体制有<strong>RSA、DSA、ECC</strong>。</p>
+</li>
+<li>
+<p>常见的<strong>对称加密算法</strong>有<strong>DES、3DES、RC5、IDEA</strong>。</p>
+</li>
+<li>
+<p><strong>MD5</strong>：消息摘要算法。把信息分为512bit的分组， 并且创建一个<strong>128bit的摘要</strong>。注意==&gt;MD5是摘要算法，用于验证数据的完整性，<strong>并没有数据加密功能</strong>。</p>
+<p><strong>SHA-1</strong>：安全Hash算法。 也是基于MD5的，使用一个标准把信息分为512bit的分组，并且创建一个<strong>160bit的摘要</strong>。</p>
+<p><strong>RSA</strong>： (Rivest Shamir Adleman)是典型的<strong>非对称加密(公开)算法</strong>，该算法基于<strong>大素数分解</strong>。RSA适合进行数字签名和密钥交换运算。在非对称加密算法中，<strong>私钥用于解密和签名，公钥用于加密和认证</strong>。</p>
+<p><strong>DES</strong>：<strong>对称加密</strong>算法。DES明文分为64位一组， 密钥64位(实际位是56位的密钥和8位奇偶校验) .注意:考试中填实际<strong>密钥位即56位</strong>。</p>
+<ul>
+<li>
+<p><strong>3DES</strong>: 3DES是DES的扩展，是<strong>执行了三次的DES</strong>。其中，第一、三次加密使用同一密钥的方式下，密钥长度扩展到128位(112位有效) ;第三次加密使用不同密钥，密钥长度扩展到192位(168位有效) 软考中对<strong>3DES默认的长度是112bit</strong>。</p>
+</li>
+<li>
+<p><strong>RC5</strong>: RC5由RSA中的Ronald L. Rivest发明，是参数可变的分组密码算法。三个可变的参数是:分组大小、密钥长度和加密轮数。</p>
+</li>
+<li>
+<p><strong>IDEA</strong>：<strong>明文、密文均为64位</strong>，<strong>密钥长度128位</strong>。</p>
+</li>
+<li>
+<p><strong>RC4</strong>：常用流密码，密钥长度可变，<strong>用于SSL协议</strong>。</p>
+</li>
+</ul>
+<p>**AES:**密钥长度可以是128bit、192bit、 256bit。明文分组长度是128bit。<strong>对称加密算法</strong>。</p>
+</li>
+<li>
+<p>HTTPS的安全机制工作在<strong>传输层</strong>。而S-HTTP的安全机制工作在应用层。</p>
+</li>
+<li>
+<p><strong>蠕虫病毒的前缀是: Worm</strong>。通常是通过<strong>网络或者系统漏洞</strong>进行传播，蠕虫利用信息系统缺陷，通过网络自动复制并传播的有害程序。</p>
+</li>
+<li>
+<p>通过<strong>各种线路传导</strong>出去，可以将计算机系统的电源线，机房内的电话线、地线等作为媒介的数据信息泄露方式称为<strong>传导泄漏</strong>。</p>
+</li>
+<li>
+<p><strong>数字签名</strong>的作用就是确保A发送给B的<strong>信息</strong>就是A<strong>本人发送</strong>的，并且<strong>没有改动</strong>，即<strong>确保消息的不可否认。</strong></p>
+<p>但是要<strong>对用户身份认证</strong>，通常是使用<strong>数字证书</strong>。数字证书采用公钥体制进行加密和解密。每个用户有一个私钥来解密和签名;同时每个用户还有一个公钥来加密和验证。</p>
+</li>
+<li>
+<p>IDS（<strong>入侵检测系统</strong>）的主要作用就是对进出网络的信息进行实时的监测与比对，及时发现攻击行为。</p>
+</li>
+<li>
+<p>使用SMTP协议发送邮件时，可以选用PGP加密机制PGP的主要加密方式<strong>是邮件内容生成摘要，对内容用IDEA算法加密，对摘要和IDEA密钥用RSA算法加密</strong>。</p>
+</li>
+<li>
+<p>除了RSA公开密钥密码技术签名方法外，也可以使用<strong>对称密钥方法实现数字签名</strong>，其方法是: A和B之间签名需要一个可信任的仲裁者C， A和C之间使用对称密钥Ka, B和C之间使用对称密钥Kb.其签名过程是: A用KA加密信息并发送给C; C利用KA解密得到明文，再利用KB对明文和自己的证书(证明该信息是A发送的)加密发送给B; B利用KB解密得到明文和C发给的证书。由于C是可信任的，因此A、B都不能抵赖和伪造。</p>
+</li>
+<li>
+<p><strong>存储系统的主要结构有三种</strong>: <strong>NAS</strong>、<strong>DAS</strong>和<strong>SAN</strong>。</p>
+<ul>
+<li><strong>DAS</strong>  (Direct Attached Storage,直接附加存储)。</li>
+</ul>
+<p>存储设备是通过电缆(通常是SCSI接电缆)直接连接服务器。I/O请求直接发送到存储设备。DAS也可称为SAS (Server-Attached Storage,服务器附加存储)。它依赖于服务器，其本身是硬件的堆叠，不带有任何存储操作系统NAS (Network Attached Storage,网络附加存储)， 存储系统不再通过I/O总线附属于某个特定的服务器或客户机，而是直接通过网络接口与网络直接相连，由用户通过网络来方问。</p>
+<ul>
+<li>
+<p><strong>NAS</strong>实际上是一个带有 服务的存储设备，其作用类似于一个专用的文件服务器，NAS用于存储服务，可以大大降低存储设备的成本。</p>
+</li>
+<li>
+<p><strong>SAN</strong> (Storage Area Network,存储区域网络)是通过专用高速网将个或多个网络存储设备和服务器连接起来的专用存储系统。SAN主要采取数据块的方式进行数据存储，目前主要有<strong>IP SAN</strong>和<strong>FC SAN</strong>两种形式(分别使用IP协议和光纤通道)。</p>
+<ul>
+<li>
+<p>通 过IP协议，能利用廉价、货源丰富的以太网交换机、集线器和线缆来实现低成本、低风险基于IP的SAN存储。</p>
+</li>
+<li>
+<p>光纤通道是种存储区域网络技术，它实现了主机互连，企业间共享存储系统的需求。可以为存储网络用户提供高速、高可靠性以及稳定安全性的传输。光纤通道是一种高性能， 高成本的技术。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>远程访问， 因此选用IPSAN结构是最适合的。</p>
+</li>
+<li>
+<p>固态盘具有 最快的速度，但目前固态盘还有一些技术 上的限制，主要表现在两个方面，-是存储容量还不能像磁盘一样大，二是写的次数有限制，远低于磁盘。鉴于此，银行的灾备应用目前还不适于选用固态盘。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>建<strong>VPN</strong>需要采用“<strong>隧道</strong>”技术，建立<strong>点对点的连接</strong>，使数据包在公共网络上的专用隧道内传输。</p>
+</li>
+<li>
+<p>网络攻击有<strong>主动攻击</strong>和<strong>被动攻击</strong>两类。其中主动攻击是指通过一系列的方法，<strong>主动地向被攻击对象实施破坏的一种攻击方式</strong>，例如重放攻击、IP地址欺骗、拒绝服务攻击等均属于攻击者主动向攻击对象发起破坏性攻击的方式。</p>
+<p><strong>流量分析攻击</strong>是通过持续检测现有网络中的流量变化或者变化趋势，而得到相应信息的一种被动攻击方式。属于<strong>被动攻击</strong>。</p>
+</li>
+<li>
+<p><strong>PGP的工作过程</strong>：用一个随机生成的密钥(每次加密不同)用<strong>IDEA算法</strong>对<strong>明文加密</strong>，然后用<strong>RSA算法</strong>对该<strong>密钥加密</strong>。因此它既有了RSA的保密性，又获得了IDEA算法的快捷性。</p>
+</li>
+<li>
+<p><strong>DDoS</strong>是分布式拒绝服务攻击，主要借助多个主机同时对一台服务器<strong>发送大量请求服务</strong>的数据包，<strong>使服务器资源被大量占用而无法为用户提供正常</strong>的服务。并不以获取机密信息为目的。</p>
+</li>
+<li>
+<p><strong>访问控制列表ACL</strong>(Access Control Lists, ACL) 是目前使用最多的访问控制实现技术。访问控制列表是路由器接口的指令列表，用来<strong>控制端门进出的数据包</strong>。ACL适用于所有的被路由协议，如IP、IPX、 AppleTalk等。 访问控制列表可以分为基本访问控制列表和高级访问控制列表。</p>
+<p><strong>ACL的默认执行顺序是自上而下</strong>，在配置时要遵循<strong>最小特权原则</strong>、<strong>最靠近受控对象</strong>原则及<strong>默认丢弃原则</strong>。</p>
+<ul>
+<li>
+<p>基本访问控制列表基本访问控制列表<strong>基于IP地址</strong>，列表取值为2000 ~ 2999,分析数据包的源地址决定允许或拒绝数据报通过。</p>
+</li>
+<li>
+<p>高级访问控制列表高级IP访问控制列表比基本IP访问控制列表具有更多的匹配项，包括协议类型、源地址、目的地址、源端口、目的端口、建立连接的和IP优先级等。编号范围是从3000到3999的访问控制列表是高级IP访问控制列表。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>入侵检测系统</strong>常用的三种分析方法<strong>匹配模式</strong>、<strong>数据完整性分析</strong>、<strong>统计分析</strong>。密文分析需要相应的解密器不属于。</p>
+</li>
+<li>
+<p>SSL(Secure Sockets Layer安全套接层)及其继任者传输层安全(Transport LayerSecurity, TLS) 是为网络通信提供安全及数据完整性的一种安全协议。<strong>TLS与SSL在传输层对网络连接进行加密</strong>。</p>
+</li>
+<li>
+<p>代理ARP是指由一个路由器代替远端目标回答ARP请求。</p>
+</li>
+<li>
+<p>典型的<strong>主动攻击</strong>有：拒绝服务攻击，信息篡改，欺骗，伪装和重放攻击等。</p>
+<p>典型的<strong>被动攻击</strong>形式主要有：嗅探、信息收集等。</p>
+<p>本题中的修改数据命令是属于篡改拒绝服务攻击等是主动攻击行为。系统干涉是来自邻近的攻击者访问并实施窃听、降级等干涉系统的攻击。</p>
+</li>
+<li>
+<p>安全攻击依据攻击特征可以分为四类。</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>定义</th>
+<th>攻击的安全要素</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>中断</td>
+<td>攻击计算机或网络系统，时的其资源变得不可用或不可用</td>
+<td>可用性</td>
+</tr>
+<tr>
+<td>窃取</td>
+<td>访问未授权的资源</td>
+<td>机密性</td>
+</tr>
+<tr>
+<td>篡改</td>
+<td>截取并修改资源内容</td>
+<td>完整性</td>
+</tr>
+<tr>
+<td>伪造</td>
+<td>伪造信息</td>
+<td>真实性</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>重放攻击(Replay Attacks)又称重播攻击、回放攻击或新鲜性攻击(FreshnessAttacks)，是指攻击者发送一个目的主机已接收过的包，来达到欺骗系统的目的，主要用于身份认证过程，破坏认证的正确性。<strong>应付重放攻击的有效手段有:时间戳、序列号、一次性密钥</strong>。而Kerberos系统使用用一次性密钥和时间戳来防止重放攻击。</p>
+</li>
+</ol>
+<blockquote>
+<p>3.29 目前做到了第80题。</p>
+</blockquote>
+<ol start="43">
+<li>
+<p>签名必须使用自己的私钥，其他人用签名者的公钥验证。因此只能是A的公钥。</p>
+</li>
+<li>
+<p>RSA和ECC (Elliptic Curves Cryptography,椭圆曲线密码编码学)算法是非对称密钥算法，加密速度慢，计算量大，不适合用于会话通信。MD5属于消息摘
+要算法。<strong>RC5属于分组对称密钥算法，可以作为会话加密</strong>。</p>
+</li>
+<li>
+<p>IP协议中<strong>增加IGMP和Mospf等多播路由协议</strong>可以支持<strong>多媒体网络应用</strong>。</p>
+</li>
+<li>
+<p><strong>MPLS</strong>是一种<strong>ip作为标记</strong>进行交换的技术。</p>
+</li>
+<li>
+<p>异步时分模式下，各个子信道所占的带宽是变化，最小可以到0，最大可以到整个信道的带宽。</p>
+</li>
+<li>
+<p><strong>公钥加密</strong>和<strong>对称密钥加密算法</strong>的加密算法和解密算法<strong>都是公开的</strong>，之所以称为公钥。加密算法是其中的一个密钥可以公开，但是另一个密钥必须严格保密。而对称密钥算法的密钥只有一个， 必须严格保密。这<strong>两种算法的安全性在于密钥的长度</strong>，各有自己的优缺点，并不能认为公钥算法就一定先进， 就必须替换对称密钥算法。</p>
+</li>
+<li>
+<p><strong>数字签名</strong>技术主要用于<strong>保证用户的身份信息的验证</strong>，<strong>确保数据的安全</strong>是通过<strong>加密算法</strong>来实现。</p>
+<p><strong>数字信封</strong>是指发送方使用接收方的公钥来加密对称密钥后所得的数据,其目的是用来<strong>确保对称密钥传输的安全性</strong>。</p>
+<p><strong>消息认证码(MAC)<strong>是在密钥的控制下将任意长的消息映射到一个简短的定长数据分组，并将它附加在消息后，用于</strong>保证所传输信息的完整性</strong>的技术。</p>
+<p><strong>数字证书</strong>有一 定的<strong>有效期</strong>。</p>
+</li>
+<li>
+<p><strong>计算机机房的耐火等级</strong>应<strong>不低于2级</strong>。</p>
+</li>
+<li>
+<p>多协议标记交换(Multi-Protocol Label Switching, <strong>MPLS</strong>)是核心路由器利用含有边缘路由器在IP分组内提供的前向信息的**标签(Label) 或标记(Tag)**实现网络层交换的一种交换方式。</p>
+</li>
+<li>
+<p><strong>报文认证</strong>是指在网络上对接收到的<strong>报文的完整性进行确认</strong>的过程。一般实现时使用一种散列函数，例如<strong>MD5或者SHA-1</strong>,验证文本的完整性和真实性。<strong>而数字签名</strong>是使用**公钥体制(如RSA)**产生的一对公钥和私钥，使用私钥对报文进行签名，使用公钥对文件的签名进行验证，起到保证文件的不可否认性的作用。</p>
+</li>
+<li>
+<p>CA对数字证书签名，就是保证这份证书被验证确实是CA所颁发，就是证书的真实性。<strong>数字证书中包含申请者的公钥。</strong></p>
+</li>
+</ol>
+<h2 id="网络基础理论与安全">网络基础理论与安全</h2>
+<h3 id="网络体系结构">网络体系结构</h3>
+<ol>
+<li>
+<p><strong>循环冗余校验</strong>用于<strong>检错</strong>，不能自动纠正错误和重新生成数据。通常的做法可以丢弃自动请求重发和报告上层协议，关键在于使用CRC的这个协议是什么性质。如果是<strong>无连接的则丢弃</strong>，<strong>面向连接可靠的则请求重发</strong>。</p>
+</li>
+<li>
+<p><strong>OSI模型与TCP/IP模型</strong><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lonercci/picbed/raw/master/img/20210402114622.png"
+        data-srcset="https://gitee.com/lonercci/picbed/raw/master/img/20210402114622.png, https://gitee.com/lonercci/picbed/raw/master/img/20210402114622.png 1.5x, https://gitee.com/lonercci/picbed/raw/master/img/20210402114622.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lonercci/picbed/raw/master/img/20210402114622.png"
+        title="image-20210402114551940" /></p>
+</li>
+<li>
+<p>与其它网络安全技术相比，<strong>IDS（入侵检测系统）<strong>的最大特点是</strong>不能发现内部误操作</strong>。</p>
+</li>
+<li>
+<p>关于ip地址中<strong>单播地址的计算</strong>：</p>
+<p>所谓单播地址就是能分配给主机使用的ip地址，一个网段中，除了网络地址和广播地址之外的地址都是单播地址。</p>
+</li>
+<li>
+<p><strong>关于IP地址的一些知识：</strong></p>
+<ul>
+<li>IP地址的构成：</li>
+</ul>
+<blockquote>
+<p>IP地址 = 网络号段 + 主机号段</p>
+<p>​            = 网络号段 +（子网号段 + 子网主机号段）</p>
+<p>xx.xx.xx.xx ==&gt;  IPV4 由四个字节组成，每个字节8位二进制数，故IP地址由32位二进制数组成。</p>
+</blockquote>
+<ul>
+<li>网络号：</li>
+</ul>
+<p>网络号就是常说的A类地址，B类地址，C类地址，D类地址，E类地址，由IP地址中的前数位构成。</p>
+<blockquote>
+<p><strong>A类地址</strong>：<strong>8位网络号</strong>(0开头）+24位主机号，<strong>范围：1.0.0.0 - 126.255.255.255</strong></p>
+<p><strong>B类地址</strong>：<strong>16位网络号</strong>（10开头）+16位主机号，<strong>范围：128.0.0.0 - 191.255.255.255</strong></p>
+<p><strong>C类地址</strong>：<strong>24位网络号</strong>（110开头）+8位主机/号，<strong>范围：192.0.0.0 - 223.255.255.255</strong></p>
+<p><strong>D类</strong>：组播地址，<strong>范围：224.0.0.0 - 239.255.255.255</strong></p>
+<p><strong>E类</strong>：保留以后再用，<strong>范围：240.0.0.0 - 255.255.255.255</strong></p>
+</blockquote>
+<p>注意：</p>
+<blockquote>
+<pre><code>  1.  网络号不能全部为0或者全部为1。
+  2.  ip地址也不能全部为0或全部为1。
+  3.  其中的D、E类地址被分别被用作**组播地址、实验地址**
+  4.  在以上点分十进制的IP地址段中没有**127.0.0.0**/8这个网段，因为该网段被用作**环回地址**。
+</code></pre>
+</blockquote>
+</li>
+<li>
+<p><strong>主域名服务器</strong>。<strong>辅助域名服务器</strong>。<strong>转发域名服务器</strong>。</p>
+<p>在进行域名解析的时候，当主域名服务器找不到地址时，由转发域名服务器负责域名解析。当主域名服务器停止时，辅助域名服务器来提供服务。</p>
+</li>
+<li>
+<p><strong>进度安排</strong>的常用图形：</p>
+<ul>
+<li><strong>PERT图</strong>是一个有向图。</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lonercci/picbed/raw/master/img/20210402200231.png"
+        data-srcset="https://gitee.com/lonercci/picbed/raw/master/img/20210402200231.png, https://gitee.com/lonercci/picbed/raw/master/img/20210402200231.png 1.5x, https://gitee.com/lonercci/picbed/raw/master/img/20210402200231.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lonercci/picbed/raw/master/img/20210402200231.png"
+        title="image-20210402194922842" /></p>
+<ul>
+<li>
+<p><strong>GANTT图</strong>是一个水平条状图。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lonercci/picbed/raw/master/img/20210402200316.png"
+        data-srcset="https://gitee.com/lonercci/picbed/raw/master/img/20210402200316.png, https://gitee.com/lonercci/picbed/raw/master/img/20210402200316.png 1.5x, https://gitee.com/lonercci/picbed/raw/master/img/20210402200316.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lonercci/picbed/raw/master/img/20210402200316.png"
+        title="image-20210402195310075" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>PERT图（工程网络图）案例</strong>：</p>
+<p><img src="https://gitee.com/lonercci/picbed/raw/master/img/20210402201707.png" alt="image-20210402201707484" style="zoom:80%;" /></p>
+<p><img src="https://gitee.com/lonercci/picbed/raw/master/img/20210402201735.png" alt="image-20210402201735169" style="zoom:80%;" /></p>
+</li>
+<li>
+<p>TCP的<strong>三次握手</strong>和<strong>四次挥手</strong></p>
+<p>在建立TCP连接过程中，出现错误连接时，<strong>RST</strong>标志字段置“1”。</p>
+</li>
+</ol>
+<blockquote>
+<p>2021.4.7 距离考试还有52天。:happy:加油！</p>
+</blockquote>
+<ol start="10">
+<li>
+<p>星型拓扑存在中心节点。</p>
+<p>网状拓扑是无规则的拓扑。</p>
+<p>环形拓扑传输时延时确定的。</p>
+<p>广域网大多采用网状拓扑。</p>
+</li>
+<li>
+<p>设信道带宽为5000Hz,采用PCM编码，采样周期为125μs,每个样本量化为256个等级，则信道的数据速率为:</p>
+<p>$R=\frac{1}{T}<em>log_2N=(\frac{1}{125</em>10^{-6}})<em>log_2256=8000</em>8=64000bps$</p>
+<p><strong>求信道的传输速率与带宽无关</strong></p>
+</li>
+<li>
+<p>使用<strong>ADSL接入</strong>Internet，用户端需要安装<strong>PPPoE协议</strong>。</p>
+</li>
+<li>
+<p>关于<strong>OSPF</strong>：</p>
+<ul>
+<li>OSPF是一个内部网关协议。开放式最短路径优先（Open Shortest Path First）,采用最短优先算法（Shortest Path Firs,SPF）计算最小生成树来确定最短路径。</li>
+<li>OSPF基于IP，协议号是89，采用组播的方式交换OSPF包，组播地址是224.0.0.5（全部OSPF路由器）和224.0.0.6（指定路由器）</li>
+<li>OSPF使用链路状态广播（Link State Advertisement，LSA）传送给某区域内的所有路由器。</li>
+<li>查看OSPF在接收报文时出错的命令是display ospf error</li>
+</ul>
+</li>
+<li>
+<p>关于<strong>RIP</strong>：</p>
+<ul>
+<li>RIP：路由信息协议，属于最早的<strong>动态路由协议</strong>。</li>
+<li>RIP是一种分布式的<strong>基于距离矢量</strong>的<strong>路由选择协议</strong>。</li>
+<li>优点：<strong>实现简单，开销较小</strong>。</li>
+</ul>
+</li>
+<li>
+<p><strong>SNMPC</strong>支持各种设备访问方式，在SNMPC支持的设备访问方式中，只是用于对TCP服务轮询的方式是<strong>无访问模式</strong>。</p>
+</li>
+<li>
+<p>关于<strong>IPV6</strong>：</p>
+<ul>
+<li>ipv6的地址长度是128位。每16位划分一个段，将每个段转换成16进制数字，并用冒号隔开</li>
+<li>ipv6中新增加了一种任意播地址。这种地址代表一组接口的标识符。任意播的限制：1、任意播地址不能制动给ipv6主机，只能指定给ipv6路由器。2、任意播不能用于源地址，只能做目的地址。</li>
+</ul>
+</li>
+<li>
+<p><strong>SNMP</strong>协议属于<strong>应用层协议</strong>。</p>
+<p>SNMP位于两种网络模型的顶层即应用层，属于应用层协议。在传输层依靠UDP协议进行传输。SNMP的数据包在传输层，因此叫做PDU (协议数据单元)</p>
+</li>
+</ol>
+<p>18.常见的<strong>三种防火墙技术</strong>：<strong>包过滤防火墙</strong>、<strong>代理服务器式防火墙</strong>、<strong>基于状态检测的防火墙</strong>。</p>
+<ul>
+<li>包过滤防火墙包过滤防火墙主要针对<strong>OSI模型中的网络层和传输层</strong>的信息进行分析。通常包过滤防火墙用来控制IP、UDP、TCP、 ICMP和其他协议。包过滤防火墙对通过防火墙的数据包进行检查，只有满足条件的数据包才能通过，对数据包的检查内容一般包括源地址、 目的地址和协议。包过滤防火墙**通过规则(如ACL)**来确定数据包是否能通过。<strong>配置了ACL的防火墙可以看成包过滤防火墙</strong>。</li>
+<li>代理服务器式防火墙代理服务器式防火墙对第四层到七层的数据进行检查，与包过滤防火墙相比，需要更高的开销。用户经过建立会话状态并通过认证及授权后，才能访问到受保护的网络。压力较大的情况下，代理服务器式防火墙工作很慢。<strong>ISA</strong>可以看成是<strong>代理服务器式防火墙</strong>。</li>
+<li>基于状态检测的防火墙基于状态检测的防火墙检测每一个TCP、UDP之类的会话连接。基于状态的会话包含特定会话的源、目的地址、端口号、TCP序列号信息以及与此会话相关的其他标志信息。基于状态检测的防火墙工作基于数据包、连接会话和一个基于状态的会话流表。<strong>基于状态检测的防火墙的性能</strong>比包过滤防火墙和代理服务器式防火墙要<strong>高</strong>。思科PIX和ASA属于基于状态检测的防火墙</li>
+</ul>
+<ol start="19">
+<li>
+<p>关于协议<strong>端口号</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">端口类型</th>
+<th style="text-align:center">取值范围</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">系统端口</td>
+<td style="text-align:center">[0,1023]</td>
+<td>供系统使用</td>
+</tr>
+<tr>
+<td style="text-align:center">登记端口</td>
+<td style="text-align:center">[1024,49151]</td>
+<td>为没有熟知端口号的应用使用的</td>
+</tr>
+<tr>
+<td style="text-align:center">客户端使用端口</td>
+<td style="text-align:center">[49152,65535]</td>
+<td>仅在客户进程运行的时候动态使用，使用完毕之后，进程会释放该端口</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><strong>IMAP4协议</strong>工作在<strong>143</strong>端口。</p>
+</li>
+<li>
+<p>工作区子系统是由<strong>终端设备连接到信息插座的连线</strong>组成的。</p>
+<p>包括连接线和适配器工作区子系统中信息插座的安装位置距离地面的高度为30~ 50cm。</p>
+<p>如果信息插座到网卡之间使用无屏蔽双绞线，布线距离最大为10m.</p>
+</li>
+<li>
+<p>关于<strong>反码</strong>：</p>
+<p><strong>正整数的反码就是其本身。</strong></p>
+<p><strong>负整数的反码是通过其绝对值按位求反来取得。</strong></p>
+<p>规律：除符号为外的其余各位逐位取反就得到反码，反码表示的数和原码一一对应。例：X1 = +1001，则X1的反码就是01001。</p>
+</li>
+<li>
+<p><strong>SNMP代理收到一个GET请求</strong>时，如果不能提供该对象的值，代理以<strong>该实例的下个值</strong>相应。</p>
+</li>
+<li>
+<p>用于<strong>生成VLAN标记</strong>的协议的是<strong>IEEE 802.1Q</strong>。</p>
+</li>
+</ol>
+<blockquote>
+<p>4.7日目前完成第65题</p>
+</blockquote>
+<ol start="25">
+<li><strong>采样定理</strong>：规定采样速率必须至少是模拟信号带宽最大值的<strong>两倍</strong></li>
+<li>属于<strong>工作区子系统区域</strong>范围的是<strong>终端设备</strong>到信息<strong>插座</strong>的整个区间</li>
+<li></li>
+</ol>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-03-28</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>,&nbsp;<a href="/tags/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B/">网络工程</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/java%E4%B9%8B%E5%8F%8D%E5%B0%84/" class="prev" rel="prev" title="Java之反射"><i class="fas fa-angle-left fa-fw"></i>Java之反射</a>
+            <a href="/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%AC%E5%9C%B0%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%B6%E4%BD%9C/" class="next" rel="next" title="记录一次本地数据库的制作">记录一次本地数据库的制作<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="tcomment"></div>
+        <script src="https://cdn.jsdelivr.net/npm/twikoo@1.3.1/dist/twikoo.all.min.js"></script>
+        <script>
+        twikoo.init({
+          envId: 'blog-data-0gc3ets7c557f7fd',
+          
+          el: '#tcomment',
+          
+          
+        })
+        </script>
+
+    </div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"></br></br></br></br></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.84.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Lone</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.77eb6ae63c63c88c5e7a10b6c9570c54.css" integrity="md5-d&#43;tq5jxjyIxeehC2yVcMVA=="><link rel="stylesheet" href="/lib/katex/katex.min.ef3c395634e43fe45f5332bfca2287b3.css" integrity="md5-7zw5VjTkP&#43;RfUzK/yiKHsw=="><link rel="stylesheet" href="/lib/katex/copy-tex.min.622133ef544b0f203604a52bebba29f4.css" integrity="md5-YiEz71RLDyA2BKUr67op9A=="><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.dd4e1772a44268dd6e27f193695067fc.js" integrity="md5-3U4XcqRCaN1uJ/GTaVBn/A=="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.10321080d79e27ee01ff36859c02acd3.js" integrity="md5-EDIQgNeeJ&#43;4B/zaFnAKs0w=="></script><script type="text/javascript" src="/lib/lunr/lunr.min.f2eea188dc4939c55ff8f55569a4e87c.js" integrity="md5-8u6hiNxJOcVf&#43;PVVaaTofA=="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.76a9898754052993cab798a24f45d94e.js" integrity="md5-dqmJh1QFKZPKt5iiT0XZTg=="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.afbe35f35a427dd563d97cbdc9eb85d5.js" integrity="md5-r74181pCfdVj2Xy9yeuF1Q=="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.40c0bfc764764587555c066d46fe6071.js" integrity="md5-QMC/x2R2RYdVXAZtRv5gcQ=="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.c6a5b6b1db8980fdc42cd3456fe1ec74.js" integrity="md5-xqW2sduJgP3ELNNFb&#43;HsdA=="></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.ba38a712df31c778e10e8211f8cb891b.js" integrity="md5-ujinEt8xx3jhDoIR&#43;MuJGw=="></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.fa56076f9d071729612c4849acae1ce5.js" integrity="md5-&#43;lYHb50HFylhLEhJrK4c5Q=="></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.4f0896a2ff5ef76f0dd00f5c5de65abb.js" integrity="md5-TwiWov9e928N0A9cXeZauw=="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.221393f48062472d1e72960fda7db7a3.js" integrity="md5-IhOT9IBiRy0ecpYP2n23ow=="></script><script type="text/javascript" src="/lib/katex/katex.min.c158c9e823b681cf535f46596b5e4eac.js" integrity="md5-wVjJ6CO2gc9TX0ZZa15OrA=="></script><script type="text/javascript" src="/lib/katex/auto-render.min.28cd0b98cd3f4fa37d52f3ffe47ad9d4.js" integrity="md5-KM0LmM0/T6N9UvP/5HrZ1A=="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.bfaec7d1dea915d74a7a6d833f0ff62e.js" integrity="md5-v67H0d6pFddKem2DPw/2Lg=="></script><script type="text/javascript" src="/lib/katex/mhchem.min.1bbb252363e83547d4b2186a41eaca28.js" integrity="md5-G7slI2PoNUfUshhqQerKKA=="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":15},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.8043ef4f5ae2d4fd302305ffd8316f55.js" integrity="md5-gEPvT1ri1P0wIwX/2DFvVQ=="></script></body>
+</html>

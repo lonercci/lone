@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>python笔记 - 分类 - Lone&#39;s Blog</title>
+        <link>http://example.org/categories/python%E7%AC%94%E8%AE%B0/</link>
+        <description>python笔记 - 分类 - Lone&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chonee@qq.com (Lone)</managingEditor>
+            <webMaster>chonee@qq.com (Lone)</webMaster><lastBuildDate>Wed, 13 Jan 2021 00:20:28 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/python%E7%AC%94%E8%AE%B0/" rel="self" type="application/rss+xml" /><item>
+    <title>装饰器 迭代器 生成器</title>
+    <link>http://example.org/%E8%A3%85%E9%A5%B0%E5%99%A8-%E8%BF%AD%E4%BB%A3%E5%99%A8-%E7%94%9F%E6%88%90%E5%99%A8/</link>
+    <pubDate>Wed, 13 Jan 2021 00:20:28 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/%E8%A3%85%E9%A5%B0%E5%99%A8-%E8%BF%AD%E4%BB%A3%E5%99%A8-%E7%94%9F%E6%88%90%E5%99%A8/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://gitee.com/lonercci/picbed/raw/master/img/20201231231530.jpg" referrerpolicy="no-referrer">
+            </div>函数返回值 return是函数结束的标志，即函数代码一旦运行到return会立即终止，并将return后的值当做本次运行的结果返回。 1、返回N]]></description>
+</item></channel>
+</rss>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>从Hexo到Hugo的博客迁移脚本Demo - Lone&#39;s Blog</title><meta name="Description" content=""><meta property="og:title" content="从Hexo到Hugo的博客迁移脚本Demo" />
+<meta property="og:description" content="从Hexo到Hugo 从一个框架到另外一个框架的过渡，比较麻烦的就是文章的迁移，尤其是文章数量较多的时候。如果一个一个手动更改 MD 文档的头部配置" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/%E4%BB%8Ehexo%E5%88%B0hugo%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E8%84%9A%E6%9C%ACdemo/" /><meta property="og:image" content="http://example.org/"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-06-26T20:48:43&#43;08:00" />
+<meta property="article:modified_time" content="2021-06-26T20:48:43&#43;08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://example.org/"/>
+
+<meta name="twitter:title" content="从Hexo到Hugo的博客迁移脚本Demo"/>
+<meta name="twitter:description" content="从Hexo到Hugo 从一个框架到另外一个框架的过渡，比较麻烦的就是文章的迁移，尤其是文章数量较多的时候。如果一个一个手动更改 MD 文档的头部配置"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="https://gitee.com/lonercci/picbed/raw/master/img/20210626110236.jpg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/%E4%BB%8Ehexo%E5%88%B0hugo%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E8%84%9A%E6%9C%ACdemo/" /><link rel="prev" href="http://example.org/java%E7%90%90%E7%A2%8E%E9%97%B2%E8%B0%88%E5%BD%95/" /><link rel="next" href="http://example.org/hugo-loveit%E4%BC%98%E5%8C%96%E8%AE%B0/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.a12cacf4b5b41234196cb89042b24a70.css" integrity="md5-oSys9LW0EjQZbLiQQrJKcA=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.26386564b5cf1594be24059af1cd0db9.css" integrity="md5-JjhlZLXPFZS&#43;JAWa8c0NuQ=="><link rel="stylesheet" href="/lib/animate/animate.min.43d6b8fdf324505f0ceb7ea698d0b7a5.css" integrity="md5-Q9a4/fMkUF8M636mmNC3pQ=="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "从Hexo到Hugo的博客迁移脚本Demo",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/%E4%BB%8Ehexo%E5%88%B0hugo%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E8%84%9A%E6%9C%ACdemo\/"
+        },"genre": "posts","keywords": "Python, 脚本, Hugo-LoveIt","wordcount":  1024 ,
+        "url": "http:\/\/example.org\/%E4%BB%8Ehexo%E5%88%B0hugo%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E8%84%9A%E6%9C%ACdemo\/","datePublished": "2021-06-26T20:48:43+08:00","dateModified": "2021-06-26T20:48:43+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Lone"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Lone&#39;s Blog">Lone&#39;s Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 全部文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Lone&#39;s Blog">Lone&#39;s Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">全部文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">从Hexo到Hugo的博客迁移脚本Demo</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Lone</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="far fa-folder fa-fw"></i>Python</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-06-26">2021-06-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1024 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#从hexo到hugo">从Hexo到Hugo</a></li>
+        <li><a href="#思路">思路</a></li>
+        <li><a href="#困境">困境</a></li>
+        <li><a href="#部分程序">部分程序</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="从hexo到hugo">从Hexo到Hugo</h3>
+<p>从一个框架到另外一个框架的过渡，比较麻烦的就是文章的迁移，尤其是文章数量较多的时候。如果一个一个手动更改 MD 文档的头部配置信息，无疑是一个巨大的工程量。这个时候我们可以考虑使用脚本来完成重复性操作。</p>
+<p>观察Hexo和HuGo的文档头部配置，很相近。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lonercci/picbed/raw/master/img/20210626210130.png"
+        data-srcset="https://gitee.com/lonercci/picbed/raw/master/img/20210626210130.png, https://gitee.com/lonercci/picbed/raw/master/img/20210626210130.png 1.5x, https://gitee.com/lonercci/picbed/raw/master/img/20210626210130.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lonercci/picbed/raw/master/img/20210626210130.png"
+        title="https://gitee.com/lonercci/picbed/raw/master/img/20210626210130.png" /></p>
+<p>一个是类似于yaml的配置文件，一个类似于toml的配置文件。</p>
+<h3 id="思路">思路</h3>
+<p>我是这样思考的：</p>
+<ul>
+<li>
+<p>把<code>Hexo</code>的<code>_post</code>路径下的所有文章全部复制到新的文件夹（怂，不敢对源文件直接操作）重命名<code>Old</code>，继续新建一个文件夹<code>New</code>，存放更改好的文件。</p>
+</li>
+<li>
+<p>遍历此目录下的所有文件，使用os的读写操作，截选配置部分，进行解析，拿到单个参数对应的值。</p>
+</li>
+<li>
+<p>把值按照Hugo的格式进行拼接，拿到Hugo的头部配置</p>
+</li>
+<li>
+<p>把头部文件和剩余的正文部分，拼接，写入新的文件中，完成。</p>
+</li>
+</ul>
+<h3 id="困境">困境</h3>
+<p>思路很简单，就是文件字符的拼接罢了。</p>
+<p>但是在实际操作中，发现以前博客的头部格式书写的并不规范，有时有好几个<code>tags</code>，这种情况使用正则直接提取<code>---xxxx---</code>的部分最方便，但是我写不好表达式，无奈只能按行读取按行取大致的前10行左右，通过判读符号<code>: </code>是否存在来确定内容是否是头部配置部分。而时间中的：又会影响我使用列表分片取值，而且文章有大量的转义字符等，这些都需要考虑进去&hellip;..我哭了。。。乱七八糟写了一堆 <code>if..else</code>，终于能把头部配置转换过去了。
+结果，正文部分的截取我不知道该如何操作了。有一种思路是通过文件修改前几行数据进行覆盖操作，但是百度了好多方法没成功，而且网上似乎对文件的更改操作教程较少。。。另一种思路是把文件内容加载到内存中，赋给一个变量，截选进行替换，但是强转之后是莫名使用不了<code>replace</code>方法，因为不是Str类型，可实际上已经使用<code>&quot;&quot;.join()</code>方法转换过了。于是我卡在了这个地方，暂时还没有好的想法。。。</p>
+<h3 id="部分程序">部分程序</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;C:\Users\lenovo\Desktop\Old&#39;</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&#34;r+&#34;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&#34;utf-8&#34;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">9</span><span class="p">]</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+            <span class="n">data_list</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">tags</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+                <span class="k">if</span> <span class="s2">&#34;:&#34;</span> <span class="ow">in</span> <span class="n">i</span> <span class="ow">and</span> <span class="s2">&#34;tags&#34;</span><span class="p">:</span>
+                    <span class="n">info</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&#34;: &#34;</span><span class="p">)</span>
+                    <span class="n">data_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="s2">&#34;- &#34;</span> <span class="ow">in</span> <span class="n">i</span><span class="p">:</span>
+                    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span>
+                    <span class="n">tags</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+            <span class="c1"># print(data_list)</span>
+            <span class="n">tag</span> <span class="o">=</span> <span class="n">data_list</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span>
+            <span class="n">tags</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">tags</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="s2">&#34;&#34;</span><span class="p">:</span>
+                    <span class="n">tags</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="s2">&#34;---</span><span class="se">\n</span><span class="s2">&#34;</span>
+            <span class="n">new_tag</span> <span class="o">=</span> <span class="s2">&#34;tags&#34;</span> <span class="o">+</span> <span class="s2">&#34;: &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tags</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\&#39;</span><span class="s2">&#34;</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\&#34;</span><span class="s2">&#34;</span><span class="p">)</span>
+            <span class="n">new_title</span> <span class="o">=</span> <span class="s2">&#34;title&#34;</span> <span class="o">+</span> <span class="s2">&#34;: &#34;</span> <span class="o">+</span> <span class="n">data_list</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">)</span>
+            <span class="n">new_date</span> <span class="o">=</span> <span class="s2">&#34;date&#34;</span> <span class="o">+</span> <span class="s2">&#34;: &#34;</span> <span class="o">+</span> <span class="n">data_list</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34; &#34;</span><span class="p">,</span> <span class="s2">&#34;T&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&#34;+08:00&#34;</span>
+            <span class="n">new_categories</span> <span class="o">=</span> <span class="s2">&#34;categories&#34;</span> <span class="o">+</span> <span class="s2">&#34;: &#34;</span> <span class="o">+</span> <span class="s2">&#34;[</span><span class="se">\&#34;</span><span class="s2">&#34;</span> <span class="o">+</span> <span class="n">data_list</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&#34;</span><span class="se">\&#34;</span><span class="s2">]&#34;</span>
+            <span class="n">new_imgurl</span> <span class="o">=</span> <span class="s2">&#34;featuredImage&#34;</span> <span class="o">+</span> <span class="s2">&#34;: &#34;</span> <span class="o">+</span> <span class="s2">&#34;</span><span class="se">\&#34;</span><span class="s2">&#34;</span> <span class="o">+</span> <span class="n">data_list</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&#34;</span><span class="se">\&#34;</span><span class="s2">&#34;</span>
+            <span class="n">end</span> <span class="o">=</span> <span class="s2">&#34;---</span><span class="se">\n\n</span><span class="s2">&#34;</span>
+            <span class="n">head_last</span> <span class="o">=</span> <span class="n">head</span> <span class="o">+</span> <span class="n">new_title</span> <span class="o">+</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span> <span class="o">+</span> <span class="n">new_date</span> <span class="o">+</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span> <span class="o">+</span> <span class="s2">&#34;draft: false</span><span class="se">\n</span><span class="s2">&#34;</span> <span class="o">+</span> <span class="n">new_tag</span> <span class="o">+</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span> <span class="o">+</span> <span class="n">new_categories</span> <span class="o">+</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span> <span class="o">+</span> <span class="n">new_imgurl</span> <span class="o">+</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span> <span class="o">+</span> <span class="n">end</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">head_last</span><span class="p">)</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lonercci/picbed/raw/master/img/20210626213257.png"
+        data-srcset="https://gitee.com/lonercci/picbed/raw/master/img/20210626213257.png, https://gitee.com/lonercci/picbed/raw/master/img/20210626213257.png 1.5x, https://gitee.com/lonercci/picbed/raw/master/img/20210626213257.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lonercci/picbed/raw/master/img/20210626213257.png"
+        title="https://gitee.com/lonercci/picbed/raw/master/img/20210626213257.png" /></p>
+<p>这里只实现了从<code>hexo</code>到<code>hugo</code>更改头部配置，但是怎么和正文部分合并，还未完成。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-06-26</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python/">python</a>,&nbsp;<a href="/tags/%E8%84%9A%E6%9C%AC/">脚本</a>,&nbsp;<a href="/tags/hugo-loveit/">Hugo-LoveIt</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/java%E7%90%90%E7%A2%8E%E9%97%B2%E8%B0%88%E5%BD%95/" class="prev" rel="prev" title="Java琐碎闲谈录"><i class="fas fa-angle-left fa-fw"></i>Java琐碎闲谈录</a>
+            <a href="/hugo-loveit%E4%BC%98%E5%8C%96%E8%AE%B0/" class="next" rel="next" title="Hugo&#43;Loveit优化记(转载)">Hugo&#43;Loveit优化记(转载)<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="tcomment"></div>
+        <script src="https://cdn.jsdelivr.net/npm/twikoo@1.3.1/dist/twikoo.all.min.js"></script>
+        <script>
+        twikoo.init({
+          envId: 'blog-data-0gc3ets7c557f7fd',
+          
+          el: '#tcomment',
+          
+          
+        })
+        </script>
+
+    </div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"></br></br></br></br></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.84.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Lone</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.77eb6ae63c63c88c5e7a10b6c9570c54.css" integrity="md5-d&#43;tq5jxjyIxeehC2yVcMVA=="><link rel="stylesheet" href="/lib/katex/katex.min.ef3c395634e43fe45f5332bfca2287b3.css" integrity="md5-7zw5VjTkP&#43;RfUzK/yiKHsw=="><link rel="stylesheet" href="/lib/katex/copy-tex.min.622133ef544b0f203604a52bebba29f4.css" integrity="md5-YiEz71RLDyA2BKUr67op9A=="><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.dd4e1772a44268dd6e27f193695067fc.js" integrity="md5-3U4XcqRCaN1uJ/GTaVBn/A=="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.10321080d79e27ee01ff36859c02acd3.js" integrity="md5-EDIQgNeeJ&#43;4B/zaFnAKs0w=="></script><script type="text/javascript" src="/lib/lunr/lunr.min.f2eea188dc4939c55ff8f55569a4e87c.js" integrity="md5-8u6hiNxJOcVf&#43;PVVaaTofA=="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.76a9898754052993cab798a24f45d94e.js" integrity="md5-dqmJh1QFKZPKt5iiT0XZTg=="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.afbe35f35a427dd563d97cbdc9eb85d5.js" integrity="md5-r74181pCfdVj2Xy9yeuF1Q=="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.40c0bfc764764587555c066d46fe6071.js" integrity="md5-QMC/x2R2RYdVXAZtRv5gcQ=="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.c6a5b6b1db8980fdc42cd3456fe1ec74.js" integrity="md5-xqW2sduJgP3ELNNFb&#43;HsdA=="></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.ba38a712df31c778e10e8211f8cb891b.js" integrity="md5-ujinEt8xx3jhDoIR&#43;MuJGw=="></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.fa56076f9d071729612c4849acae1ce5.js" integrity="md5-&#43;lYHb50HFylhLEhJrK4c5Q=="></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.4f0896a2ff5ef76f0dd00f5c5de65abb.js" integrity="md5-TwiWov9e928N0A9cXeZauw=="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.221393f48062472d1e72960fda7db7a3.js" integrity="md5-IhOT9IBiRy0ecpYP2n23ow=="></script><script type="text/javascript" src="/lib/katex/katex.min.c158c9e823b681cf535f46596b5e4eac.js" integrity="md5-wVjJ6CO2gc9TX0ZZa15OrA=="></script><script type="text/javascript" src="/lib/katex/auto-render.min.28cd0b98cd3f4fa37d52f3ffe47ad9d4.js" integrity="md5-KM0LmM0/T6N9UvP/5HrZ1A=="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.bfaec7d1dea915d74a7a6d833f0ff62e.js" integrity="md5-v67H0d6pFddKem2DPw/2Lg=="></script><script type="text/javascript" src="/lib/katex/mhchem.min.1bbb252363e83547d4b2186a41eaca28.js" integrity="md5-G7slI2PoNUfUshhqQerKKA=="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":15},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.8043ef4f5ae2d4fd302305ffd8316f55.js" integrity="md5-gEPvT1ri1P0wIwX/2DFvVQ=="></script></body>
+</html>

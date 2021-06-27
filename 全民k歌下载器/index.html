@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>全民K歌下载器 - Lone&#39;s Blog</title><meta name="Description" content=""><meta property="og:title" content="全民K歌下载器" />
+<meta property="og:description" content="前言 希望最终的美好都能为你如期而置。 获取接口 1、目标：下载指定用户主页的全部歌曲。 2、对比url，删除不必要的参数后发现，用户uid为个人凭" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/%E5%85%A8%E6%B0%91k%E6%AD%8C%E4%B8%8B%E8%BD%BD%E5%99%A8/" /><meta property="og:image" content="http://example.org/"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-12-03T23:27:40&#43;08:00" />
+<meta property="article:modified_time" content="2020-12-03T23:27:40&#43;08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://example.org/"/>
+
+<meta name="twitter:title" content="全民K歌下载器"/>
+<meta name="twitter:description" content="前言 希望最终的美好都能为你如期而置。 获取接口 1、目标：下载指定用户主页的全部歌曲。 2、对比url，删除不必要的参数后发现，用户uid为个人凭"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="https://gitee.com/lonercci/picbed/raw/master/img/20210626110236.jpg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/%E5%85%A8%E6%B0%91k%E6%AD%8C%E4%B8%8B%E8%BD%BD%E5%99%A8/" /><link rel="prev" href="http://example.org/%E4%B8%80%E4%B8%AA%E5%BD%A9%E8%9B%8B/" /><link rel="next" href="http://example.org/%E6%9F%90%E7%BD%91%E7%AB%99%E7%88%AC%E8%99%AB%E7%BB%83%E4%B9%A0/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.a12cacf4b5b41234196cb89042b24a70.css" integrity="md5-oSys9LW0EjQZbLiQQrJKcA=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.26386564b5cf1594be24059af1cd0db9.css" integrity="md5-JjhlZLXPFZS&#43;JAWa8c0NuQ=="><link rel="stylesheet" href="/lib/animate/animate.min.43d6b8fdf324505f0ceb7ea698d0b7a5.css" integrity="md5-Q9a4/fMkUF8M636mmNC3pQ=="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "全民K歌下载器",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/%E5%85%A8%E6%B0%91k%E6%AD%8C%E4%B8%8B%E8%BD%BD%E5%99%A8\/"
+        },"genre": "posts","keywords": "迁移","wordcount":  1089 ,
+        "url": "http:\/\/example.org\/%E5%85%A8%E6%B0%91k%E6%AD%8C%E4%B8%8B%E8%BD%BD%E5%99%A8\/","datePublished": "2020-12-03T23:27:40+08:00","dateModified": "2020-12-03T23:27:40+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Lone"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Lone&#39;s Blog">Lone&#39;s Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 全部文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Lone&#39;s Blog">Lone&#39;s Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">全部文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">全民K歌下载器</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Lone</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="far fa-folder fa-fw"></i>Python</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-12-03">2020-12-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1089 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lonercci/picbed/raw/master/img/20201203213429.jpg"
+        data-srcset="https://gitee.com/lonercci/picbed/raw/master/img/20201203213429.jpg, https://gitee.com/lonercci/picbed/raw/master/img/20201203213429.jpg 1.5x, https://gitee.com/lonercci/picbed/raw/master/img/20201203213429.jpg 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lonercci/picbed/raw/master/img/20201203213429.jpg"
+        title="https://gitee.com/lonercci/picbed/raw/master/img/20201203213429.jpg" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#前言">前言</a></li>
+        <li><a href="#获取接口">获取接口</a></li>
+        <li><a href="#代码实现">代码实现</a></li>
+        <li><a href="#运行截图">运行截图</a></li>
+        <li><a href="#问题总结">问题总结</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="前言">前言</h3>
+<p>希望最终的美好都能为你如期而置。</p>
+<h3 id="获取接口">获取接口</h3>
+<p>1、目标：下载指定用户主页的全部歌曲。
+2、对比<code>url</code>，删除不必要的参数后发现，用户<code>uid</code>为个人凭证。
+3、分析网页源代码得到用户所有的json数据接口为<code>https://node.kg.qq.com/cgi/fcgi-bin/kg_ugc_get_homepage?type=get_uinfo&amp;start={}&amp;num=10&amp;share_uid={}</code>
+第一个参数是页码，每页的<code>json</code>数据有10条，第二个参数为用户凭证信息。</p>
+<h3 id="代码实现">代码实现</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">etree</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&#34;User-Agent&#34;</span><span class="p">:</span><span class="s2">&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36&#34;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span>
+<span class="n">PATH</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="s1">&#39;music&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">PATH</span><span class="p">):</span>
+    <span class="n">PATH</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">PATH</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;下载路径：&#34;</span><span class="o">+</span><span class="n">PATH</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">get_data</span><span class="p">():</span>
+     <span class="n">c</span><span class="o">=</span><span class="mi">0</span>
+     <span class="n">uid</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;请输入k歌主页uid：&#34;</span><span class="p">)</span>
+     <span class="n">header_url</span> <span class="o">=</span> <span class="s2">&#34;https://kg.qq.com/node/personal?uid=</span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">uid</span><span class="p">)</span>
+     <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">header_url</span><span class="p">,</span><span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+     <span class="n">user_name</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">etree</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&#34;//*[@class = &#39;my_show__name&#39;]/text()&#34;</span><span class="p">))</span>
+     <span class="n">music_num</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">etree</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&#34;//*[@class = &#39;my_nav__list&#39;]/li[1]/a/text()&#34;</span><span class="p">))[</span><span class="mi">3</span><span class="p">:]</span>
+     <span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">music_num</span><span class="p">)</span> <span class="o">//</span> <span class="mi">10</span>
+     <span class="k">if</span> <span class="n">num</span> <span class="o">!=</span> <span class="nb">int</span><span class="p">(</span><span class="n">music_num</span><span class="p">)</span> <span class="o">/</span> <span class="mi">10</span><span class="p">:</span>
+         <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">+</span> <span class="mi">2</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;昵称：</span><span class="si">{}</span><span class="s2"> ——&gt; 一共有</span><span class="si">{}</span><span class="s2">首音乐,数据共</span><span class="si">{}</span><span class="s2">页</span><span class="se">\n</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">user_name</span><span class="p">,</span><span class="n">music_num</span><span class="p">,</span><span class="n">num</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+
+     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">num</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+         <span class="k">try</span><span class="p">:</span>
+             <span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;https://node.kg.qq.com/cgi/fcgi-bin/kg_ugc_get_homepage?type=get_uinfo&amp;start=</span><span class="si">{}</span><span class="s2">&amp;num=10&amp;share_uid=</span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">uid</span><span class="p">)</span>
+             <span class="c1"># print(url)</span>
+             <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">这是第</span><span class="si">{}</span><span class="s2">页数据：</span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">url</span><span class="p">))</span>
+             <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+             <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+             <span class="n">r</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="mi">18</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+             <span class="n">music_name</span> <span class="o">=</span> <span class="n">r</span><span class="p">[</span><span class="s2">&#34;data&#34;</span><span class="p">][</span><span class="s2">&#34;ugclist&#34;</span><span class="p">]</span>
+             <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">music_name</span><span class="p">:</span>
+                 <span class="n">title</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="s2">&#34;title&#34;</span><span class="p">]</span>
+                 <span class="k">if</span> <span class="s2">&#34;|&#34;</span> <span class="ow">or</span> <span class="s2">&#34;?&#34;</span> <span class="ow">or</span> <span class="s2">&#34;:&#34;</span> <span class="ow">in</span> <span class="n">title</span><span class="p">:</span>
+                     <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;|&#34;</span><span class="p">,</span> <span class="s2">&#34; &#34;</span><span class="p">)</span>
+                     <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;?&#34;</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">)</span>
+                     <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;:&#34;</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">)</span>
+                 <span class="n">shareid</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="s2">&#34;shareid&#34;</span><span class="p">]</span>
+                 <span class="k">try</span><span class="p">:</span>
+                     <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;  &#34;</span><span class="o">+</span><span class="n">title</span><span class="o">+</span><span class="s2">&#34;--&gt; &#34;</span><span class="o">+</span><span class="s2">&#34;https://kg.qq.com/node/personal?uid=&#34;</span><span class="o">+</span><span class="n">shareid</span><span class="p">)</span>
+                     <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;    正在下载……&#34;</span><span class="p">)</span>
+                     <span class="n">music_url</span> <span class="o">=</span> <span class="s2">&#34;http://node.kg.qq.com/play?s=</span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">shareid</span><span class="p">)</span>
+                     <span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">music_url</span><span class="p">,</span><span class="n">headers</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+                     <span class="n">data_url</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;playurl&#34;:&#34;(.*?)&#34;&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+                     <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">data_url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span><span class="n">timeout</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">30</span><span class="p">))</span>
+                     <span class="n">music</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">content</span>
+                     <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">PATH</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1">.mp3&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">)</span>
+                     <span class="k">try</span><span class="p">:</span>
+                         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;ab&#39;</span><span class="p">)</span><span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                             <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">music</span><span class="p">)</span>
+                             <span class="n">f</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+                         <span class="n">c</span> <span class="o">=</span> <span class="n">c</span><span class="o">+</span><span class="mi">1</span>
+                         <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;      【第</span><span class="si">{}</span><span class="s2">首-——&gt;</span><span class="si">{}</span><span class="s2">---&gt;下载成功】&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">title</span><span class="p">))</span>
+                     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                         <span class="c1"># news = &#34;!!!sorry，{}下载失败!!!,稍后重新下载&#34;.format(title)</span>
+                         <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+                 <span class="k">except</span><span class="p">:</span>
+                     <span class="k">pass</span>
+         <span class="k">except</span><span class="p">:</span>
+             <span class="k">pass</span>
+<span class="n">get_data</span><span class="p">()</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="运行截图">运行截图</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://s1.ax1x.com/2020/10/14/0I6GFS.png"
+        data-srcset="https://s1.ax1x.com/2020/10/14/0I6GFS.png, https://s1.ax1x.com/2020/10/14/0I6GFS.png 1.5x, https://s1.ax1x.com/2020/10/14/0I6GFS.png 2x"
+        data-sizes="auto"
+        alt="https://s1.ax1x.com/2020/10/14/0I6GFS.png"
+        title="https://s1.ax1x.com/2020/10/14/0I6GFS.png" /></p>
+<h3 id="问题总结">问题总结</h3>
+<p>1、由于把歌名作为MP3的文件名，所以歌名中如果出现<code>&quot;|&quot;,&quot;?&quot;,&quot;:&quot;</code>等特殊符号，会报错，当时还纠结了好长时间，为什么会报错。。。
+2、不足之处有一下几点：
+1）如果用户把相同名称的歌曲重复发布，则会造成下载覆盖，只保留一首歌曲。
+2）经过测试，发现下载成功率还是很高的。但是总有些例外没能下载下来，也没做下载失败的歌曲保存再等全体结束后重新下载。
+3）这个程序只能一键下载某个用户的全部音乐，但是如果此用户后续更新了，不能针对更新的内容单独下载，体验性不高。
+3、可能会更新，也可能不会，，，</p>
+<p>(本文由老博客迁移至此&hellip;.)</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-12-03</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E8%BF%81%E7%A7%BB/">迁移</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/%E4%B8%80%E4%B8%AA%E5%BD%A9%E8%9B%8B/" class="prev" rel="prev" title="关于一个彩蛋"><i class="fas fa-angle-left fa-fw"></i>关于一个彩蛋</a>
+            <a href="/%E6%9F%90%E7%BD%91%E7%AB%99%E7%88%AC%E8%99%AB%E7%BB%83%E4%B9%A0/" class="next" rel="next" title="某网站爬虫练习">某网站爬虫练习<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="tcomment"></div>
+        <script src="https://cdn.jsdelivr.net/npm/twikoo@1.3.1/dist/twikoo.all.min.js"></script>
+        <script>
+        twikoo.init({
+          envId: 'blog-data-0gc3ets7c557f7fd',
+          
+          el: '#tcomment',
+          
+          
+        })
+        </script>
+
+    </div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"></br></br></br></br></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.84.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Lone</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.77eb6ae63c63c88c5e7a10b6c9570c54.css" integrity="md5-d&#43;tq5jxjyIxeehC2yVcMVA=="><link rel="stylesheet" href="/lib/katex/katex.min.ef3c395634e43fe45f5332bfca2287b3.css" integrity="md5-7zw5VjTkP&#43;RfUzK/yiKHsw=="><link rel="stylesheet" href="/lib/katex/copy-tex.min.622133ef544b0f203604a52bebba29f4.css" integrity="md5-YiEz71RLDyA2BKUr67op9A=="><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.dd4e1772a44268dd6e27f193695067fc.js" integrity="md5-3U4XcqRCaN1uJ/GTaVBn/A=="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.10321080d79e27ee01ff36859c02acd3.js" integrity="md5-EDIQgNeeJ&#43;4B/zaFnAKs0w=="></script><script type="text/javascript" src="/lib/lunr/lunr.min.f2eea188dc4939c55ff8f55569a4e87c.js" integrity="md5-8u6hiNxJOcVf&#43;PVVaaTofA=="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.76a9898754052993cab798a24f45d94e.js" integrity="md5-dqmJh1QFKZPKt5iiT0XZTg=="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.afbe35f35a427dd563d97cbdc9eb85d5.js" integrity="md5-r74181pCfdVj2Xy9yeuF1Q=="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.40c0bfc764764587555c066d46fe6071.js" integrity="md5-QMC/x2R2RYdVXAZtRv5gcQ=="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.c6a5b6b1db8980fdc42cd3456fe1ec74.js" integrity="md5-xqW2sduJgP3ELNNFb&#43;HsdA=="></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.ba38a712df31c778e10e8211f8cb891b.js" integrity="md5-ujinEt8xx3jhDoIR&#43;MuJGw=="></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.fa56076f9d071729612c4849acae1ce5.js" integrity="md5-&#43;lYHb50HFylhLEhJrK4c5Q=="></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.4f0896a2ff5ef76f0dd00f5c5de65abb.js" integrity="md5-TwiWov9e928N0A9cXeZauw=="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.221393f48062472d1e72960fda7db7a3.js" integrity="md5-IhOT9IBiRy0ecpYP2n23ow=="></script><script type="text/javascript" src="/lib/katex/katex.min.c158c9e823b681cf535f46596b5e4eac.js" integrity="md5-wVjJ6CO2gc9TX0ZZa15OrA=="></script><script type="text/javascript" src="/lib/katex/auto-render.min.28cd0b98cd3f4fa37d52f3ffe47ad9d4.js" integrity="md5-KM0LmM0/T6N9UvP/5HrZ1A=="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.bfaec7d1dea915d74a7a6d833f0ff62e.js" integrity="md5-v67H0d6pFddKem2DPw/2Lg=="></script><script type="text/javascript" src="/lib/katex/mhchem.min.1bbb252363e83547d4b2186a41eaca28.js" integrity="md5-G7slI2PoNUfUshhqQerKKA=="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":15},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.8043ef4f5ae2d4fd302305ffd8316f55.js" integrity="md5-gEPvT1ri1P0wIwX/2DFvVQ=="></script></body>
+</html>

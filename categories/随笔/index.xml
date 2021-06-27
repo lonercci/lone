@@ -1,0 +1,35 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>随笔 - 分类 - Lone&#39;s Blog</title>
+        <link>http://example.org/categories/%E9%9A%8F%E7%AC%94/</link>
+        <description>随笔 - 分类 - Lone&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chonee@qq.com (Lone)</managingEditor>
+            <webMaster>chonee@qq.com (Lone)</webMaster><lastBuildDate>Thu, 03 Dec 2020 00:11:58 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/%E9%9A%8F%E7%AC%94/" rel="self" type="application/rss+xml" /><item>
+    <title>关于一个彩蛋</title>
+    <link>http://example.org/%E4%B8%80%E4%B8%AA%E5%BD%A9%E8%9B%8B/</link>
+    <pubDate>Thu, 03 Dec 2020 00:11:58 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/%E4%B8%80%E4%B8%AA%E5%BD%A9%E8%9B%8B/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://gitee.com/lonercci/picbed/raw/master/img/20201203211138.jpg" referrerpolicy="no-referrer">
+            </div>这只是一个测试 使用gitee+PicGo搭建了一个图床，真香。终于不用在网页上傻傻的上传了。 图片 放几张图，作为测试用，看看效果。 关于彩蛋 其实]]></description>
+</item><item>
+    <title>Last month</title>
+    <link>http://example.org/last-month/</link>
+    <pubDate>Mon, 30 Nov 2020 00:01:22 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/last-month/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://gitee.com/lonercci/picbed/raw/master/img/20201221221350.jpg" referrerpolicy="no-referrer">
+            </div>今天是30号，还有一个月就到2020年的年底了。这是个特殊而难忘的一年，疫情，战火，党争，世界各地都焦头烂额。 下半年几乎都在学校，经历了起起]]></description>
+</item><item>
+    <title>Hello World</title>
+    <link>http://example.org/hello-world/</link>
+    <pubDate>Sun, 29 Nov 2020 01:05:43 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/hello-world/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://gitee.com/lonercci/picbed/raw/master/img/20201221221353.jpg" referrerpolicy="no-referrer">
+            </div>Hello World hello,hexo. 第一次见到这个框架的时候，深深被惊艳到了，这也太好看了吧。 于是放弃WordPress，有了这个博客。 hello,World. 记录生活的美好与真实。]]></description>
+</item></channel>
+</rss>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>CSDN图片一键下载去水印 - Lone&#39;s Blog</title><meta name="Description" content=""><meta property="og:title" content="CSDN图片一键下载去水印" />
+<meta property="og:description" content="前言 在吾爱论坛上逛逛，看到有个悬赏贴下载CSDN去水印。好像不难，就去试试看。于是今天又可以水一篇博客了， 代码实现 代码实现很简单。贴主说了，" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/csdn%E5%9B%BE%E7%89%87%E4%B8%80%E9%94%AE%E4%B8%8B%E8%BD%BD%E5%8E%BB%E6%B0%B4%E5%8D%B0/" /><meta property="og:image" content="http://example.org/"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-02-07T12:03:06&#43;08:00" />
+<meta property="article:modified_time" content="2021-02-07T12:03:06&#43;08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://example.org/"/>
+
+<meta name="twitter:title" content="CSDN图片一键下载去水印"/>
+<meta name="twitter:description" content="前言 在吾爱论坛上逛逛，看到有个悬赏贴下载CSDN去水印。好像不难，就去试试看。于是今天又可以水一篇博客了， 代码实现 代码实现很简单。贴主说了，"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="https://gitee.com/lonercci/picbed/raw/master/img/20210626110236.jpg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/csdn%E5%9B%BE%E7%89%87%E4%B8%80%E9%94%AE%E4%B8%8B%E8%BD%BD%E5%8E%BB%E6%B0%B4%E5%8D%B0/" /><link rel="prev" href="http://example.org/css%E5%8A%A0%E5%AF%86-%E6%A0%B7%E5%BC%8F%E5%B9%B2%E6%89%B0/" /><link rel="next" href="http://example.org/%E6%96%87%E7%AB%A0%E8%BD%AC%E8%BD%BD/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.a12cacf4b5b41234196cb89042b24a70.css" integrity="md5-oSys9LW0EjQZbLiQQrJKcA=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.26386564b5cf1594be24059af1cd0db9.css" integrity="md5-JjhlZLXPFZS&#43;JAWa8c0NuQ=="><link rel="stylesheet" href="/lib/animate/animate.min.43d6b8fdf324505f0ceb7ea698d0b7a5.css" integrity="md5-Q9a4/fMkUF8M636mmNC3pQ=="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "CSDN图片一键下载去水印",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/csdn%E5%9B%BE%E7%89%87%E4%B8%80%E9%94%AE%E4%B8%8B%E8%BD%BD%E5%8E%BB%E6%B0%B4%E5%8D%B0\/"
+        },"genre": "posts","keywords": "python","wordcount":  760 ,
+        "url": "http:\/\/example.org\/csdn%E5%9B%BE%E7%89%87%E4%B8%80%E9%94%AE%E4%B8%8B%E8%BD%BD%E5%8E%BB%E6%B0%B4%E5%8D%B0\/","datePublished": "2021-02-07T12:03:06+08:00","dateModified": "2021-02-07T12:03:06+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Lone"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Lone&#39;s Blog">Lone&#39;s Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 全部文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Lone&#39;s Blog">Lone&#39;s Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">全部文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">CSDN图片一键下载去水印</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Lone</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python%E5%86%99%E7%9A%84%E5%B0%8F%E5%B7%A5%E5%85%B7/"><i class="far fa-folder fa-fw"></i>python写的小工具</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-07">2021-02-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 760 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lonercci/picbed/raw/master/img/20210207131411.png"
+        data-srcset="https://gitee.com/lonercci/picbed/raw/master/img/20210207131411.png, https://gitee.com/lonercci/picbed/raw/master/img/20210207131411.png 1.5x, https://gitee.com/lonercci/picbed/raw/master/img/20210207131411.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lonercci/picbed/raw/master/img/20210207131411.png"
+        title="https://gitee.com/lonercci/picbed/raw/master/img/20210207131411.png" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#前言">前言</a></li>
+        <li><a href="#代码实现">代码实现</a></li>
+        <li><a href="#水印参数分析">水印参数分析</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="前言">前言</h3>
+<blockquote>
+<p>在<a href="https://www.52pojie.cn/thread-1367497-1-1.html" target="_blank" rel="noopener noreffer">吾爱论坛</a>上逛逛，看到有个悬赏贴下载CSDN去水印。好像不难，就去试试看。于是今天又可以水一篇博客了，<img src="https://gitee.com/lonercci/picbed/raw/master/img/20210207121025.png"/></p>
+</blockquote>
+<h3 id="代码实现">代码实现</h3>
+<p>代码实现很简单。贴主说了，水印和原图的区别就是url后面多了一串东西，那我们只要获取所有的图片地址，然后利用正则过滤一下多的东西，套个循环，下载就行了。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">etree</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">os</span>
+ 
+ 
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&#34;User-Agent&#34;</span><span class="p">:</span> <span class="s2">&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;Referer&#34;</span><span class="p">:</span> <span class="s2">&#34;https://blog.csdn.net&#34;</span><span class="p">}</span>
+ 
+<span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span>
+<span class="n">PATH</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="s1">&#39;img&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">PATH</span><span class="p">):</span>
+    <span class="n">PATH</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">PATH</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;下载路径：&#34;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">PATH</span><span class="p">))</span>
+ 
+<span class="k">def</span> <span class="nf">get_img_data</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+    <span class="n">img_url</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">data</span> <span class="o">=</span>  <span class="n">etree</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">res</span><span class="p">)</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s1">&#39;//*[@id=&#34;content_views&#34;]/p/img/@src&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;一共有</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="si">}</span><span class="s2">张图片&#34;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="n">info</span><span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;(.*?)\?&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">i</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">img_url</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">img_url</span>
+ 
+<span class="k">def</span> <span class="nf">download_img</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span><span class="o">.</span><span class="n">content</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">PATH</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s1">.jpg&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;ab&#39;</span><span class="p">)</span><span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;第</span><span class="si">{</span><span class="n">count</span><span class="si">}</span><span class="s2">张图片下载成功！&#34;</span><span class="p">)</span>
+ 
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;https://blog.csdn.net/yht6005/article/details/107568596?ops_request_misc=%25257B</span><span class="si">%252522r</span><span class="s2">equest</span><span class="si">%25255F</span><span class="s2">id</span><span class="si">%252522%</span><span class="s2">25253A</span><span class="si">%252522161265977516780261989880%</span><span class="s2">252522%25252C</span><span class="si">%252522s</span><span class="s2">cm</span><span class="si">%252522%</span><span class="s2">25253A%25252220140713.130102334..</span><span class="si">%252522%</span><span class="s2">25257D&amp;request_id=161265977516780261989880&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-107568596.first_rank_v2_pc_rank_v29&amp;utm_term=VRay4.2</span><span class="si">%25E</span><span class="s2">5%25AE</span><span class="si">%2589%</span><span class="s2">25E8%25A3</span><span class="si">%2585%</span><span class="s2">25E6</span><span class="si">%2595%</span><span class="s2">2599</span><span class="si">%25E</span><span class="s2">7%25A8%258B&#34;</span>
+    <span class="n">download_img</span><span class="p">(</span><span class="n">get_img_data</span><span class="p">(</span><span class="n">url</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>以上代码应该是通用所有CSDN文章通用的，因为网站的结构是相同的，但我没做测试，也说不好。</p>
+<h3 id="水印参数分析">水印参数分析</h3>
+<p>我们看一下区别
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20200724201139172.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lodDYwMDU=,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20200724201139172.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2c%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lodDYwMDU=%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200724201139172.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2c%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lodDYwMDU=%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200724201139172.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2c%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lodDYwMDU=%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20200724201139172.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lodDYwMDU=,size_16,color_FFFFFF,t_70"
+        title="有水印" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20200724201139172.png"
+        data-srcset="https://img-blog.csdnimg.cn/20200724201139172.png, https://img-blog.csdnimg.cn/20200724201139172.png 1.5x, https://img-blog.csdnimg.cn/20200724201139172.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20200724201139172.png"
+        title="无水印" />
+我们对比一下url，这是原来的
+<code>https://img-blog.csdnimg.cn/20200724201139172.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3lodDYwMDU=,size_16,color_FFFFFF,t_70</code><br>
+<code>https://img-blog.csdnimg.cn/20200724201139172.png</code>
+加了水印之后的网址多了几个参数。分别是<code>process</code>,<code>type</code>,<code>shadow</code>,<code>text</code>,<code>size</code>,<code>color</code>
+有些参数看着好像被加密了。看到text的值有一个<code>=</code>号，嗯？？？怎么这么像base64加密，拿到解密网站，果然，解码之后是字符串<code>https://blog.csdn.net/yht6005</code>，这个就是水印内容了呀。那我们是不是可以随便改了，试试改成我真帅看看。。。
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20200724201139172.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,text_5oiR55yf5biF,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20200724201139172.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2ctext_5oiR55yf5biF%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200724201139172.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2ctext_5oiR55yf5biF%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200724201139172.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2ctext_5oiR55yf5biF%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20200724201139172.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,text_5oiR55yf5biF,size_16,color_FFFFFF,t_70"
+        title="有水印" />
+嘿嘿，有意思
+经过一系列测试，得到这些参数的作用如下</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">type</td>
+<td style="text-align:left">显示的字体，具体怎么加密的不太清楚</td>
+</tr>
+<tr>
+<td style="text-align:center">text</td>
+<td style="text-align:left">水印的内容，必须是base64编码之后的</td>
+</tr>
+<tr>
+<td style="text-align:center">color</td>
+<td style="text-align:left">水印的颜色</td>
+</tr>
+<tr>
+<td style="text-align:center">t</td>
+<td style="text-align:left">水印的透明度，越高越不透明</td>
+</tr>
+<tr>
+<td style="text-align:center">size</td>
+<td style="text-align:left">水印的比例大小，调高即放大水印</td>
+</tr>
+<tr>
+<td style="text-align:center">shadow</td>
+<td style="text-align:left">阴影填充，数值越高，填充越明显</td>
+</tr>
+<tr>
+<td style="text-align:center">process</td>
+<td style="text-align:left">告诉你这是一个添加水印的图片</td>
+</tr>
+</tbody>
+</table>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-02-07</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python/">python</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/css%E5%8A%A0%E5%AF%86-%E6%A0%B7%E5%BC%8F%E5%B9%B2%E6%89%B0/" class="prev" rel="prev" title="css加密-样式干扰"><i class="fas fa-angle-left fa-fw"></i>css加密-样式干扰</a>
+            <a href="/%E6%96%87%E7%AB%A0%E8%BD%AC%E8%BD%BD/" class="next" rel="next" title="文章--转载自知乎">文章--转载自知乎<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="tcomment"></div>
+        <script src="https://cdn.jsdelivr.net/npm/twikoo@1.3.1/dist/twikoo.all.min.js"></script>
+        <script>
+        twikoo.init({
+          envId: 'blog-data-0gc3ets7c557f7fd',
+          
+          el: '#tcomment',
+          
+          
+        })
+        </script>
+
+    </div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"></br></br></br></br></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.84.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Lone</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.77eb6ae63c63c88c5e7a10b6c9570c54.css" integrity="md5-d&#43;tq5jxjyIxeehC2yVcMVA=="><link rel="stylesheet" href="/lib/katex/katex.min.ef3c395634e43fe45f5332bfca2287b3.css" integrity="md5-7zw5VjTkP&#43;RfUzK/yiKHsw=="><link rel="stylesheet" href="/lib/katex/copy-tex.min.622133ef544b0f203604a52bebba29f4.css" integrity="md5-YiEz71RLDyA2BKUr67op9A=="><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.dd4e1772a44268dd6e27f193695067fc.js" integrity="md5-3U4XcqRCaN1uJ/GTaVBn/A=="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.10321080d79e27ee01ff36859c02acd3.js" integrity="md5-EDIQgNeeJ&#43;4B/zaFnAKs0w=="></script><script type="text/javascript" src="/lib/lunr/lunr.min.f2eea188dc4939c55ff8f55569a4e87c.js" integrity="md5-8u6hiNxJOcVf&#43;PVVaaTofA=="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.76a9898754052993cab798a24f45d94e.js" integrity="md5-dqmJh1QFKZPKt5iiT0XZTg=="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.afbe35f35a427dd563d97cbdc9eb85d5.js" integrity="md5-r74181pCfdVj2Xy9yeuF1Q=="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.40c0bfc764764587555c066d46fe6071.js" integrity="md5-QMC/x2R2RYdVXAZtRv5gcQ=="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.c6a5b6b1db8980fdc42cd3456fe1ec74.js" integrity="md5-xqW2sduJgP3ELNNFb&#43;HsdA=="></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.ba38a712df31c778e10e8211f8cb891b.js" integrity="md5-ujinEt8xx3jhDoIR&#43;MuJGw=="></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.fa56076f9d071729612c4849acae1ce5.js" integrity="md5-&#43;lYHb50HFylhLEhJrK4c5Q=="></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.4f0896a2ff5ef76f0dd00f5c5de65abb.js" integrity="md5-TwiWov9e928N0A9cXeZauw=="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.221393f48062472d1e72960fda7db7a3.js" integrity="md5-IhOT9IBiRy0ecpYP2n23ow=="></script><script type="text/javascript" src="/lib/katex/katex.min.c158c9e823b681cf535f46596b5e4eac.js" integrity="md5-wVjJ6CO2gc9TX0ZZa15OrA=="></script><script type="text/javascript" src="/lib/katex/auto-render.min.28cd0b98cd3f4fa37d52f3ffe47ad9d4.js" integrity="md5-KM0LmM0/T6N9UvP/5HrZ1A=="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.bfaec7d1dea915d74a7a6d833f0ff62e.js" integrity="md5-v67H0d6pFddKem2DPw/2Lg=="></script><script type="text/javascript" src="/lib/katex/mhchem.min.1bbb252363e83547d4b2186a41eaca28.js" integrity="md5-G7slI2PoNUfUshhqQerKKA=="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":15},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.8043ef4f5ae2d4fd302305ffd8316f55.js" integrity="md5-gEPvT1ri1P0wIwX/2DFvVQ=="></script></body>
+</html>

@@ -1,0 +1,51 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Python - 分类 - Lone&#39;s Blog</title>
+        <link>http://example.org/categories/python/</link>
+        <description>Python - 分类 - Lone&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chonee@qq.com (Lone)</managingEditor>
+            <webMaster>chonee@qq.com (Lone)</webMaster><lastBuildDate>Sat, 26 Jun 2021 20:48:43 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/python/" rel="self" type="application/rss+xml" /><item>
+    <title>从Hexo到Hugo的博客迁移脚本Demo</title>
+    <link>http://example.org/%E4%BB%8Ehexo%E5%88%B0hugo%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E8%84%9A%E6%9C%ACdemo/</link>
+    <pubDate>Sat, 26 Jun 2021 20:48:43 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/%E4%BB%8Ehexo%E5%88%B0hugo%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E8%84%9A%E6%9C%ACdemo/</guid>
+    <description><![CDATA[从Hexo到Hugo 从一个框架到另外一个框架的过渡，比较麻烦的就是文章的迁移，尤其是文章数量较多的时候。如果一个一个手动更改 MD 文档的头部配置]]></description>
+</item><item>
+    <title>文字转语音demo</title>
+    <link>http://example.org/%E6%96%87%E5%AD%97%E8%BD%AC%E8%AF%AD%E9%9F%B3demo/</link>
+    <pubDate>Sun, 18 Apr 2021 23:17:25 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/%E6%96%87%E5%AD%97%E8%BD%AC%E8%AF%AD%E9%9F%B3demo/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://gitee.com/lonercci/picbed/raw/master/img/20201231231525.jpg" referrerpolicy="no-referrer">
+            </div>前言 逛吾爱论坛发现有个文字转语音的软件非常火。题者说爬的是收费的接口，下载下来试了一下，震惊了，，语音效果非常棒，很接近人声。但是软件是用易]]></description>
+</item><item>
+    <title>使用Pandas合并表格</title>
+    <link>http://example.org/%E4%BD%BF%E7%94%A8pandas%E5%90%88%E5%B9%B6%E8%A1%A8%E6%A0%BC/</link>
+    <pubDate>Sun, 27 Dec 2020 20:40:53 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/%E4%BD%BF%E7%94%A8pandas%E5%90%88%E5%B9%B6%E8%A1%A8%E6%A0%BC/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://gitee.com/lonercci/picbed/raw/master/img/20201203213823.jpg" referrerpolicy="no-referrer">
+            </div>背景 室友因工作需要，要导出大创网的互联网+项目后台学校里面的详细数据。在官网只能导出当前页面的所有项目，一页只显示20个项目。学校总共有18]]></description>
+</item><item>
+    <title>学校教务系统模拟登陆</title>
+    <link>http://example.org/%E5%AD%A6%E6%A0%A1%E6%95%99%E5%8A%A1%E7%B3%BB%E7%BB%9F%E6%A8%A1%E6%8B%9F%E7%99%BB%E9%99%86/</link>
+    <pubDate>Wed, 09 Dec 2020 16:53:01 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/%E5%AD%A6%E6%A0%A1%E6%95%99%E5%8A%A1%E7%B3%BB%E7%BB%9F%E6%A8%A1%E6%8B%9F%E7%99%BB%E9%99%86/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://gitee.com/lonercci/picbed/raw/master/img/20201221214112.jpg" referrerpolicy="no-referrer">
+            </div>登录模拟 关于 想尝试一下学校的官网，试试看。 登陆页面 学校的教务系统是青果公司的，很多版块页面都是单独的iframe。但是审查元素单独去访问显示]]></description>
+</item><item>
+    <title>全民K歌下载器</title>
+    <link>http://example.org/%E5%85%A8%E6%B0%91k%E6%AD%8C%E4%B8%8B%E8%BD%BD%E5%99%A8/</link>
+    <pubDate>Thu, 03 Dec 2020 23:27:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/%E5%85%A8%E6%B0%91k%E6%AD%8C%E4%B8%8B%E8%BD%BD%E5%99%A8/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://gitee.com/lonercci/picbed/raw/master/img/20201203213429.jpg" referrerpolicy="no-referrer">
+            </div>前言 希望最终的美好都能为你如期而置。 获取接口 1、目标：下载指定用户主页的全部歌曲。 2、对比url，删除不必要的参数后发现，用户uid为个人凭]]></description>
+</item></channel>
+</rss>

@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>校园 - 分类 - Lone&#39;s Blog</title>
+        <link>http://example.org/categories/%E6%A0%A1%E5%9B%AD/</link>
+        <description>校园 - 分类 - Lone&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chonee@qq.com (Lone)</managingEditor>
+            <webMaster>chonee@qq.com (Lone)</webMaster><lastBuildDate>Wed, 26 May 2021 19:26:40 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/%E6%A0%A1%E5%9B%AD/" rel="self" type="application/rss+xml" /><item>
+    <title>一次日落</title>
+    <link>http://example.org/%E4%B8%80%E6%AC%A1%E6%97%A5%E8%90%BD/</link>
+    <pubDate>Wed, 26 May 2021 19:26:40 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/%E4%B8%80%E6%AC%A1%E6%97%A5%E8%90%BD/</guid>
+    <description><![CDATA[序 总有些事，有些景，有个人，值得你去留恋……聊以此文章来纪念一段我最后的大学校园时光。 2021.5.17 连续下了好多天的雨，早上终于出太阳了，随手拍的宿舍楼]]></description>
+</item></channel>
+</rss>

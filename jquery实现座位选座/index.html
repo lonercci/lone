@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>jQuery实现座位选座 - Lone&#39;s Blog</title><meta name="Description" content=""><meta property="og:title" content="jQuery实现座位选座" />
+<meta property="og:description" content="引言 快期末了，JS课要交一次大作业。从几个案例中挑选一个，我选的是一个座位预定程序。要求：单击要预定的座位，座位会以某种颜色标识，右侧显示计" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/jquery%E5%AE%9E%E7%8E%B0%E5%BA%A7%E4%BD%8D%E9%80%89%E5%BA%A7/" /><meta property="og:image" content="http://example.org/"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-12-23T23:27:25&#43;08:00" />
+<meta property="article:modified_time" content="2020-12-23T23:27:25&#43;08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://example.org/"/>
+
+<meta name="twitter:title" content="jQuery实现座位选座"/>
+<meta name="twitter:description" content="引言 快期末了，JS课要交一次大作业。从几个案例中挑选一个，我选的是一个座位预定程序。要求：单击要预定的座位，座位会以某种颜色标识，右侧显示计"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="https://gitee.com/lonercci/picbed/raw/master/img/20210626110236.jpg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/jquery%E5%AE%9E%E7%8E%B0%E5%BA%A7%E4%BD%8D%E9%80%89%E5%BA%A7/" /><link rel="prev" href="http://example.org/%E5%AD%A6%E6%A0%A1%E6%95%99%E5%8A%A1%E7%B3%BB%E7%BB%9F%E6%A8%A1%E6%8B%9F%E7%99%BB%E9%99%86/" /><link rel="next" href="http://example.org/%E4%BD%BF%E7%94%A8pandas%E5%90%88%E5%B9%B6%E8%A1%A8%E6%A0%BC/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.a12cacf4b5b41234196cb89042b24a70.css" integrity="md5-oSys9LW0EjQZbLiQQrJKcA=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.26386564b5cf1594be24059af1cd0db9.css" integrity="md5-JjhlZLXPFZS&#43;JAWa8c0NuQ=="><link rel="stylesheet" href="/lib/animate/animate.min.43d6b8fdf324505f0ceb7ea698d0b7a5.css" integrity="md5-Q9a4/fMkUF8M636mmNC3pQ=="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "jQuery实现座位选座",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/jquery%E5%AE%9E%E7%8E%B0%E5%BA%A7%E4%BD%8D%E9%80%89%E5%BA%A7\/"
+        },"genre": "posts","keywords": "js, jQuery","wordcount":  2770 ,
+        "url": "http:\/\/example.org\/jquery%E5%AE%9E%E7%8E%B0%E5%BA%A7%E4%BD%8D%E9%80%89%E5%BA%A7\/","datePublished": "2020-12-23T23:27:25+08:00","dateModified": "2020-12-23T23:27:25+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Lone"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Lone&#39;s Blog">Lone&#39;s Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 全部文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Lone&#39;s Blog">Lone&#39;s Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">全部文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">jQuery实现座位选座</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Lone</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/javascript/"><i class="far fa-folder fa-fw"></i>JavaScript</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-12-23">2020-12-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2770 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lonercci/picbed/raw/master/img/20201221221351.jpg"
+        data-srcset="https://gitee.com/lonercci/picbed/raw/master/img/20201221221351.jpg, https://gitee.com/lonercci/picbed/raw/master/img/20201221221351.jpg 1.5x, https://gitee.com/lonercci/picbed/raw/master/img/20201221221351.jpg 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lonercci/picbed/raw/master/img/20201221221351.jpg"
+        title="https://gitee.com/lonercci/picbed/raw/master/img/20201221221351.jpg" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#引言">引言</a></li>
+    <li><a href="#关于jquery-seat-charts">关于jQuery-Seat-Charts</a>
+      <ul>
+        <li><a href="#例子">例子</a></li>
+        <li><a href="#座位图">座位图</a></li>
+        <li><a href="#定义座位属性">定义座位属性</a></li>
+        <li><a href="#定义行列等信息">定义行列等信息</a></li>
+        <li><a href="#定义图例">定义图例</a></li>
+        <li><a href="#click事件">click事件</a></li>
+        <li><a href="#focusblur事件">focus,blur事件</a></li>
+        <li><a href="#设定方法">设定方法</a>
+          <ul>
+            <li><a href="#statusidsstatus">.status（ids，status）</a></li>
+            <li><a href="#status-status-">.status( status )</a></li>
+            <li><a href="#node-">.node( )</a></li>
+            <li><a href="#each-callback-">.each( callback )</a></li>
+          </ul>
+        </li>
+        <li><a href="#案例代码">案例代码</a></li>
+      </ul>
+    </li>
+    <li><a href="#目录结构">目录结构</a></li>
+    <li><a href="#运行结果">运行结果</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="引言">引言</h2>
+<p>快期末了，<code>JS</code>课要交一次大作业。从几个案例中挑选一个，我选的是一个座位预定程序。要求：单击要预定的座位，座位会以某种颜色标识，右侧显示计算的票款和座位信息等。
+使用了<code>html</code>+<code>js</code>+<code>css</code>+<code>jQuery</code>，有1说1，这是我第一次使用<code>jQuery</code>插件。
+参考资料来源：
+1、<code>jQuery-Seat-Charts</code> 官方使用文档 <a href="https://github.com/mateuszmarkowski/jQuery-Seat-Charts">https://github.com/mateuszmarkowski/jQuery-Seat-Charts</a>
+2、<code>jQuery</code>在线选座订座 <a href="https://www.cnblogs.com/helloweba/p/4108512.html">https://www.cnblogs.com/helloweba/p/4108512.html</a></p>
+<h2 id="关于jquery-seat-charts">关于jQuery-Seat-Charts</h2>
+<p>使用文档里面很详细了。但是是英文版的。稍微整理了一下。</p>
+<h3 id="例子">例子</h3>
+<p>基本设置：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Js" data-lang="Js"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+ <span class="kd">var</span> <span class="nx">sc</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#seat-map&#39;</span><span class="p">).</span><span class="nx">seatCharts</span><span class="p">({</span>
+     <span class="nx">map</span><span class="o">:</span> <span class="p">[</span>
+         <span class="s1">&#39;aaaaaaaaaaaa&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;aaaaaaaaaaaa&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;bbbbbbbbbb__&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;bbbbbbbbbb__&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;bbbbbbbbbbbb&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;cccccccccccc&#39;</span>
+     <span class="p">],</span>
+     <span class="nx">seats</span><span class="o">:</span> <span class="p">{</span>
+         <span class="nx">a</span><span class="o">:</span> <span class="p">{</span>
+             <span class="nx">price</span>   <span class="o">:</span> <span class="mf">99.99</span><span class="p">,</span>
+             <span class="nx">classes</span> <span class="o">:</span> <span class="s1">&#39;front-seat&#39;</span> <span class="c1">//your custom CSS class
+</span><span class="c1"></span>         <span class="p">}</span>
+     
+     <span class="p">},</span>
+     <span class="nx">click</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+         <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;available&#39;</span><span class="p">)</span> <span class="p">{</span>
+             <span class="c1">//do some stuff, i.e. add to the cart
+</span><span class="c1"></span>             <span class="k">return</span> <span class="s1">&#39;selected&#39;</span><span class="p">;</span>
+         <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;selected&#39;</span><span class="p">)</span> <span class="p">{</span>
+             <span class="c1">//seat has been vacated
+</span><span class="c1"></span>             <span class="k">return</span> <span class="s1">&#39;available&#39;</span><span class="p">;</span>
+         <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;unavailable&#39;</span><span class="p">)</span> <span class="p">{</span>
+             <span class="c1">//seat has been already booked
+</span><span class="c1"></span>             <span class="k">return</span> <span class="s1">&#39;unavailable&#39;</span><span class="p">;</span>
+         <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+             <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">style</span><span class="p">();</span>
+         <span class="p">}</span>
+     <span class="p">}</span>
+ <span class="p">});</span>
+
+ <span class="c1">//Make all available &#39;c&#39; seats unavailable
+</span><span class="c1"></span> <span class="nx">sc</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;c.available&#39;</span><span class="p">).</span><span class="nx">status</span><span class="p">(</span><span class="s1">&#39;unavailable&#39;</span><span class="p">);</span>
+ 
+ <span class="cm">/*
+</span><span class="cm"> Get seats with ids 2_6, 1_7 (more on ids later on),
+</span><span class="cm"> put them in a jQuery set and change some css
+</span><span class="cm"> */</span>
+ <span class="nx">sc</span><span class="p">.</span><span class="nx">get</span><span class="p">([</span><span class="s1">&#39;2_6&#39;</span><span class="p">,</span> <span class="s1">&#39;1_7&#39;</span><span class="p">]).</span><span class="nx">node</span><span class="p">().</span><span class="nx">css</span><span class="p">({</span>
+     <span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;#ffcfcf&#39;</span>
+ <span class="p">});</span>
+ 
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Seat 1_2 costs &#39;</span> <span class="o">+</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;1_2&#39;</span><span class="p">).</span><span class="nx">data</span><span class="p">().</span><span class="nx">price</span> <span class="o">+</span> <span class="s1">&#39; and is currently &#39;</span> <span class="o">+</span> <span class="nx">sc</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="s1">&#39;1_2&#39;</span><span class="p">));</span>
+
+<span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="座位图">座位图</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">map</span><span class="o">:</span> <span class="p">[</span>
+ <span class="s1">&#39;ff__ff&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;ff__ff&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;______&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;eee_ee&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;eee_ee&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;eee_ee&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;eee_ee&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;eee_ee&#39;</span><span class="p">,</span> 
+ <span class="s1">&#39;eee_ee&#39;</span>
+<span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>每个字符代表一个不同类型的座位，除下划线<code>_</code>以外的任何人。下划线用于表示在特定位置不应有任何座位。</p>
+<h3 id="定义座位属性">定义座位属性</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">seats</span><span class="o">:</span> <span class="p">{</span> <span class="c1">//定义座位属性 
+</span><span class="c1"></span> <span class="nx">f</span><span class="o">:</span> <span class="p">{</span> 
+     <span class="nx">price</span>   <span class="o">:</span> <span class="mi">100</span><span class="p">,</span> 
+     <span class="nx">classes</span> <span class="o">:</span> <span class="s1">&#39;first-class&#39;</span><span class="p">,</span>  
+     <span class="nx">category</span><span class="o">:</span> <span class="s1">&#39;一等座&#39;</span> 
+ <span class="p">},</span> 
+ <span class="nx">e</span><span class="o">:</span> <span class="p">{</span> 
+     <span class="nx">price</span>   <span class="o">:</span> <span class="mi">40</span><span class="p">,</span> 
+     <span class="nx">classes</span> <span class="o">:</span> <span class="s1">&#39;economy-class&#39;</span><span class="p">,</span>  
+     <span class="nx">category</span><span class="o">:</span> <span class="s1">&#39;二等座&#39;</span> 
+ <span class="p">}</span>                     
+<span class="p">},</span> 
+</code></pre></td></tr></table>
+</div>
+</div><p>上面的代码定义了一等座和二等座的价格、类别名称以及对应的<code>css</code>样式。他们可以在后面通过<code>data()</code>方法调用</p>
+<h3 id="定义行列等信息">定义行列等信息</h3>
+<p><code>top</code>:是否显示顶部横坐标
+<code>columns</code>: 定义横坐标（行）
+<code>rows</code>: 定义纵坐标（列）的值
+<code>getLabe</code>: 用来返回座位信息。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">naming</span> <span class="o">:</span> <span class="p">{</span> <span class="c1">//定义行列等信息 
+</span><span class="c1"></span> <span class="nx">top</span> <span class="o">:</span> <span class="kc">true</span><span class="p">,</span> 
+ <span class="nx">columns</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span><span class="s1">&#39;F&#39;</span><span class="p">],</span> 
+ <span class="nx">rows</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;01&#39;</span><span class="p">,</span><span class="s1">&#39;02&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;03&#39;</span><span class="p">,</span><span class="s1">&#39;04&#39;</span><span class="p">,</span><span class="s1">&#39;05&#39;</span><span class="p">,</span><span class="s1">&#39;06&#39;</span><span class="p">,</span><span class="s1">&#39;07&#39;</span><span class="p">,</span><span class="s1">&#39;08&#39;</span><span class="p">,</span><span class="s1">&#39;09&#39;</span><span class="p">],</span> 
+ <span class="nx">getLabel</span> <span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">character</span><span class="p">,</span> <span class="nx">row</span><span class="p">,</span> <span class="nx">column</span><span class="p">)</span> <span class="p">{</span> 
+     <span class="k">return</span> <span class="nx">row</span><span class="o">+</span><span class="nx">column</span><span class="p">;</span> 
+ <span class="p">}</span> 
+<span class="p">},</span> 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="定义图例">定义图例</h3>
+<pre><code>  `node`: 使用`legend`来定义图例，对应图例关联的元素是`#legend`,并对座位类型定义对应的样式。
+  `Items`: 每个数组元素应为三元素数组：[字符，状态，描述]。
+</code></pre>
+<p>状态有三种：
+<code>available</code>: 可以坐的座位
+<code>unavailable</code>: 无法坐下的座位
+<code>selected</code>: 当前用户已坐下的座位</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">legend</span> <span class="o">:</span> <span class="p">{</span> <span class="c1">//定义图例 
+</span><span class="c1"></span> <span class="nx">node</span> <span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#legend&#39;</span><span class="p">),</span> 
+ <span class="nx">items</span> <span class="o">:</span> <span class="p">[</span> 
+     <span class="p">[</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;available&#39;</span><span class="p">,</span>   <span class="s1">&#39;一等座&#39;</span> <span class="p">],</span> 
+     <span class="p">[</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;available&#39;</span><span class="p">,</span>   <span class="s1">&#39;二等座&#39;</span><span class="p">],</span> 
+     <span class="p">[</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;unavailable&#39;</span><span class="p">,</span> <span class="s1">&#39;已售出&#39;</span><span class="p">]</span> 
+ <span class="p">]</span>                     
+<span class="p">},</span> 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="click事件">click事件</h3>
+<p><code>if (this.status() == 'available')</code>  如果可选座
+<code>else if (this.status() == 'selected')</code>  已选中
+<code>else if (this.status() == 'unavailable')</code> 已出售</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js">   <span class="nx">click</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> 
+    <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;available&#39;</span><span class="p">)</span> <span class="p">{</span><span class="c1">//可选座 
+</span><span class="c1"></span>        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;li&gt;&#39;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">().</span><span class="nx">category</span><span class="o">+</span><span class="s1">&#39;&lt;br/&gt;01车&#39;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">settings</span><span class="p">.</span><span class="nx">label</span><span class="o">+</span><span class="s1">&#39;号&lt;br/&gt;￥&#39;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">().</span><span class="nx">price</span><span class="o">+</span><span class="s1">&#39;&lt;/li&gt;&#39;</span><span class="p">)</span> 
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;cart-item-&#39;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">settings</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span> 
+        <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;seatId&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">settings</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span> 
+        <span class="p">.</span><span class="nx">appendTo</span><span class="p">(</span><span class="nx">$cart</span><span class="p">);</span> 
+        <span class="c1">//更新票数 
+</span><span class="c1"></span>        <span class="nx">$counter</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="nx">sc</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;selected&#39;</span><span class="p">).</span><span class="nx">length</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span> 
+        <span class="c1">//计算总计金额 
+</span><span class="c1"></span>        <span class="nx">$total</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="nx">recalculateTotal</span><span class="p">(</span><span class="nx">sc</span><span class="p">)</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">().</span><span class="nx">price</span><span class="p">);</span> 
+        <span class="k">return</span> <span class="s1">&#39;selected&#39;</span><span class="p">;</span> 
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;selected&#39;</span><span class="p">)</span> <span class="p">{</span><span class="c1">//已选中 
+</span><span class="c1"></span>        <span class="nx">$counter</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="nx">sc</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;selected&#39;</span><span class="p">).</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span> 
+        <span class="nx">$total</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="nx">recalculateTotal</span><span class="p">(</span><span class="nx">sc</span><span class="p">)</span><span class="o">-</span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">().</span><span class="nx">price</span><span class="p">);</span> 
+        <span class="c1">//删除已预订座位 
+</span><span class="c1"></span>        <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#cart-item-&#39;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">settings</span><span class="p">.</span><span class="nx">id</span><span class="p">).</span><span class="nx">remove</span><span class="p">();</span> 
+        <span class="k">return</span> <span class="s1">&#39;available&#39;</span><span class="p">;</span> 
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;unavailable&#39;</span><span class="p">)</span> <span class="p">{</span><span class="c1">//已售出 
+</span><span class="c1"></span>        <span class="c1">//已售出 
+</span><span class="c1"></span>        <span class="k">return</span> <span class="s1">&#39;unavailable&#39;</span><span class="p">;</span> 
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> 
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">style</span><span class="p">();</span> 
+    <span class="p">}</span> 
+<span class="p">},</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="focusblur事件">focus,blur事件</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">focus</span>  <span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;available&#39;</span><span class="p">)</span> <span class="p">{</span>
+		<span class="c1">//if seat&#39;s available, it can be focused
+</span><span class="c1"></span>		<span class="k">return</span> <span class="s1">&#39;focused&#39;</span><span class="p">;</span>
+	<span class="p">}</span> <span class="k">else</span>  <span class="p">{</span>
+		<span class="c1">//otherwise nothing changes
+</span><span class="c1"></span>		<span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">style</span><span class="p">();</span>
+	<span class="p">}</span>
+<span class="p">},</span>
+<span class="nx">blur</span>   <span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	<span class="c1">//The only place where you should return actual seat status
+</span><span class="c1"></span>	<span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">status</span><span class="p">();</span>
+<span class="p">},</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>blur</code>:模糊处理程序。当座椅由于鼠标移动或箭头击中而失去焦点时触发。
+<code>focus</code>:焦点处理程序。当座椅获得焦点时触发。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">//default handler
+</span><span class="c1"></span><span class="nx">blur</span>   <span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">status</span><span class="p">();</span>
+<span class="p">},</span>
+<span class="c1">//default handler
+</span><span class="c1"></span><span class="nx">focus</span>  <span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+	<span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;available&#39;</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="s1">&#39;focused&#39;</span><span class="p">;</span>
+	<span class="p">}</span> <span class="k">else</span>  <span class="p">{</span>
+		<span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">style</span><span class="p">();</span>
+	<span class="p">}</span>
+<span class="p">},</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="设定方法">设定方法</h3>
+<h4 id="statusidsstatus">.status（ids，status）</h4>
+<p>更新具有给定ID的座位组的状态。ids变量可以包含一个id或一个id数组。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">sc</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="s1">&#39;2_15&#39;</span><span class="p">,</span> <span class="s1">&#39;unvailable&#39;</span><span class="p">);</span> <span class="c1">//set status for one seat
+</span><span class="c1"></span><span class="nx">sc</span><span class="p">.</span><span class="nx">status</span><span class="p">([</span><span class="s1">&#39;2_15&#39;</span><span class="p">,</span> <span class="s1">&#39;2_10&#39;</span><span class="p">],</span> <span class="s1">&#39;unvailable&#39;</span><span class="p">);</span> <span class="c1">//set status for two seats
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="status-status-">.status( status )</h4>
+<p>更新当前集合中所有席位的状态。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">sc</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;unavailable&#39;</span><span class="p">).</span><span class="nx">status</span><span class="p">(</span><span class="s1">&#39;available&#39;</span><span class="p">);</span> <span class="c1">//make all unvailable seats available
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="node-">.node( )</h4>
+<p>返回jQuery座位节点引用集。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">sc</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;unavailable&#39;</span><span class="p">).</span><span class="nx">node</span><span class="p">().</span><span class="nx">fadeOut</span><span class="p">(</span><span class="s1">&#39;fast&#39;</span><span class="p">);</span> <span class="c1">//make all unavailable seats disappear
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="each-callback-">.each( callback )</h4>
+<p>遍历一个座位集，将在每个元素的上下文中触发回调。回调可以接受座位ID作为参数。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">sc</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;a.unavailable&#39;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">seatId</span><span class="p">)</span> <span class="p">{</span>
+ <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">());</span> <span class="c1">//display seat data
+</span><span class="c1"></span><span class="p">});</span> 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="案例代码">案例代码</h3>
+<p>（js+html部分）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="cp">&lt;!doctype html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>选座系统<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&#34;Content-Type&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;text/html; charset=utf-8&#34;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/css&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;css/jquery.seat-charts.css&#34;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/css&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;css/style.css&#34;</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;wrapper&#34;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;container&#34;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;seat-map&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;front-indicator&#34;</span><span class="p">&gt;</span>座位表<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;booking-details&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>已选中的座位 (<span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;counter&#34;</span><span class="p">&gt;</span>0<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>):<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;selected-seats&#34;</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>总价: <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>$<span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;total&#34;</span><span class="p">&gt;</span>0<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;&lt;/</span><span class="nt">b</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;checkout-button&#34;</span><span class="p">&gt;</span>结算<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>      
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;legend&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;js/jquery-1.11.0.min.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span> 
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;js/jquery.seat-charts.min.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span> 
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+			<span class="kd">var</span> <span class="nx">firstSeatLabel</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//定义第一个座位的序号
+</span><span class="c1"></span>		
+			<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+				<span class="kd">var</span> <span class="nx">$cart</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#selected-seats&#39;</span><span class="p">),</span>
+					<span class="nx">$counter</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#counter&#39;</span><span class="p">),</span>
+					<span class="nx">$total</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#total&#39;</span><span class="p">),</span>
+					<span class="nx">sc</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#seat-map&#39;</span><span class="p">).</span><span class="nx">seatCharts</span><span class="p">({</span>
+                      <span class="c1">//座位图
+</span><span class="c1"></span>					<span class="nx">map</span><span class="o">:</span> <span class="p">[</span>
+						<span class="s1">&#39;fffff&#39;</span><span class="p">,</span>
+						<span class="s1">&#39;fffff&#39;</span><span class="p">,</span>
+						<span class="s1">&#39;eeeee&#39;</span><span class="p">,</span>
+						<span class="s1">&#39;eeeee&#39;</span><span class="p">,</span>
+						<span class="s1">&#39;eeeee&#39;</span><span class="p">,</span>
+						<span class="s1">&#39;ee_ee&#39;</span><span class="p">,</span>
+						
+					<span class="p">],</span>
+                      <span class="c1">//座位属性
+</span><span class="c1"></span>					<span class="nx">seats</span><span class="o">:</span> <span class="p">{</span>
+						<span class="nx">f</span><span class="o">:</span> <span class="p">{</span>
+							<span class="nx">price</span>   <span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+							<span class="nx">classes</span> <span class="o">:</span> <span class="s1">&#39;first-class&#39;</span><span class="p">,</span> <span class="c1">//对应的css样式
+</span><span class="c1"></span>						<span class="p">},</span>
+						<span class="nx">e</span><span class="o">:</span> <span class="p">{</span>
+							<span class="nx">price</span>   <span class="o">:</span> <span class="mi">40</span><span class="p">,</span>
+							<span class="nx">classes</span> <span class="o">:</span> <span class="s1">&#39;economy-class&#39;</span><span class="p">,</span> <span class="c1">//对应的css样式
+</span><span class="c1"></span>							<span class="nx">category</span><span class="o">:</span> <span class="s1">&#39;普通座位&#39;</span>
+						<span class="p">}</span>					
+					
+					<span class="p">},</span>
+                      <span class="c1">//定义行列等信息，每一个数字自加操作
+</span><span class="c1"></span>					<span class="nx">naming</span> <span class="o">:</span> <span class="p">{</span>
+						<span class="nx">top</span> <span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+						<span class="nx">getLabel</span> <span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">character</span><span class="p">,</span> <span class="nx">row</span><span class="p">,</span> <span class="nx">column</span><span class="p">)</span> <span class="p">{</span>
+							<span class="k">return</span> <span class="nx">firstSeatLabel</span><span class="o">++</span><span class="p">;</span>
+						<span class="p">},</span>
+					<span class="p">},</span>
+					<span class="nx">legend</span> <span class="o">:</span> <span class="p">{</span>
+						<span class="nx">node</span> <span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#legend&#39;</span><span class="p">),</span>
+					    <span class="nx">items</span> <span class="o">:</span> <span class="p">[</span>
+							<span class="p">[</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;available&#39;</span><span class="p">,</span>   <span class="s1">&#39;VIP座位&#39;</span> <span class="p">],</span>
+							<span class="p">[</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;available&#39;</span><span class="p">,</span>   <span class="s1">&#39;普通座位&#39;</span><span class="p">],</span>
+							<span class="p">[</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;unavailable&#39;</span><span class="p">,</span> <span class="s1">&#39;已预定&#39;</span><span class="p">]</span>
+					    <span class="p">]</span>					
+					<span class="p">},</span>
+					<span class="nx">click</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+						<span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;available&#39;</span><span class="p">)</span> <span class="p">{</span>
+							<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;li&gt;&#39;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">().</span><span class="nx">category</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">settings</span><span class="p">.</span><span class="nx">label</span><span class="o">+</span><span class="s1">&#39;号座位&#39;</span><span class="o">+</span><span class="s1">&#39;：&lt;br/&gt;价格：&lt;b&gt;$&#39;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">().</span><span class="nx">price</span><span class="o">+</span><span class="s1">&#39;&lt;/b&gt; &lt;a href=&#34;#&#34; class=&#34;cancel-cart-item&#34;&gt;[删除]&lt;/a&gt;&lt;/li&gt;&#39;</span><span class="p">)</span>
+								<span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span><span class="s1">&#39;cart-item-&#39;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">settings</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span>
+								<span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;seatId&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">settings</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span>
+								<span class="p">.</span><span class="nx">appendTo</span><span class="p">(</span><span class="nx">$cart</span><span class="p">);</span>
+							<span class="nx">$counter</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="nx">sc</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;selected&#39;</span><span class="p">).</span><span class="nx">length</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+							<span class="nx">$total</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="nx">recalculateTotal</span><span class="p">(</span><span class="nx">sc</span><span class="p">)</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">().</span><span class="nx">price</span><span class="p">);</span>
+							
+							<span class="k">return</span> <span class="s1">&#39;selected&#39;</span><span class="p">;</span>
+						<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;selected&#39;</span><span class="p">)</span> <span class="p">{</span>
+							<span class="c1">//update the counter
+</span><span class="c1"></span>							<span class="nx">$counter</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="nx">sc</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;selected&#39;</span><span class="p">).</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+							<span class="c1">//and total
+</span><span class="c1"></span>							<span class="nx">$total</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="nx">recalculateTotal</span><span class="p">(</span><span class="nx">sc</span><span class="p">)</span><span class="o">-</span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">().</span><span class="nx">price</span><span class="p">);</span>
+						
+							<span class="c1">//remove the item from our cart
+</span><span class="c1"></span>							<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#cart-item-&#39;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">settings</span><span class="p">.</span><span class="nx">id</span><span class="p">).</span><span class="nx">remove</span><span class="p">();</span>
+						
+							<span class="c1">//seat has been vacated
+</span><span class="c1"></span>							<span class="k">return</span> <span class="s1">&#39;available&#39;</span><span class="p">;</span>
+						<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;unavailable&#39;</span><span class="p">)</span> <span class="p">{</span>
+							<span class="c1">//seat has been already booked
+</span><span class="c1"></span>							<span class="k">return</span> <span class="s1">&#39;unavailable&#39;</span><span class="p">;</span>
+						<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+							<span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">style</span><span class="p">();</span>
+						<span class="p">}</span>
+					<span class="p">}</span>
+				<span class="p">});</span>
+
+				<span class="c1">//this will handle &#34;[cancel]&#34; link clicks
+</span><span class="c1"></span>				<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#selected-seats&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="s1">&#39;.cancel-cart-item&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+					<span class="c1">//let&#39;s just trigger Click event on the appropriate seat, so we don&#39;t have to repeat the logic here
+</span><span class="c1"></span>					<span class="nx">sc</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">parents</span><span class="p">(</span><span class="s1">&#39;li:first&#39;</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;seatId&#39;</span><span class="p">)).</span><span class="nx">click</span><span class="p">();</span>
+				<span class="p">});</span>
+
+				<span class="c1">//let&#39;s pretend some seats have already been booked
+</span><span class="c1"></span>				<span class="nx">sc</span><span class="p">.</span><span class="nx">get</span><span class="p">([</span><span class="s1">&#39;1_2&#39;</span><span class="p">,</span> <span class="s1">&#39;4_1&#39;</span><span class="p">,</span> <span class="s1">&#39;7_1&#39;</span><span class="p">,</span> <span class="s1">&#39;7_2&#39;</span><span class="p">]).</span><span class="nx">status</span><span class="p">(</span><span class="s1">&#39;unavailable&#39;</span><span class="p">);</span>
+		
+		<span class="p">});</span>
+
+		<span class="kd">function</span> <span class="nx">recalculateTotal</span><span class="p">(</span><span class="nx">sc</span><span class="p">)</span> <span class="p">{</span>
+			<span class="kd">var</span> <span class="nx">total</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+			<span class="c1">//basically find every selected seat and sum its price
+</span><span class="c1"></span>			<span class="nx">sc</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="s1">&#39;selected&#39;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+				<span class="nx">total</span> <span class="o">+=</span> <span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">().</span><span class="nx">price</span><span class="p">;</span>
+			<span class="p">});</span>
+			
+			<span class="k">return</span> <span class="nx">total</span><span class="p">;</span>
+		<span class="p">}</span>
+		
+		<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>(css部分)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span><span class="lnt">92
+</span><span class="lnt">93
+</span><span class="lnt">94
+</span><span class="lnt">95
+</span><span class="lnt">96
+</span><span class="lnt">97
+</span><span class="lnt">98
+</span><span class="lnt">99
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="nt">body</span> <span class="p">{</span>
+	<span class="k">font-family</span><span class="p">:</span> <span class="s1">&#39;Lato&#39;</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">a</span> <span class="p">{</span>
+	<span class="k">color</span><span class="p">:</span> <span class="mh">#b71a4c</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">front-indicator</span> <span class="p">{</span>
+	<span class="k">width</span><span class="p">:</span> <span class="mi">145</span><span class="kt">px</span><span class="p">;</span>
+	<span class="k">margin</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">32</span><span class="kt">px</span> <span class="mi">15</span><span class="kt">px</span> <span class="mi">32</span><span class="kt">px</span><span class="p">;</span>
+	<span class="k">background-color</span><span class="p">:</span> <span class="mh">#f6f6f6</span><span class="p">;</span>	
+	<span class="k">color</span><span class="p">:</span> <span class="mh">#adadad</span><span class="p">;</span>
+	<span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+	<span class="k">padding</span><span class="p">:</span> <span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
+	<span class="k">border-radius</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">wrapper</span> <span class="p">{</span>
+	<span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+	<span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">container</span> <span class="p">{</span>
+	<span class="k">margin</span><span class="p">:</span> <span class="mi">0</span> <span class="kc">auto</span><span class="p">;</span>
+	<span class="k">width</span><span class="p">:</span> <span class="mi">500</span><span class="kt">px</span><span class="p">;</span>
+	<span class="k">text-align</span><span class="p">:</span> <span class="kc">left</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">booking-details</span> <span class="p">{</span>
+	<span class="k">float</span><span class="p">:</span> <span class="kc">left</span><span class="p">;</span>
+	<span class="k">text-align</span><span class="p">:</span> <span class="kc">left</span><span class="p">;</span>
+	<span class="k">margin-left</span><span class="p">:</span> <span class="mi">35</span><span class="kt">px</span><span class="p">;</span>
+	<span class="k">font-size</span><span class="p">:</span> <span class="mi">12</span><span class="kt">px</span><span class="p">;</span>
+	<span class="k">position</span><span class="p">:</span> <span class="kc">relative</span><span class="p">;</span>
+	<span class="k">height</span><span class="p">:</span> <span class="mi">401</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">booking-details</span> <span class="nt">h2</span> <span class="p">{</span>
+	<span class="k">margin</span><span class="p">:</span> <span class="mi">25</span><span class="kt">px</span> <span class="mi">0</span> <span class="mi">20</span><span class="kt">px</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">font-size</span><span class="p">:</span> <span class="mi">17</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">booking-details</span> <span class="nt">h3</span> <span class="p">{</span>
+	<span class="k">margin</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">5</span><span class="kt">px</span> <span class="mi">0</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">font-size</span><span class="p">:</span> <span class="mi">14</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">div</span><span class="p">.</span><span class="nc">seatCharts-cell</span> <span class="p">{</span>
+	<span class="k">color</span><span class="p">:</span> <span class="mh">#182C4E</span><span class="p">;</span>
+	<span class="k">height</span><span class="p">:</span> <span class="mi">25</span><span class="kt">px</span><span class="p">;</span>
+	<span class="k">width</span><span class="p">:</span> <span class="mi">25</span><span class="kt">px</span><span class="p">;</span>
+	<span class="k">line-height</span><span class="p">:</span> <span class="mi">25</span><span class="kt">px</span><span class="p">;</span>
+	
+<span class="p">}</span>
+<span class="nt">div</span><span class="p">.</span><span class="nc">seatCharts-seat</span> <span class="p">{</span>
+	<span class="k">color</span><span class="p">:</span> <span class="mh">#FFFFFF</span><span class="p">;</span>
+	<span class="k">cursor</span><span class="p">:</span> <span class="kc">pointer</span><span class="p">;</span>	
+<span class="p">}</span>
+<span class="nt">div</span><span class="p">.</span><span class="nc">seatCharts-row</span> <span class="p">{</span>
+	<span class="k">height</span><span class="p">:</span> <span class="mi">35</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">div</span><span class="p">.</span><span class="nc">seatCharts-seat</span><span class="p">.</span><span class="nc">available</span> <span class="p">{</span>
+	<span class="k">background-color</span><span class="p">:</span> <span class="mh">#B9DEA0</span><span class="p">;</span>
+
+<span class="p">}</span>
+<span class="nt">div</span><span class="p">.</span><span class="nc">seatCharts-seat</span><span class="p">.</span><span class="nc">available</span><span class="p">.</span><span class="nc">first-class</span> <span class="p">{</span>
+<span class="c">/* 	background: url(vip.png); */</span>
+	<span class="k">background-color</span><span class="p">:</span> <span class="mh">#3a78c3</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">div</span><span class="p">.</span><span class="nc">seatCharts-seat</span><span class="p">.</span><span class="nc">focused</span> <span class="p">{</span>
+	<span class="k">background-color</span><span class="p">:</span> <span class="mh">#76B474</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">div</span><span class="p">.</span><span class="nc">seatCharts-seat</span><span class="p">.</span><span class="nc">selected</span> <span class="p">{</span>
+	<span class="k">background-color</span><span class="p">:</span> <span class="mh">#E6CAC4</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">div</span><span class="p">.</span><span class="nc">seatCharts-seat</span><span class="p">.</span><span class="nc">unavailable</span> <span class="p">{</span>
+	<span class="k">background-color</span><span class="p">:</span> <span class="mh">#ccc</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">div</span><span class="p">.</span><span class="nc">seatCharts-container</span> <span class="p">{</span>
+	<span class="k">border-right</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">dotted</span> <span class="mh">#adadad</span><span class="p">;</span>
+	<span class="k">width</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+	<span class="k">padding</span><span class="p">:</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+	<span class="k">float</span><span class="p">:</span> <span class="kc">left</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">div</span><span class="p">.</span><span class="nc">seatCharts-legend</span> <span class="p">{</span>
+	<span class="k">padding-left</span><span class="p">:</span> <span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
+	<span class="k">bottom</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">ul</span><span class="p">.</span><span class="nc">seatCharts-legendList</span> <span class="p">{</span>
+	<span class="k">padding-left</span><span class="p">:</span> <span class="mi">0</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">span</span><span class="p">.</span><span class="nc">seatCharts-legendDescription</span> <span class="p">{</span>
+	<span class="k">margin-left</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+	<span class="k">line-height</span><span class="p">:</span> <span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="nc">checkout-button</span> <span class="p">{</span>
+	<span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
+	<span class="k">margin</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">font-size</span><span class="p">:</span> <span class="mi">14</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">#</span><span class="nn">selected-seats</span> <span class="p">{</span>
+	<span class="k">max-height</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+	<span class="k">overflow-y</span><span class="p">:</span> <span class="kc">scroll</span><span class="p">;</span>
+	<span class="k">overflow-x</span><span class="p">:</span> <span class="kc">hidden</span><span class="p">;</span>
+	<span class="k">width</span><span class="p">:</span> <span class="mi">170</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="目录结构">目录结构</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lonercci/picbed/raw/master/img/20201224002840.png"
+        data-srcset="https://gitee.com/lonercci/picbed/raw/master/img/20201224002840.png, https://gitee.com/lonercci/picbed/raw/master/img/20201224002840.png 1.5x, https://gitee.com/lonercci/picbed/raw/master/img/20201224002840.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lonercci/picbed/raw/master/img/20201224002840.png"
+        title="https://gitee.com/lonercci/picbed/raw/master/img/20201224002840.png" /></p>
+<h2 id="运行结果">运行结果</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lonercci/picbed/raw/master/img/20201224002949.png"
+        data-srcset="https://gitee.com/lonercci/picbed/raw/master/img/20201224002949.png, https://gitee.com/lonercci/picbed/raw/master/img/20201224002949.png 1.5x, https://gitee.com/lonercci/picbed/raw/master/img/20201224002949.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lonercci/picbed/raw/master/img/20201224002949.png"
+        title="https://gitee.com/lonercci/picbed/raw/master/img/20201224002949.png" /></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-12-23</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/js/">js</a>,&nbsp;<a href="/tags/jquery/">jQuery</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/%E5%AD%A6%E6%A0%A1%E6%95%99%E5%8A%A1%E7%B3%BB%E7%BB%9F%E6%A8%A1%E6%8B%9F%E7%99%BB%E9%99%86/" class="prev" rel="prev" title="学校教务系统模拟登陆"><i class="fas fa-angle-left fa-fw"></i>学校教务系统模拟登陆</a>
+            <a href="/%E4%BD%BF%E7%94%A8pandas%E5%90%88%E5%B9%B6%E8%A1%A8%E6%A0%BC/" class="next" rel="next" title="使用Pandas合并表格">使用Pandas合并表格<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="tcomment"></div>
+        <script src="https://cdn.jsdelivr.net/npm/twikoo@1.3.1/dist/twikoo.all.min.js"></script>
+        <script>
+        twikoo.init({
+          envId: 'blog-data-0gc3ets7c557f7fd',
+          
+          el: '#tcomment',
+          
+          
+        })
+        </script>
+
+    </div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"></br></br></br></br></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.84.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Lone</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.77eb6ae63c63c88c5e7a10b6c9570c54.css" integrity="md5-d&#43;tq5jxjyIxeehC2yVcMVA=="><link rel="stylesheet" href="/lib/katex/katex.min.ef3c395634e43fe45f5332bfca2287b3.css" integrity="md5-7zw5VjTkP&#43;RfUzK/yiKHsw=="><link rel="stylesheet" href="/lib/katex/copy-tex.min.622133ef544b0f203604a52bebba29f4.css" integrity="md5-YiEz71RLDyA2BKUr67op9A=="><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.dd4e1772a44268dd6e27f193695067fc.js" integrity="md5-3U4XcqRCaN1uJ/GTaVBn/A=="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.10321080d79e27ee01ff36859c02acd3.js" integrity="md5-EDIQgNeeJ&#43;4B/zaFnAKs0w=="></script><script type="text/javascript" src="/lib/lunr/lunr.min.f2eea188dc4939c55ff8f55569a4e87c.js" integrity="md5-8u6hiNxJOcVf&#43;PVVaaTofA=="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.76a9898754052993cab798a24f45d94e.js" integrity="md5-dqmJh1QFKZPKt5iiT0XZTg=="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.afbe35f35a427dd563d97cbdc9eb85d5.js" integrity="md5-r74181pCfdVj2Xy9yeuF1Q=="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.40c0bfc764764587555c066d46fe6071.js" integrity="md5-QMC/x2R2RYdVXAZtRv5gcQ=="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.c6a5b6b1db8980fdc42cd3456fe1ec74.js" integrity="md5-xqW2sduJgP3ELNNFb&#43;HsdA=="></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.ba38a712df31c778e10e8211f8cb891b.js" integrity="md5-ujinEt8xx3jhDoIR&#43;MuJGw=="></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.fa56076f9d071729612c4849acae1ce5.js" integrity="md5-&#43;lYHb50HFylhLEhJrK4c5Q=="></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.4f0896a2ff5ef76f0dd00f5c5de65abb.js" integrity="md5-TwiWov9e928N0A9cXeZauw=="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.221393f48062472d1e72960fda7db7a3.js" integrity="md5-IhOT9IBiRy0ecpYP2n23ow=="></script><script type="text/javascript" src="/lib/katex/katex.min.c158c9e823b681cf535f46596b5e4eac.js" integrity="md5-wVjJ6CO2gc9TX0ZZa15OrA=="></script><script type="text/javascript" src="/lib/katex/auto-render.min.28cd0b98cd3f4fa37d52f3ffe47ad9d4.js" integrity="md5-KM0LmM0/T6N9UvP/5HrZ1A=="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.bfaec7d1dea915d74a7a6d833f0ff62e.js" integrity="md5-v67H0d6pFddKem2DPw/2Lg=="></script><script type="text/javascript" src="/lib/katex/mhchem.min.1bbb252363e83547d4b2186a41eaca28.js" integrity="md5-G7slI2PoNUfUshhqQerKKA=="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":15},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.8043ef4f5ae2d4fd302305ffd8316f55.js" integrity="md5-gEPvT1ri1P0wIwX/2DFvVQ=="></script></body>
+</html>

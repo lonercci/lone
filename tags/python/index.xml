@@ -1,0 +1,96 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>python - 标签 - Lone&#39;s Blog</title>
+        <link>http://example.org/tags/python/</link>
+        <description>python - 标签 - Lone&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chonee@qq.com (Lone)</managingEditor>
+            <webMaster>chonee@qq.com (Lone)</webMaster><lastBuildDate>Sat, 26 Jun 2021 20:48:43 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/python/" rel="self" type="application/rss+xml" /><item>
+    <title>从Hexo到Hugo的博客迁移脚本Demo</title>
+    <link>http://example.org/%E4%BB%8Ehexo%E5%88%B0hugo%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E8%84%9A%E6%9C%ACdemo/</link>
+    <pubDate>Sat, 26 Jun 2021 20:48:43 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/%E4%BB%8Ehexo%E5%88%B0hugo%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E8%84%9A%E6%9C%ACdemo/</guid>
+    <description><![CDATA[从Hexo到Hugo 从一个框架到另外一个框架的过渡，比较麻烦的就是文章的迁移，尤其是文章数量较多的时候。如果一个一个手动更改 MD 文档的头部配置]]></description>
+</item><item>
+    <title>文字转语音demo</title>
+    <link>http://example.org/%E6%96%87%E5%AD%97%E8%BD%AC%E8%AF%AD%E9%9F%B3demo/</link>
+    <pubDate>Sun, 18 Apr 2021 23:17:25 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/%E6%96%87%E5%AD%97%E8%BD%AC%E8%AF%AD%E9%9F%B3demo/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://gitee.com/lonercci/picbed/raw/master/img/20201231231525.jpg" referrerpolicy="no-referrer">
+            </div>前言 逛吾爱论坛发现有个文字转语音的软件非常火。题者说爬的是收费的接口，下载下来试了一下，震惊了，，语音效果非常棒，很接近人声。但是软件是用易]]></description>
+</item><item>
+    <title>记录一次本地数据库的制作</title>
+    <link>http://example.org/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%AC%E5%9C%B0%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%B6%E4%BD%9C/</link>
+    <pubDate>Mon, 05 Apr 2021 01:27:35 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1%E6%9C%AC%E5%9C%B0%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%B6%E4%BD%9C/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://gitee.com/lonercci/picbed/raw/master/img/20210403003249.jpg" referrerpolicy="no-referrer">
+            </div>前言 一切因为昨天晚上无意间打开了易班APP。 里面有个轻应用可以直接提交补助申请，点进去看了一眼，发现页面有交互功能（因为以前在易班工作，知道]]></description>
+</item><item>
+    <title>CSDN图片一键下载去水印</title>
+    <link>http://example.org/csdn%E5%9B%BE%E7%89%87%E4%B8%80%E9%94%AE%E4%B8%8B%E8%BD%BD%E5%8E%BB%E6%B0%B4%E5%8D%B0/</link>
+    <pubDate>Sun, 07 Feb 2021 12:03:06 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/csdn%E5%9B%BE%E7%89%87%E4%B8%80%E9%94%AE%E4%B8%8B%E8%BD%BD%E5%8E%BB%E6%B0%B4%E5%8D%B0/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://gitee.com/lonercci/picbed/raw/master/img/20210207131411.png" referrerpolicy="no-referrer">
+            </div>前言 在吾爱论坛上逛逛，看到有个悬赏贴下载CSDN去水印。好像不难，就去试试看。于是今天又可以水一篇博客了， 代码实现 代码实现很简单。贴主说了，]]></description>
+</item><item>
+    <title>css加密-样式干扰</title>
+    <link>http://example.org/css%E5%8A%A0%E5%AF%86-%E6%A0%B7%E5%BC%8F%E5%B9%B2%E6%89%B0/</link>
+    <pubDate>Fri, 29 Jan 2021 18:57:20 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/css%E5%8A%A0%E5%AF%86-%E6%A0%B7%E5%BC%8F%E5%B9%B2%E6%89%B0/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://gitee.com/lonercci/picbed/raw/master/img/20210123190226.jpg" referrerpolicy="no-referrer">
+            </div>题目 本次题目涉及到了一些前端的知识，包括HTML，CSS，JQuery，Ajax。 采集这5页的全部数字，计算加和并提交结果 题目链接：http]]></description>
+</item><item>
+    <title>访问逻辑-推心置腹</title>
+    <link>http://example.org/%E8%AE%BF%E9%97%AE%E9%80%BB%E8%BE%91-%E6%8E%A8%E5%BF%83%E7%BD%AE%E8%85%B9/</link>
+    <pubDate>Thu, 28 Jan 2021 23:25:04 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/%E8%AE%BF%E9%97%AE%E9%80%BB%E8%BE%91-%E6%8E%A8%E5%BF%83%E7%BD%AE%E8%85%B9/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://gitee.com/lonercci/picbed/raw/master/img/20210123190226.jpg" referrerpolicy="no-referrer">
+            </div>题目 抓取下列5页商标的数据，并将出现频率最高的申请号填入答案中 分析网页 查看XHR里面的内容 可以很清晰的看到数据来源于第三个请求。 查看Prev]]></description>
+</item><item>
+    <title>Js混淆-动态cookie</title>
+    <link>http://example.org/js%E6%B7%B7%E6%B7%86-%E5%8A%A8%E6%80%81cookie/</link>
+    <pubDate>Wed, 27 Jan 2021 22:15:36 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/js%E6%B7%B7%E6%B7%86-%E5%8A%A8%E6%80%81cookie/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://gitee.com/lonercci/picbed/raw/master/img/20210123190226.jpg" referrerpolicy="no-referrer">
+            </div>题目 题目链接：http://match.yuanrenxue.com/match/2 提取全部5页发布日热度的值，计算所有值的加和,并提交答案]]></description>
+</item><item>
+    <title>Js混淆-源码乱码</title>
+    <link>http://example.org/js%E6%B7%B7%E6%B7%86-%E6%BA%90%E7%A0%81%E4%B9%B1%E7%A0%81/</link>
+    <pubDate>Sat, 23 Jan 2021 19:03:49 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/js%E6%B7%B7%E6%B7%86-%E6%BA%90%E7%A0%81%E4%B9%B1%E7%A0%81/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://gitee.com/lonercci/picbed/raw/master/img/20210123190226.jpg" referrerpolicy="no-referrer">
+            </div>题目 抓取所有（5页）机票的价格，并计算所有机票价格的平均值，填入答案。 题目链接：http://match.yuanrenxue.com/ma]]></description>
+</item><item>
+    <title>装饰器 迭代器 生成器</title>
+    <link>http://example.org/%E8%A3%85%E9%A5%B0%E5%99%A8-%E8%BF%AD%E4%BB%A3%E5%99%A8-%E7%94%9F%E6%88%90%E5%99%A8/</link>
+    <pubDate>Wed, 13 Jan 2021 00:20:28 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/%E8%A3%85%E9%A5%B0%E5%99%A8-%E8%BF%AD%E4%BB%A3%E5%99%A8-%E7%94%9F%E6%88%90%E5%99%A8/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://gitee.com/lonercci/picbed/raw/master/img/20201231231530.jpg" referrerpolicy="no-referrer">
+            </div>函数返回值 return是函数结束的标志，即函数代码一旦运行到return会立即终止，并将return后的值当做本次运行的结果返回。 1、返回N]]></description>
+</item><item>
+    <title>学校教务系统模拟登陆</title>
+    <link>http://example.org/%E5%AD%A6%E6%A0%A1%E6%95%99%E5%8A%A1%E7%B3%BB%E7%BB%9F%E6%A8%A1%E6%8B%9F%E7%99%BB%E9%99%86/</link>
+    <pubDate>Wed, 09 Dec 2020 16:53:01 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/%E5%AD%A6%E6%A0%A1%E6%95%99%E5%8A%A1%E7%B3%BB%E7%BB%9F%E6%A8%A1%E6%8B%9F%E7%99%BB%E9%99%86/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://gitee.com/lonercci/picbed/raw/master/img/20201221214112.jpg" referrerpolicy="no-referrer">
+            </div>登录模拟 关于 想尝试一下学校的官网，试试看。 登陆页面 学校的教务系统是青果公司的，很多版块页面都是单独的iframe。但是审查元素单独去访问显示]]></description>
+</item></channel>
+</rss>

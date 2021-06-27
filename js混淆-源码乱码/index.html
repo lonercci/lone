@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Js混淆-源码乱码 - Lone&#39;s Blog</title><meta name="Description" content=""><meta property="og:title" content="Js混淆-源码乱码" />
+<meta property="og:description" content="题目 抓取所有（5页）机票的价格，并计算所有机票价格的平均值，填入答案。 题目链接：http://match.yuanrenxue.com/ma" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/js%E6%B7%B7%E6%B7%86-%E6%BA%90%E7%A0%81%E4%B9%B1%E7%A0%81/" /><meta property="og:image" content="http://example.org/"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-01-23T19:03:49&#43;08:00" />
+<meta property="article:modified_time" content="2021-01-23T19:03:49&#43;08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://example.org/"/>
+
+<meta name="twitter:title" content="Js混淆-源码乱码"/>
+<meta name="twitter:description" content="题目 抓取所有（5页）机票的价格，并计算所有机票价格的平均值，填入答案。 题目链接：http://match.yuanrenxue.com/ma"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="https://gitee.com/lonercci/picbed/raw/master/img/20210626110236.jpg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/js%E6%B7%B7%E6%B7%86-%E6%BA%90%E7%A0%81%E4%B9%B1%E7%A0%81/" /><link rel="prev" href="http://example.org/%E8%A3%85%E9%A5%B0%E5%99%A8-%E8%BF%AD%E4%BB%A3%E5%99%A8-%E7%94%9F%E6%88%90%E5%99%A8/" /><link rel="next" href="http://example.org/js%E6%B7%B7%E6%B7%86-%E5%8A%A8%E6%80%81cookie/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.a12cacf4b5b41234196cb89042b24a70.css" integrity="md5-oSys9LW0EjQZbLiQQrJKcA=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.26386564b5cf1594be24059af1cd0db9.css" integrity="md5-JjhlZLXPFZS&#43;JAWa8c0NuQ=="><link rel="stylesheet" href="/lib/animate/animate.min.43d6b8fdf324505f0ceb7ea698d0b7a5.css" integrity="md5-Q9a4/fMkUF8M636mmNC3pQ=="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Js混淆-源码乱码",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/js%E6%B7%B7%E6%B7%86-%E6%BA%90%E7%A0%81%E4%B9%B1%E7%A0%81\/"
+        },"genre": "posts","keywords": "js, python","wordcount":  5069 ,
+        "url": "http:\/\/example.org\/js%E6%B7%B7%E6%B7%86-%E6%BA%90%E7%A0%81%E4%B9%B1%E7%A0%81\/","datePublished": "2021-01-23T19:03:49+08:00","dateModified": "2021-01-23T19:03:49+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Lone"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Lone&#39;s Blog">Lone&#39;s Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 全部文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Lone&#39;s Blog">Lone&#39;s Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">全部文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Js混淆-源码乱码</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Lone</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E7%88%AC%E8%99%AB/"><i class="far fa-folder fa-fw"></i>爬虫</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-01-23">2021-01-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5069 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 11 分钟&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lonercci/picbed/raw/master/img/20210123190226.jpg"
+        data-srcset="https://gitee.com/lonercci/picbed/raw/master/img/20210123190226.jpg, https://gitee.com/lonercci/picbed/raw/master/img/20210123190226.jpg 1.5x, https://gitee.com/lonercci/picbed/raw/master/img/20210123190226.jpg 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lonercci/picbed/raw/master/img/20210123190226.jpg"
+        title="https://gitee.com/lonercci/picbed/raw/master/img/20210123190226.jpg" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#题目">题目</a></li>
+    <li><a href="#思路分析">思路分析</a>
+      <ul>
+        <li><a href="#关闭断点">关闭断点</a></li>
+        <li><a href="#查看数据">查看数据</a></li>
+        <li><a href="#分析url">分析url</a></li>
+        <li><a href="#如何寻找m的加密过程---">如何寻找m的加密过程&mdash;&gt;|</a></li>
+        <li><a href="#进一步跟踪">进一步跟踪</a></li>
+        <li><a href="#寻找windowf---eval">寻找window.f &ndash;&gt;eval()</a></li>
+        <li><a href="#寻找mwqqppz">寻找mwqqppz</a></li>
+        <li><a href="#翻译eval函数">翻译eval()函数</a></li>
+        <li><a href="#思路整理验证">思路整理+验证</a></li>
+      </ul>
+    </li>
+    <li><a href="#js加密部分代码">JS加密部分代码</a></li>
+    <li><a href="#爬虫代码">爬虫代码</a></li>
+    <li><a href="#题目总结">题目总结</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="题目">题目</h2>
+<p><img src="https://gitee.com/lonercci/picbed/raw/master/img/20210124182912.png" style="zoom:50%;" /></p>
+<blockquote>
+<p>抓取所有（5页）机票的价格，并计算所有机票价格的平均值，填入答案。</p>
+</blockquote>
+<p>题目链接：http://match.yuanrenxue.com/match/1</p>
+<h2 id="思路分析">思路分析</h2>
+<h3 id="关闭断点">关闭断点</h3>
+<p>看着好像不难，但是打开F12的时候，会出现这个页面，发现无法查看数据。
+<img src="https://gitee.com/lonercci/picbed/raw/master/img/20210124183340.png" style="zoom:50%;" /></p>
+<p>这是debug断点，直接关闭，继续运行。</p>
+<h3 id="查看数据">查看数据</h3>
+<p><img src="https://gitee.com/lonercci/picbed/raw/master/img/20210124185139.png" style="zoom:50%;" />
+发现数据以json格式存放，那么我们只要拿到这个url地址，就能拿到所有数据</p>
+<h3 id="分析url">分析url</h3>
+<p>把这几页的url都拿出来看看</p>
+<blockquote>
+<p><a href="http://match.yuanrenxue.com/api/match/1?m=5b6658c234a4d3b9a334bb7a652c6483%E4%B8%A81611585722">http://match.yuanrenxue.com/api/match/1?m=5b6658c234a4d3b9a334bb7a652c6483%E4%B8%A81611585722</a>
+<a href="http://match.yuanrenxue.com/api/match/1?page=2&amp;m=6ab86178933c0ff456e01ebb40a9e9e1%E4%B8%A81611585928">http://match.yuanrenxue.com/api/match/1?page=2&amp;m=6ab86178933c0ff456e01ebb40a9e9e1%E4%B8%A81611585928</a>
+<a href="http://match.yuanrenxue.com/api/match/1?page=3&amp;m=c531e3e5f28835032f9da3fc4e88718d%E4%B8%A81611585938">http://match.yuanrenxue.com/api/match/1?page=3&amp;m=c531e3e5f28835032f9da3fc4e88718d%E4%B8%A81611585938</a></p>
+</blockquote>
+<p>参数很明显了，一共有两个参数。page是页码，m是一个未知参数。
+<code>%E4%B8%A8</code>是url转码后的东西，解码出来是<code>丨</code>（一个中文符号）。后面的东西会随着时间推移改变，根据经验也知道这一定是个时间戳。于是现在就是要分析前面的一堆字符是什么，看样子是经过加密后的东西。<br>
+但是！！！经过测试发现在不同的时间段，同一个数据的url都不一样，时间戳改变可以理解，那为什么加密的部分也会改变呢？我们是否可以猜测，前面加密部分的动态改变，有时间戳的参与的可能？</p>
+<h3 id="如何寻找m的加密过程---">如何寻找m的加密过程&mdash;&gt;|</h3>
+<p>当时我就卡在这里了，如何去找到m参数的加密过程。尝试直接搜索m是行不通的，因为这个文件里m太多了。后来猜测m可能是由三部分拼接的，加密字符串+|+时间戳。那么在这个过程中，<code>|</code>就至关重要了。试着搜索看看，果然有惊喜，找到了一段js。我们把这段js复制下来，格式化以后，删除后面的ajax部分，最终得到如下代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nb">window</span><span class="p">.</span><span class="nx">url</span> <span class="o">=</span> <span class="s1">&#39;/api/match/1&#39;</span><span class="p">;</span>
+<span class="nx">request</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="kd">var</span> <span class="nx">timestamp</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">())</span> <span class="o">+</span> <span class="mi">100000000</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">oo0O0</span><span class="p">(</span><span class="nx">timestamp</span><span class="p">.</span><span class="nx">toString</span><span class="p">())</span> <span class="o">+</span> <span class="nb">window</span><span class="p">.</span><span class="nx">f</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">list</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&#34;page &#34;</span><span class="o">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">page</span><span class="p">,</span>
+    <span class="s2">&#34;m &#34;</span><span class="o">:</span> <span class="nx">m</span> <span class="o">+</span> <span class="s1">&#39;丨&#39;</span> <span class="o">+</span> <span class="nx">timestamp</span> <span class="o">/</span> <span class="mi">1000</span>
+<span class="p">};</span>
+<span class="nx">request</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>到这里似乎说不通了，我当时也有点懵，实际上 <code>&quot;m &quot;: m + '丨' + timestamp / 1000</code>只是list里面的一个参数的值，而我们这里需要的是变量m，即list里面的值与我们想要的无关，而<code>m = oo0O0(timestamp.toString()) + window.f</code>正好印证了我们刚刚的猜测，前面加密部分的字符串有时间戳的参与，于是继续精简</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">timestamp</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">())</span> <span class="o">+</span> <span class="mi">100000000</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">oo0O0</span><span class="p">(</span><span class="nx">timestamp</span><span class="p">.</span><span class="nx">toString</span><span class="p">())</span> <span class="o">+</span> <span class="nb">window</span><span class="p">.</span><span class="nx">f</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>可得所需要的m参数是由以上两行代码完成的，此时可以大胆的猜想一下，timestamp应该是一个时间戳，timestamp.toString()应该是一个转换为字符串的函数，传入oo0O0()中，一完成了某些操作，再与window.f的值相加。<br>
+于是我们的突破口来了，分别是oo0O0()函数和window.f 。</p>
+<h3 id="进一步跟踪">进一步跟踪</h3>
+<p>window.f 窗口这个对象调用了f,至于f是什么东西,我们先不管。先来看oo0O0()函数。发现还是在上面搜索时的地方，我们把定义这个函数的部分截取下来。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">oo0O0</span><span class="p">(</span><span class="nx">mw</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">b</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">len</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">a</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">b</span> <span class="o">+=</span> <span class="nb">String</span><span class="p">[</span><span class="nb">document</span><span class="p">.</span><span class="nx">e</span> <span class="o">+</span> <span class="nb">document</span><span class="p">.</span><span class="nx">g</span><span class="p">](</span><span class="nb">window</span><span class="p">.</span><span class="nx">a</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="nb">document</span><span class="p">.</span><span class="nx">f</span> <span class="o">+</span> <span class="nb">document</span><span class="p">.</span><span class="nx">h</span><span class="p">]()</span> <span class="o">-</span> <span class="nx">i</span> <span class="o">-</span> <span class="nb">window</span><span class="p">.</span><span class="nx">c</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="kd">var</span> <span class="nx">U</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;W5r5W6VdIHZcT8kU&#39;</span><span class="p">,</span> <span class="s1">&#39;WQ8CWRaxWQirAW==&#39;</span><span class="p">];</span>
+    <span class="kd">var</span> <span class="nx">J</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">o</span><span class="p">,</span> <span class="nx">E</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">o</span> <span class="o">=</span> <span class="nx">o</span> <span class="o">-</span> <span class="mh">0x0</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">N</span> <span class="o">=</span> <span class="nx">U</span><span class="p">[</span><span class="nx">o</span><span class="p">];</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">J</span><span class="p">[</span><span class="s1">&#39;bSSGte&#39;</span><span class="p">]</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">Y</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">w</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="s1">&#39;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=&#39;</span><span class="p">,</span>
+                    <span class="nx">T</span> <span class="o">=</span> <span class="nb">String</span><span class="p">(</span><span class="nx">w</span><span class="p">)[</span><span class="s1">&#39;replace&#39;</span><span class="p">](</span><span class="sr">/=+$/</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
+                <span class="kd">var</span> <span class="nx">A</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">C</span> <span class="o">=</span> <span class="mh">0x0</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">W</span><span class="p">,</span> <span class="nx">l</span> <span class="o">=</span> <span class="mh">0x0</span><span class="p">;</span> <span class="nx">W</span> <span class="o">=</span> <span class="nx">T</span><span class="p">[</span><span class="s1">&#39;charAt&#39;</span><span class="p">](</span><span class="nx">l</span><span class="o">++</span><span class="p">);</span> <span class="o">~</span><span class="nx">W</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">b</span> <span class="o">=</span> <span class="nx">C</span> <span class="o">%</span> <span class="mh">0x4</span> <span class="o">?</span> <span class="nx">b</span> <span class="o">*</span> <span class="mh">0x40</span> <span class="o">+</span> <span class="nx">W</span> <span class="o">:</span> <span class="nx">W</span><span class="p">,</span> <span class="nx">C</span><span class="o">++</span> <span class="o">%</span> <span class="mh">0x4</span><span class="p">)</span> <span class="o">?</span> <span class="nx">A</span> <span class="o">+=</span> <span class="nb">String</span><span class="p">[</span><span class="s1">&#39;fromCharCode&#39;</span><span class="p">](</span><span class="mh">0xff</span> <span class="o">&amp;</span> <span class="nx">b</span> <span class="o">&gt;&gt;</span> <span class="p">(</span><span class="o">-</span><span class="mh">0x2</span> <span class="o">*</span> <span class="nx">C</span> <span class="o">&amp;</span> <span class="mh">0x6</span><span class="p">))</span> <span class="o">:</span> <span class="mh">0x0</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">W</span> <span class="o">=</span> <span class="nx">m</span><span class="p">[</span><span class="s1">&#39;indexOf&#39;</span><span class="p">](</span><span class="nx">W</span><span class="p">)</span>
+                <span class="p">}</span>
+                <span class="k">return</span> <span class="nx">A</span>
+            <span class="p">};</span>
+            <span class="kd">var</span> <span class="nx">t</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">m</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">T</span> <span class="o">=</span> <span class="p">[],</span> <span class="nx">A</span> <span class="o">=</span> <span class="mh">0x0</span><span class="p">,</span> <span class="nx">C</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="nx">W</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+                <span class="nx">w</span> <span class="o">=</span> <span class="nx">Y</span><span class="p">(</span><span class="nx">w</span><span class="p">);</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">R</span> <span class="o">=</span> <span class="mh">0x0</span><span class="p">,</span> <span class="nx">v</span> <span class="o">=</span> <span class="nx">w</span><span class="p">[</span><span class="s1">&#39;length&#39;</span><span class="p">];</span> <span class="nx">R</span> <span class="o">&lt;</span> <span class="nx">v</span><span class="p">;</span> <span class="nx">R</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">W</span> <span class="o">+=</span> <span class="s1">&#39;%&#39;</span> <span class="o">+</span> <span class="p">(</span><span class="s1">&#39;00&#39;</span> <span class="o">+</span> <span class="nx">w</span><span class="p">[</span><span class="s1">&#39;charCodeAt&#39;</span><span class="p">](</span><span class="nx">R</span><span class="p">)[</span><span class="s1">&#39;toString&#39;</span><span class="p">](</span><span class="mh">0x10</span><span class="p">))[</span><span class="s1">&#39;slice&#39;</span><span class="p">](</span><span class="o">-</span><span class="mh">0x2</span><span class="p">)</span>
+                <span class="p">}</span>
+                <span class="nx">w</span> <span class="o">=</span> <span class="nb">decodeURIComponent</span><span class="p">(</span><span class="nx">W</span><span class="p">);</span>
+                <span class="kd">var</span> <span class="nx">l</span><span class="p">;</span>
+                <span class="k">for</span> <span class="p">(</span><span class="nx">l</span> <span class="o">=</span> <span class="mh">0x0</span><span class="p">;</span> <span class="nx">l</span> <span class="o">&lt;</span> <span class="mh">0x100</span><span class="p">;</span> <span class="nx">l</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">T</span><span class="p">[</span><span class="nx">l</span><span class="p">]</span> <span class="o">=</span> <span class="nx">l</span>
+                <span class="p">}</span>
+                <span class="k">for</span> <span class="p">(</span><span class="nx">l</span> <span class="o">=</span> <span class="mh">0x0</span><span class="p">;</span> <span class="nx">l</span> <span class="o">&lt;</span> <span class="mh">0x100</span><span class="p">;</span> <span class="nx">l</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">A</span> <span class="o">=</span> <span class="p">(</span><span class="nx">A</span> <span class="o">+</span> <span class="nx">T</span><span class="p">[</span><span class="nx">l</span><span class="p">]</span> <span class="o">+</span> <span class="nx">m</span><span class="p">[</span><span class="s1">&#39;charCodeAt&#39;</span><span class="p">](</span><span class="nx">l</span> <span class="o">%</span> <span class="nx">m</span><span class="p">[</span><span class="s1">&#39;length&#39;</span><span class="p">]))</span> <span class="o">%</span> <span class="mh">0x100</span><span class="p">,</span> <span class="nx">C</span> <span class="o">=</span> <span class="nx">T</span><span class="p">[</span><span class="nx">l</span><span class="p">],</span> <span class="nx">T</span><span class="p">[</span><span class="nx">l</span><span class="p">]</span> <span class="o">=</span> <span class="nx">T</span><span class="p">[</span><span class="nx">A</span><span class="p">],</span> <span class="nx">T</span><span class="p">[</span><span class="nx">A</span><span class="p">]</span> <span class="o">=</span> <span class="nx">C</span>
+                <span class="p">}</span>
+                <span class="nx">l</span> <span class="o">=</span> <span class="mh">0x0</span><span class="p">,</span> <span class="nx">A</span> <span class="o">=</span> <span class="mh">0x0</span><span class="p">;</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">L</span> <span class="o">=</span> <span class="mh">0x0</span><span class="p">;</span> <span class="nx">L</span> <span class="o">&lt;</span> <span class="nx">w</span><span class="p">[</span><span class="s1">&#39;length&#39;</span><span class="p">];</span> <span class="nx">L</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">l</span> <span class="o">=</span> <span class="p">(</span><span class="nx">l</span> <span class="o">+</span> <span class="mh">0x1</span><span class="p">)</span> <span class="o">%</span> <span class="mh">0x100</span><span class="p">,</span> <span class="nx">A</span> <span class="o">=</span> <span class="p">(</span><span class="nx">A</span> <span class="o">+</span> <span class="nx">T</span><span class="p">[</span><span class="nx">l</span><span class="p">])</span> <span class="o">%</span> <span class="mh">0x100</span><span class="p">,</span> <span class="nx">C</span> <span class="o">=</span> <span class="nx">T</span><span class="p">[</span><span class="nx">l</span><span class="p">],</span> <span class="nx">T</span><span class="p">[</span><span class="nx">l</span><span class="p">]</span> <span class="o">=</span> <span class="nx">T</span><span class="p">[</span><span class="nx">A</span><span class="p">],</span> <span class="nx">T</span><span class="p">[</span><span class="nx">A</span><span class="p">]</span> <span class="o">=</span> <span class="nx">C</span><span class="p">,</span> <span class="nx">b</span> <span class="o">+=</span> <span class="nb">String</span><span class="p">[</span><span class="s1">&#39;fromCharCode&#39;</span><span class="p">](</span><span class="nx">w</span><span class="p">[</span><span class="s1">&#39;charCodeAt&#39;</span><span class="p">](</span><span class="nx">L</span><span class="p">)</span> <span class="o">^</span> <span class="nx">T</span><span class="p">[(</span><span class="nx">T</span><span class="p">[</span><span class="nx">l</span><span class="p">]</span> <span class="o">+</span> <span class="nx">T</span><span class="p">[</span><span class="nx">A</span><span class="p">])</span> <span class="o">%</span> <span class="mh">0x100</span><span class="p">])</span>
+                <span class="p">}</span>
+                <span class="k">return</span> <span class="nx">b</span>
+            <span class="p">};</span>
+            <span class="nx">J</span><span class="p">[</span><span class="s1">&#39;luAabU&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">t</span><span class="p">,</span> <span class="nx">J</span><span class="p">[</span><span class="s1">&#39;qlVPZg&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{},</span> <span class="nx">J</span><span class="p">[</span><span class="s1">&#39;bSSGte&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">!!</span><span class="p">[]</span>
+        <span class="p">}</span>
+        <span class="kd">var</span> <span class="nx">H</span> <span class="o">=</span> <span class="nx">J</span><span class="p">[</span><span class="s1">&#39;qlVPZg&#39;</span><span class="p">][</span><span class="nx">o</span><span class="p">];</span>
+        <span class="k">return</span> <span class="nx">H</span> <span class="o">===</span> <span class="kc">undefined</span> <span class="o">?</span> <span class="p">(</span><span class="nx">J</span><span class="p">[</span><span class="s1">&#39;TUDBIJ&#39;</span><span class="p">]</span> <span class="o">===</span> <span class="kc">undefined</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">J</span><span class="p">[</span><span class="s1">&#39;TUDBIJ&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">!!</span><span class="p">[]),</span> <span class="nx">N</span> <span class="o">=</span> <span class="nx">J</span><span class="p">[</span><span class="s1">&#39;luAabU&#39;</span><span class="p">](</span><span class="nx">N</span><span class="p">,</span> <span class="nx">E</span><span class="p">),</span> <span class="nx">J</span><span class="p">[</span><span class="s1">&#39;qlVPZg&#39;</span><span class="p">][</span><span class="nx">o</span><span class="p">]</span> <span class="o">=</span> <span class="nx">N</span><span class="p">)</span> <span class="o">:</span> <span class="nx">N</span> <span class="o">=</span> <span class="nx">H</span><span class="p">,</span> <span class="nx">N</span>
+    <span class="p">};</span>
+    <span class="nb">eval</span><span class="p">(</span><span class="nx">atob</span><span class="p">(</span><span class="nb">window</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">])[</span><span class="nx">J</span><span class="p">(</span><span class="s1">&#39;0x0&#39;</span><span class="p">,</span> <span class="s1">&#39;]dQW&#39;</span><span class="p">)](</span><span class="nx">J</span><span class="p">(</span><span class="s1">&#39;0x1&#39;</span><span class="p">,</span> <span class="s1">&#39;GTu!&#39;</span><span class="p">),</span> <span class="s1">&#39;\x27&#39;</span> <span class="o">+</span> <span class="nx">mw</span> <span class="o">+</span> <span class="s1">&#39;\x27&#39;</span><span class="p">));</span>
+    <span class="k">return</span> <span class="s1">&#39;&#39;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>代码有点长，压缩一部分，
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lonercci/picbed/raw/master/img/20210124223349.png"
+        data-srcset="https://gitee.com/lonercci/picbed/raw/master/img/20210124223349.png, https://gitee.com/lonercci/picbed/raw/master/img/20210124223349.png 1.5x, https://gitee.com/lonercci/picbed/raw/master/img/20210124223349.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lonercci/picbed/raw/master/img/20210124223349.png"
+        title="https://gitee.com/lonercci/picbed/raw/master/img/20210124223349.png" />
+很amazing啊，清晰的看到返回值居然是空字符串。这意味着 [ var m = window.f ]，那我们只能很不幸的得到以下这个结论：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">oo0O0</span><span class="p">(</span><span class="nx">timestamp</span><span class="p">.</span><span class="nx">toString</span><span class="p">())</span> <span class="o">+</span> <span class="nb">window</span><span class="p">.</span><span class="nx">f</span><span class="p">;</span>   <span class="c1">//之前
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">f</span>   <span class="c1">//之后
+</span></code></pre></td></tr></table>
+</div>
+</div><p>可是<code>window.f</code>是什么东西啊</p>
+<h3 id="寻找windowf---eval">寻找window.f &ndash;&gt;eval()</h3>
+<p>怎么找到<code>window.f</code>，首先我能想到的,就是去源码中搜索,但是结果并没有那么理想,只出现了一处代码,也就是刚刚那一处代码</p>
+<p>在源码中找不到,但是又使用了<code>window.f</code>，肯定是通过间接的方式定义赋值的,那么它又在在那里定义的呢?
+我们再来看一下这行代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">oo0O0</span><span class="p">(</span><span class="nx">timestamp</span><span class="p">.</span><span class="nx">toString</span><span class="p">())</span> <span class="o">+</span> <span class="nb">window</span><span class="p">.</span><span class="nx">f</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>oo0O0函数执行了,但是却返回的空值;而且oo0O0()里面却有很多代码,开发者肯定不会这么闲吧。也不排除,开发者写这些没有用的代码误导我们,但是这里面肯定是有内容的。
+这就涉及到我的盲区了。。。
+JS中的 eval() 函数可计算某个字符串，并<strong>执行其中的的 JS 代码</strong>。而这个函数也出现在了oo0O0()里面，</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nb">eval</span><span class="p">(</span><span class="nx">atob</span><span class="p">(</span><span class="nb">window</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">])[</span><span class="nx">J</span><span class="p">(</span><span class="s1">&#39;0x0&#39;</span><span class="p">,</span> <span class="s1">&#39;]dQW&#39;</span><span class="p">)](</span><span class="nx">J</span><span class="p">(</span><span class="s1">&#39;0x1&#39;</span><span class="p">,</span> <span class="s1">&#39;GTu!&#39;</span><span class="p">),</span> <span class="s1">&#39;\x27&#39;</span> <span class="o">+</span> <span class="nx">mw</span> <span class="o">+</span> <span class="s1">&#39;\x27&#39;</span><span class="p">));</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>eval()里面还调用了一个函数atob()，atob() 方法用于解码使用 base-64 编码的字符串。我们一步步来，先看<code>atob(window['b']</code>是什么，复制到控制台运行后
+<img src="https://gitee.com/lonercci/picbed/raw/master/img/20210124230811.png" style="zoom: 80%;" />
+将代码复制格式化之后得到的是MD5加密算法，非常长，这里截取一部分
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lonercci/picbed/raw/master/img/20210124231335.png"
+        data-srcset="https://gitee.com/lonercci/picbed/raw/master/img/20210124231335.png, https://gitee.com/lonercci/picbed/raw/master/img/20210124231335.png 1.5x, https://gitee.com/lonercci/picbed/raw/master/img/20210124231335.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lonercci/picbed/raw/master/img/20210124231335.png"
+        title="https://gitee.com/lonercci/picbed/raw/master/img/20210124231335.png" />
+通过最后一行代码，我们发现 <code>window.f</code> 出现了，并且通过调用hex_md5()来实现赋值。<br>
+但是又出现了一个新的问题，<code>mwqqppz</code>是什么？</p>
+<h3 id="寻找mwqqppz">寻找mwqqppz</h3>
+<p>再来看一下刚刚的eval代码片段</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nb">eval</span><span class="p">(</span><span class="nx">atob</span><span class="p">(</span><span class="nb">window</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">])[</span><span class="nx">J</span><span class="p">(</span><span class="s1">&#39;0x0&#39;</span><span class="p">,</span> <span class="s1">&#39;]dQW&#39;</span><span class="p">)](</span><span class="nx">J</span><span class="p">(</span><span class="s1">&#39;0x1&#39;</span><span class="p">,</span> <span class="s1">&#39;GTu!&#39;</span><span class="p">),</span> <span class="s1">&#39;\x27&#39;</span> <span class="o">+</span> <span class="nx">mw</span> <span class="o">+</span> <span class="s1">&#39;\x27&#39;</span><span class="p">));</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>可以看到eval函数里面除了atob(window[&lsquo;b&rsquo;],还有</p>
+<ul>
+<li><code>J('0x0', ']dQW')</code></li>
+<li><code>J('0x1', 'GTu!')</code></li>
+<li><code>'\x27' + mw + '\x27'</code>
+我们再到调试工具的Console运行一下上面列出来的代码
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lonercci/picbed/raw/master/img/20210124232140.png"
+        data-srcset="https://gitee.com/lonercci/picbed/raw/master/img/20210124232140.png, https://gitee.com/lonercci/picbed/raw/master/img/20210124232140.png 1.5x, https://gitee.com/lonercci/picbed/raw/master/img/20210124232140.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lonercci/picbed/raw/master/img/20210124232140.png"
+        title="https://gitee.com/lonercci/picbed/raw/master/img/20210124232140.png" />
+这是因为oo0O0()函数里面还有一些代码段没有执行
+我们先把oo0O0()函数里面eval函数上面的所有代码复制,然后去Console中运行一下</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js">    <span class="kd">var</span> <span class="nx">U</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;W5r5W6VdIHZcT8kU&#39;</span><span class="p">,</span> <span class="s1">&#39;WQ8CWRaxWQirAW==&#39;</span><span class="p">];</span>
+    <span class="kd">var</span> <span class="nx">J</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">o</span><span class="p">,</span> <span class="nx">E</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">o</span> <span class="o">=</span> <span class="nx">o</span> <span class="o">-</span> <span class="mh">0x0</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">N</span> <span class="o">=</span> <span class="nx">U</span><span class="p">[</span><span class="nx">o</span><span class="p">];</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">J</span><span class="p">[</span><span class="s1">&#39;bSSGte&#39;</span><span class="p">]</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">Y</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">w</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="s1">&#39;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=&#39;</span><span class="p">,</span>
+                <span class="nx">T</span> <span class="o">=</span> <span class="nb">String</span><span class="p">(</span><span class="nx">w</span><span class="p">)[</span><span class="s1">&#39;replace&#39;</span><span class="p">](</span><span class="sr">/=+$/</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
+                <span class="kd">var</span> <span class="nx">A</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">C</span> <span class="o">=</span> <span class="mh">0x0</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">W</span><span class="p">,</span> <span class="nx">l</span> <span class="o">=</span> <span class="mh">0x0</span><span class="p">;</span> <span class="nx">W</span> <span class="o">=</span> <span class="nx">T</span><span class="p">[</span><span class="s1">&#39;charAt&#39;</span><span class="p">](</span><span class="nx">l</span><span class="o">++</span><span class="p">);</span> <span class="o">~</span><span class="nx">W</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">b</span> <span class="o">=</span> <span class="nx">C</span> <span class="o">%</span> <span class="mh">0x4</span> <span class="o">?</span> <span class="nx">b</span> <span class="o">*</span> <span class="mh">0x40</span> <span class="o">+</span> <span class="nx">W</span> <span class="o">:</span> <span class="nx">W</span><span class="p">,</span> <span class="nx">C</span><span class="o">++</span> <span class="o">%</span> <span class="mh">0x4</span><span class="p">)</span> <span class="o">?</span> <span class="nx">A</span> <span class="o">+=</span> <span class="nb">String</span><span class="p">[</span><span class="s1">&#39;fromCharCode&#39;</span><span class="p">](</span><span class="mh">0xff</span> <span class="o">&amp;</span> <span class="nx">b</span> <span class="o">&gt;&gt;</span> <span class="p">(</span><span class="o">-</span><span class="mh">0x2</span> <span class="o">*</span> <span class="nx">C</span> <span class="o">&amp;</span> <span class="mh">0x6</span><span class="p">))</span> <span class="o">:</span> <span class="mh">0x0</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">W</span> <span class="o">=</span> <span class="nx">m</span><span class="p">[</span><span class="s1">&#39;indexOf&#39;</span><span class="p">](</span><span class="nx">W</span><span class="p">)</span>
+                <span class="p">}</span>
+                <span class="k">return</span> <span class="nx">A</span>
+            <span class="p">};</span>
+            <span class="kd">var</span> <span class="nx">t</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">m</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">T</span> <span class="o">=</span> <span class="p">[],</span>
+                <span class="nx">A</span> <span class="o">=</span> <span class="mh">0x0</span><span class="p">,</span>
+                <span class="nx">C</span><span class="p">,</span>
+                <span class="nx">b</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                <span class="nx">W</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+                <span class="nx">w</span> <span class="o">=</span> <span class="nx">Y</span><span class="p">(</span><span class="nx">w</span><span class="p">);</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">R</span> <span class="o">=</span> <span class="mh">0x0</span><span class="p">,</span> <span class="nx">v</span> <span class="o">=</span> <span class="nx">w</span><span class="p">[</span><span class="s1">&#39;length&#39;</span><span class="p">];</span> <span class="nx">R</span> <span class="o">&lt;</span> <span class="nx">v</span><span class="p">;</span> <span class="nx">R</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">W</span> <span class="o">+=</span> <span class="s1">&#39;%&#39;</span> <span class="o">+</span> <span class="p">(</span><span class="s1">&#39;00&#39;</span> <span class="o">+</span> <span class="nx">w</span><span class="p">[</span><span class="s1">&#39;charCodeAt&#39;</span><span class="p">](</span><span class="nx">R</span><span class="p">)[</span><span class="s1">&#39;toString&#39;</span><span class="p">](</span><span class="mh">0x10</span><span class="p">))[</span><span class="s1">&#39;slice&#39;</span><span class="p">](</span><span class="o">-</span><span class="mh">0x2</span><span class="p">)</span>
+                <span class="p">}</span>
+                <span class="nx">w</span> <span class="o">=</span> <span class="nb">decodeURIComponent</span><span class="p">(</span><span class="nx">W</span><span class="p">);</span>
+                <span class="kd">var</span> <span class="nx">l</span><span class="p">;</span>
+                <span class="k">for</span> <span class="p">(</span><span class="nx">l</span> <span class="o">=</span> <span class="mh">0x0</span><span class="p">;</span> <span class="nx">l</span> <span class="o">&lt;</span> <span class="mh">0x100</span><span class="p">;</span> <span class="nx">l</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">T</span><span class="p">[</span><span class="nx">l</span><span class="p">]</span> <span class="o">=</span> <span class="nx">l</span>
+                <span class="p">}</span>
+                <span class="k">for</span> <span class="p">(</span><span class="nx">l</span> <span class="o">=</span> <span class="mh">0x0</span><span class="p">;</span> <span class="nx">l</span> <span class="o">&lt;</span> <span class="mh">0x100</span><span class="p">;</span> <span class="nx">l</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">A</span> <span class="o">=</span> <span class="p">(</span><span class="nx">A</span> <span class="o">+</span> <span class="nx">T</span><span class="p">[</span><span class="nx">l</span><span class="p">]</span> <span class="o">+</span> <span class="nx">m</span><span class="p">[</span><span class="s1">&#39;charCodeAt&#39;</span><span class="p">](</span><span class="nx">l</span> <span class="o">%</span> <span class="nx">m</span><span class="p">[</span><span class="s1">&#39;length&#39;</span><span class="p">]))</span> <span class="o">%</span> <span class="mh">0x100</span><span class="p">,</span>
+                    <span class="nx">C</span> <span class="o">=</span> <span class="nx">T</span><span class="p">[</span><span class="nx">l</span><span class="p">],</span>
+                    <span class="nx">T</span><span class="p">[</span><span class="nx">l</span><span class="p">]</span> <span class="o">=</span> <span class="nx">T</span><span class="p">[</span><span class="nx">A</span><span class="p">],</span>
+                    <span class="nx">T</span><span class="p">[</span><span class="nx">A</span><span class="p">]</span> <span class="o">=</span> <span class="nx">C</span>
+                <span class="p">}</span>
+                <span class="nx">l</span> <span class="o">=</span> <span class="mh">0x0</span><span class="p">,</span>
+                <span class="nx">A</span> <span class="o">=</span> <span class="mh">0x0</span><span class="p">;</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">L</span> <span class="o">=</span> <span class="mh">0x0</span><span class="p">;</span> <span class="nx">L</span> <span class="o">&lt;</span> <span class="nx">w</span><span class="p">[</span><span class="s1">&#39;length&#39;</span><span class="p">];</span> <span class="nx">L</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">l</span> <span class="o">=</span> <span class="p">(</span><span class="nx">l</span> <span class="o">+</span> <span class="mh">0x1</span><span class="p">)</span> <span class="o">%</span> <span class="mh">0x100</span><span class="p">,</span>
+                    <span class="nx">A</span> <span class="o">=</span> <span class="p">(</span><span class="nx">A</span> <span class="o">+</span> <span class="nx">T</span><span class="p">[</span><span class="nx">l</span><span class="p">])</span> <span class="o">%</span> <span class="mh">0x100</span><span class="p">,</span>
+                    <span class="nx">C</span> <span class="o">=</span> <span class="nx">T</span><span class="p">[</span><span class="nx">l</span><span class="p">],</span>
+                    <span class="nx">T</span><span class="p">[</span><span class="nx">l</span><span class="p">]</span> <span class="o">=</span> <span class="nx">T</span><span class="p">[</span><span class="nx">A</span><span class="p">],</span>
+                    <span class="nx">T</span><span class="p">[</span><span class="nx">A</span><span class="p">]</span> <span class="o">=</span> <span class="nx">C</span><span class="p">,</span>
+                    <span class="nx">b</span> <span class="o">+=</span> <span class="nb">String</span><span class="p">[</span><span class="s1">&#39;fromCharCode&#39;</span><span class="p">](</span><span class="nx">w</span><span class="p">[</span><span class="s1">&#39;charCodeAt&#39;</span><span class="p">](</span><span class="nx">L</span><span class="p">)</span> <span class="o">^</span> <span class="nx">T</span><span class="p">[(</span><span class="nx">T</span><span class="p">[</span><span class="nx">l</span><span class="p">]</span> <span class="o">+</span> <span class="nx">T</span><span class="p">[</span><span class="nx">A</span><span class="p">])</span> <span class="o">%</span> <span class="mh">0x100</span><span class="p">])</span>
+                <span class="p">}</span>
+                <span class="k">return</span> <span class="nx">b</span>
+            <span class="p">};</span>
+            <span class="nx">J</span><span class="p">[</span><span class="s1">&#39;luAabU&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">t</span><span class="p">,</span>
+            <span class="nx">J</span><span class="p">[</span><span class="s1">&#39;qlVPZg&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{},</span>
+            <span class="nx">J</span><span class="p">[</span><span class="s1">&#39;bSSGte&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">!!</span><span class="p">[]</span>
+        <span class="p">}</span>
+        <span class="kd">var</span> <span class="nx">H</span> <span class="o">=</span> <span class="nx">J</span><span class="p">[</span><span class="s1">&#39;qlVPZg&#39;</span><span class="p">][</span><span class="nx">o</span><span class="p">];</span>
+        <span class="k">return</span> <span class="nx">H</span> <span class="o">===</span> <span class="kc">undefined</span> <span class="o">?</span> <span class="p">(</span><span class="nx">J</span><span class="p">[</span><span class="s1">&#39;TUDBIJ&#39;</span><span class="p">]</span> <span class="o">===</span> <span class="kc">undefined</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">J</span><span class="p">[</span><span class="s1">&#39;TUDBIJ&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">!!</span><span class="p">[]),</span> <span class="nx">N</span> <span class="o">=</span> <span class="nx">J</span><span class="p">[</span><span class="s1">&#39;luAabU&#39;</span><span class="p">](</span><span class="nx">N</span><span class="p">,</span> <span class="nx">E</span><span class="p">),</span> <span class="nx">J</span><span class="p">[</span><span class="s1">&#39;qlVPZg&#39;</span><span class="p">][</span><span class="nx">o</span><span class="p">]</span> <span class="o">=</span> <span class="nx">N</span><span class="p">)</span> <span class="o">:</span> <span class="nx">N</span> <span class="o">=</span> <span class="nx">H</span><span class="p">,</span>
+        <span class="nx">N</span>
+    <span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>然后依次运行</p>
+<p><img src="https://gitee.com/lonercci/picbed/raw/master/img/20210124232743.png" style="zoom: 67%;" /></p>
+<p>此时 mwqqppz 出现了</p>
+<h3 id="翻译eval函数">翻译eval()函数</h3>
+<p>知道eval()函数里面的奇怪符号的意义后,我们就可以翻译一下eval()代码片段</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nb">eval</span><span class="p">(</span><span class="nx">atob</span><span class="p">(</span><span class="nb">window</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">])[</span><span class="nx">J</span><span class="p">(</span><span class="s1">&#39;0x0&#39;</span><span class="p">,</span> <span class="s1">&#39;]dQW&#39;</span><span class="p">)](</span><span class="nx">J</span><span class="p">(</span><span class="s1">&#39;0x1&#39;</span><span class="p">,</span> <span class="s1">&#39;GTu!&#39;</span><span class="p">),</span> <span class="s1">&#39;\x27&#39;</span> <span class="o">+</span> <span class="nx">mw</span> <span class="o">+</span> <span class="s1">&#39;\x27&#39;</span><span class="p">));</span><span class="err">\\</span><span class="nx">原来的</span>
+
+<span class="nb">eval</span><span class="p">(</span><span class="nx">atob</span><span class="p">(</span><span class="nb">window</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">])[</span><span class="s2">&#34;replace&#34;</span><span class="p">](</span><span class="s2">&#34;mwqqppz&#34;</span><span class="p">,</span><span class="s1">&#39;mw&#39;</span><span class="p">));</span><span class="err">\\</span><span class="nx">翻译后的</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>使用Python重写：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="nb">eval</span><span class="p">(</span><span class="n">atob</span><span class="p">(</span><span class="n">window</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;mwqqppz&#34;</span><span class="p">,</span><span class="s1">&#39;mw&#39;</span><span class="p">));</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>而mw是什么？是oo0O0()函数的一个形参，回顾前面的代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">timestamp</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">())</span> <span class="o">+</span> <span class="mi">100000000</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">oo0O0</span><span class="p">(</span><span class="nx">timestamp</span><span class="p">.</span><span class="nx">toString</span><span class="p">())</span> <span class="o">+</span> <span class="nb">window</span><span class="p">.</span><span class="nx">f</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">oo0O0</span><span class="p">(</span><span class="nx">mw</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">...</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>可见，其传入的就是一个字符串时间戳</p>
+<h3 id="思路整理验证">思路整理+验证</h3>
+<p>很清晰的我们可以得出</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">timestamp</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">())</span> <span class="o">+</span> <span class="mi">100000000</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">oo0O0</span><span class="p">(</span><span class="nx">timestamp</span><span class="p">.</span><span class="nx">toString</span><span class="p">())</span> <span class="o">+</span> <span class="nb">window</span><span class="p">.</span><span class="nx">f</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">f</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">hex_md5</span><span class="p">(</span><span class="nx">mwqqppz</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">hex_md5</span><span class="p">(</span><span class="nx">timestamp</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>改写一下js文件，直接把时间戳带入，加载代码，对比相同，成功</p>
+<h2 id="js加密部分代码">JS加密部分代码</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">hexcase</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">b64pad</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">chrsz</span> <span class="o">=</span> <span class="mi">16</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">hex_md5</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">binl2hex</span><span class="p">(</span><span class="nx">core_md5</span><span class="p">(</span><span class="nx">str2binl</span><span class="p">(</span><span class="nx">a</span><span class="p">),</span> <span class="nx">a</span><span class="p">.</span><span class="nx">length</span> <span class="o">*</span> <span class="nx">chrsz</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">b64_md5</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">binl2b64</span><span class="p">(</span><span class="nx">core_md5</span><span class="p">(</span><span class="nx">str2binl</span><span class="p">(</span><span class="nx">a</span><span class="p">),</span> <span class="nx">a</span><span class="p">.</span><span class="nx">length</span> <span class="o">*</span> <span class="nx">chrsz</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">str_md5</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">binl2str</span><span class="p">(</span><span class="nx">core_md5</span><span class="p">(</span><span class="nx">str2binl</span><span class="p">(</span><span class="nx">a</span><span class="p">),</span> <span class="nx">a</span><span class="p">.</span><span class="nx">length</span> <span class="o">*</span> <span class="nx">chrsz</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">hex_hmac_md5</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">binl2hex</span><span class="p">(</span><span class="nx">core_hmac_md5</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">b64_hmac_md5</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">binl2b64</span><span class="p">(</span><span class="nx">core_hmac_md5</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">str_hmac_md5</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">binl2str</span><span class="p">(</span><span class="nx">core_hmac_md5</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">md5_vm_test</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">hex_md5</span><span class="p">(</span><span class="s2">&#34;abc&#34;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&#34;900150983cd24fb0d6963f7d28e17f72&#34;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">core_md5</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span> <span class="nx">k</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">p</span><span class="p">[</span><span class="nx">k</span> <span class="o">&gt;&gt;</span> <span class="mi">5</span><span class="p">]</span> <span class="o">|=</span> <span class="mi">128</span> <span class="o">&lt;&lt;</span> <span class="p">((</span><span class="nx">k</span><span class="p">)</span> <span class="o">%</span> <span class="mi">32</span><span class="p">);</span>
+    <span class="nx">p</span><span class="p">[(((</span><span class="nx">k</span> <span class="o">+</span> <span class="mi">64</span><span class="p">)</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">9</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="mi">14</span><span class="p">]</span> <span class="o">=</span> <span class="nx">k</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="mi">1732584193</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="o">-</span><span class="mi">271733879</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1732584194</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">l</span> <span class="o">=</span> <span class="mi">271733878</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">g</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">g</span> <span class="o">&lt;</span> <span class="nx">p</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">g</span> <span class="o">+=</span> <span class="mi">16</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">o</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">h</span> <span class="o">=</span> <span class="nx">n</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">f</span> <span class="o">=</span> <span class="nx">m</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">e</span> <span class="o">=</span> <span class="nx">l</span><span class="p">;</span>
+        <span class="nx">o</span> <span class="o">=</span> <span class="nx">md5_ff</span><span class="p">(</span><span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">0</span><span class="p">],</span> <span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">680976936</span><span class="p">);</span>
+        <span class="nx">l</span> <span class="o">=</span> <span class="nx">md5_ff</span><span class="p">(</span><span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">389564586</span><span class="p">);</span>
+        <span class="nx">m</span> <span class="o">=</span> <span class="nx">md5_ff</span><span class="p">(</span><span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">606105819</span><span class="p">);</span>
+        <span class="nx">n</span> <span class="o">=</span> <span class="nx">md5_ff</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">22</span><span class="p">,</span> <span class="o">-</span><span class="mi">1044525330</span><span class="p">);</span>
+        <span class="nx">o</span> <span class="o">=</span> <span class="nx">md5_ff</span><span class="p">(</span><span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">4</span><span class="p">],</span> <span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">176418897</span><span class="p">);</span>
+        <span class="nx">l</span> <span class="o">=</span> <span class="nx">md5_ff</span><span class="p">(</span><span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">5</span><span class="p">],</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1200080426</span><span class="p">);</span>
+        <span class="nx">m</span> <span class="o">=</span> <span class="nx">md5_ff</span><span class="p">(</span><span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">6</span><span class="p">],</span> <span class="mi">17</span><span class="p">,</span> <span class="o">-</span><span class="mi">1473231341</span><span class="p">);</span>
+        <span class="nx">n</span> <span class="o">=</span> <span class="nx">md5_ff</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">7</span><span class="p">],</span> <span class="mi">22</span><span class="p">,</span> <span class="o">-</span><span class="mi">45705983</span><span class="p">);</span>
+        <span class="nx">o</span> <span class="o">=</span> <span class="nx">md5_ff</span><span class="p">(</span><span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">8</span><span class="p">],</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1770035416</span><span class="p">);</span>
+        <span class="nx">l</span> <span class="o">=</span> <span class="nx">md5_ff</span><span class="p">(</span><span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">9</span><span class="p">],</span> <span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">1958414417</span><span class="p">);</span>
+        <span class="nx">m</span> <span class="o">=</span> <span class="nx">md5_ff</span><span class="p">(</span><span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">10</span><span class="p">],</span> <span class="mi">17</span><span class="p">,</span> <span class="o">-</span><span class="mi">42063</span><span class="p">);</span>
+        <span class="nx">n</span> <span class="o">=</span> <span class="nx">md5_ff</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">11</span><span class="p">],</span> <span class="mi">22</span><span class="p">,</span> <span class="o">-</span><span class="mi">1990404162</span><span class="p">);</span>
+        <span class="nx">o</span> <span class="o">=</span> <span class="nx">md5_ff</span><span class="p">(</span><span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">12</span><span class="p">],</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1804660682</span><span class="p">);</span>
+        <span class="nx">l</span> <span class="o">=</span> <span class="nx">md5_ff</span><span class="p">(</span><span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">13</span><span class="p">],</span> <span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">40341101</span><span class="p">);</span>
+        <span class="nx">m</span> <span class="o">=</span> <span class="nx">md5_ff</span><span class="p">(</span><span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">14</span><span class="p">],</span> <span class="mi">17</span><span class="p">,</span> <span class="o">-</span><span class="mi">1502002290</span><span class="p">);</span>
+        <span class="nx">n</span> <span class="o">=</span> <span class="nx">md5_ff</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">15</span><span class="p">],</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">1236535329</span><span class="p">);</span>
+        <span class="nx">o</span> <span class="o">=</span> <span class="nx">md5_gg</span><span class="p">(</span><span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">165796510</span><span class="p">);</span>
+        <span class="nx">l</span> <span class="o">=</span> <span class="nx">md5_gg</span><span class="p">(</span><span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">6</span><span class="p">],</span> <span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">1069501632</span><span class="p">);</span>
+        <span class="nx">m</span> <span class="o">=</span> <span class="nx">md5_gg</span><span class="p">(</span><span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">11</span><span class="p">],</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">643717713</span><span class="p">);</span>
+        <span class="nx">n</span> <span class="o">=</span> <span class="nx">md5_gg</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">0</span><span class="p">],</span> <span class="mi">20</span><span class="p">,</span> <span class="o">-</span><span class="mi">373897302</span><span class="p">);</span>
+        <span class="nx">o</span> <span class="o">=</span> <span class="nx">md5_gg</span><span class="p">(</span><span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">5</span><span class="p">],</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">701558691</span><span class="p">);</span>
+        <span class="nx">l</span> <span class="o">=</span> <span class="nx">md5_gg</span><span class="p">(</span><span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">10</span><span class="p">],</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">38016083</span><span class="p">);</span>
+        <span class="nx">m</span> <span class="o">=</span> <span class="nx">md5_gg</span><span class="p">(</span><span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">15</span><span class="p">],</span> <span class="mi">14</span><span class="p">,</span> <span class="o">-</span><span class="mi">660478335</span><span class="p">);</span>
+        <span class="nx">n</span> <span class="o">=</span> <span class="nx">md5_gg</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">4</span><span class="p">],</span> <span class="mi">20</span><span class="p">,</span> <span class="o">-</span><span class="mi">405537848</span><span class="p">);</span>
+        <span class="nx">o</span> <span class="o">=</span> <span class="nx">md5_gg</span><span class="p">(</span><span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">9</span><span class="p">],</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">568446438</span><span class="p">);</span>
+        <span class="nx">l</span> <span class="o">=</span> <span class="nx">md5_gg</span><span class="p">(</span><span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">14</span><span class="p">],</span> <span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">1019803690</span><span class="p">);</span>
+        <span class="nx">m</span> <span class="o">=</span> <span class="nx">md5_gg</span><span class="p">(</span><span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">14</span><span class="p">,</span> <span class="o">-</span><span class="mi">187363961</span><span class="p">);</span>
+        <span class="nx">n</span> <span class="o">=</span> <span class="nx">md5_gg</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">8</span><span class="p">],</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">1163531501</span><span class="p">);</span>
+        <span class="nx">o</span> <span class="o">=</span> <span class="nx">md5_gg</span><span class="p">(</span><span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">13</span><span class="p">],</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1444681467</span><span class="p">);</span>
+        <span class="nx">l</span> <span class="o">=</span> <span class="nx">md5_gg</span><span class="p">(</span><span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">51403784</span><span class="p">);</span>
+        <span class="nx">m</span> <span class="o">=</span> <span class="nx">md5_gg</span><span class="p">(</span><span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">7</span><span class="p">],</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">1735328473</span><span class="p">);</span>
+        <span class="nx">n</span> <span class="o">=</span> <span class="nx">md5_gg</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">12</span><span class="p">],</span> <span class="mi">20</span><span class="p">,</span> <span class="o">-</span><span class="mi">1921207734</span><span class="p">);</span>
+        <span class="nx">o</span> <span class="o">=</span> <span class="nx">md5_hh</span><span class="p">(</span><span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">5</span><span class="p">],</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">378558</span><span class="p">);</span>
+        <span class="nx">l</span> <span class="o">=</span> <span class="nx">md5_hh</span><span class="p">(</span><span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">8</span><span class="p">],</span> <span class="mi">11</span><span class="p">,</span> <span class="o">-</span><span class="mi">2022574463</span><span class="p">);</span>
+        <span class="nx">m</span> <span class="o">=</span> <span class="nx">md5_hh</span><span class="p">(</span><span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">11</span><span class="p">],</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">1839030562</span><span class="p">);</span>
+        <span class="nx">n</span> <span class="o">=</span> <span class="nx">md5_hh</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">14</span><span class="p">],</span> <span class="mi">23</span><span class="p">,</span> <span class="o">-</span><span class="mi">35309556</span><span class="p">);</span>
+        <span class="nx">o</span> <span class="o">=</span> <span class="nx">md5_hh</span><span class="p">(</span><span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1530992060</span><span class="p">);</span>
+        <span class="nx">l</span> <span class="o">=</span> <span class="nx">md5_hh</span><span class="p">(</span><span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">4</span><span class="p">],</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">1272893353</span><span class="p">);</span>
+        <span class="nx">m</span> <span class="o">=</span> <span class="nx">md5_hh</span><span class="p">(</span><span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">7</span><span class="p">],</span> <span class="mi">16</span><span class="p">,</span> <span class="o">-</span><span class="mi">155497632</span><span class="p">);</span>
+        <span class="nx">n</span> <span class="o">=</span> <span class="nx">md5_hh</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">10</span><span class="p">],</span> <span class="mi">23</span><span class="p">,</span> <span class="o">-</span><span class="mi">1094730640</span><span class="p">);</span>
+        <span class="nx">o</span> <span class="o">=</span> <span class="nx">md5_hh</span><span class="p">(</span><span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">13</span><span class="p">],</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">681279174</span><span class="p">);</span>
+        <span class="nx">l</span> <span class="o">=</span> <span class="nx">md5_hh</span><span class="p">(</span><span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">0</span><span class="p">],</span> <span class="mi">11</span><span class="p">,</span> <span class="o">-</span><span class="mi">358537222</span><span class="p">);</span>
+        <span class="nx">m</span> <span class="o">=</span> <span class="nx">md5_hh</span><span class="p">(</span><span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">16</span><span class="p">,</span> <span class="o">-</span><span class="mi">722881979</span><span class="p">);</span>
+        <span class="nx">n</span> <span class="o">=</span> <span class="nx">md5_hh</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">6</span><span class="p">],</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">76029189</span><span class="p">);</span>
+        <span class="nx">o</span> <span class="o">=</span> <span class="nx">md5_hh</span><span class="p">(</span><span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">9</span><span class="p">],</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">640364487</span><span class="p">);</span>
+        <span class="nx">l</span> <span class="o">=</span> <span class="nx">md5_hh</span><span class="p">(</span><span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">12</span><span class="p">],</span> <span class="mi">11</span><span class="p">,</span> <span class="o">-</span><span class="mi">421815835</span><span class="p">);</span>
+        <span class="nx">m</span> <span class="o">=</span> <span class="nx">md5_hh</span><span class="p">(</span><span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">15</span><span class="p">],</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">530742520</span><span class="p">);</span>
+        <span class="nx">n</span> <span class="o">=</span> <span class="nx">md5_hh</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">23</span><span class="p">,</span> <span class="o">-</span><span class="mi">995338651</span><span class="p">);</span>
+        <span class="nx">o</span> <span class="o">=</span> <span class="nx">md5_ii</span><span class="p">(</span><span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">0</span><span class="p">],</span> <span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">198630844</span><span class="p">);</span>
+        <span class="nx">l</span> <span class="o">=</span> <span class="nx">md5_ii</span><span class="p">(</span><span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">7</span><span class="p">],</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11261161415</span><span class="p">);</span>
+        <span class="nx">m</span> <span class="o">=</span> <span class="nx">md5_ii</span><span class="p">(</span><span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">14</span><span class="p">],</span> <span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">1416354905</span><span class="p">);</span>
+        <span class="nx">n</span> <span class="o">=</span> <span class="nx">md5_ii</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">5</span><span class="p">],</span> <span class="mi">21</span><span class="p">,</span> <span class="o">-</span><span class="mi">57434055</span><span class="p">);</span>
+        <span class="nx">o</span> <span class="o">=</span> <span class="nx">md5_ii</span><span class="p">(</span><span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">12</span><span class="p">],</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1700485571</span><span class="p">);</span>
+        <span class="nx">l</span> <span class="o">=</span> <span class="nx">md5_ii</span><span class="p">(</span><span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">1894446606</span><span class="p">);</span>
+        <span class="nx">m</span> <span class="o">=</span> <span class="nx">md5_ii</span><span class="p">(</span><span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">10</span><span class="p">],</span> <span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">1051523</span><span class="p">);</span>
+        <span class="nx">n</span> <span class="o">=</span> <span class="nx">md5_ii</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="mi">21</span><span class="p">,</span> <span class="o">-</span><span class="mi">2054922799</span><span class="p">);</span>
+        <span class="nx">o</span> <span class="o">=</span> <span class="nx">md5_ii</span><span class="p">(</span><span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">8</span><span class="p">],</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1873313359</span><span class="p">);</span>
+        <span class="nx">l</span> <span class="o">=</span> <span class="nx">md5_ii</span><span class="p">(</span><span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">15</span><span class="p">],</span> <span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">30611744</span><span class="p">);</span>
+        <span class="nx">m</span> <span class="o">=</span> <span class="nx">md5_ii</span><span class="p">(</span><span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">6</span><span class="p">],</span> <span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">1560198380</span><span class="p">);</span>
+        <span class="nx">n</span> <span class="o">=</span> <span class="nx">md5_ii</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">13</span><span class="p">],</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">1309151649</span><span class="p">);</span>
+        <span class="nx">o</span> <span class="o">=</span> <span class="nx">md5_ii</span><span class="p">(</span><span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">4</span><span class="p">],</span> <span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">145523070</span><span class="p">);</span>
+        <span class="nx">l</span> <span class="o">=</span> <span class="nx">md5_ii</span><span class="p">(</span><span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">11</span><span class="p">],</span> <span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">1120210379</span><span class="p">);</span>
+        <span class="nx">m</span> <span class="o">=</span> <span class="nx">md5_ii</span><span class="p">(</span><span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">718787259</span><span class="p">);</span>
+        <span class="nx">n</span> <span class="o">=</span> <span class="nx">md5_ii</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">o</span><span class="p">,</span> <span class="nx">p</span><span class="p">[</span><span class="nx">g</span> <span class="o">+</span> <span class="mi">9</span><span class="p">],</span> <span class="mi">21</span><span class="p">,</span> <span class="o">-</span><span class="mi">343485551</span><span class="p">);</span>
+        <span class="nx">o</span> <span class="o">=</span> <span class="nx">safe_add</span><span class="p">(</span><span class="nx">o</span><span class="p">,</span> <span class="nx">j</span><span class="p">);</span>
+        <span class="nx">n</span> <span class="o">=</span> <span class="nx">safe_add</span><span class="p">(</span><span class="nx">n</span><span class="p">,</span> <span class="nx">h</span><span class="p">);</span>
+        <span class="nx">m</span> <span class="o">=</span> <span class="nx">safe_add</span><span class="p">(</span><span class="nx">m</span><span class="p">,</span> <span class="nx">f</span><span class="p">);</span>
+        <span class="nx">l</span> <span class="o">=</span> <span class="nx">safe_add</span><span class="p">(</span><span class="nx">l</span><span class="p">,</span> <span class="nx">e</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nb">Array</span><span class="p">(</span><span class="nx">o</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">l</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">md5_cmn</span><span class="p">(</span><span class="nx">h</span><span class="p">,</span> <span class="nx">e</span><span class="p">,</span> <span class="nx">d</span><span class="p">,</span> <span class="nx">c</span><span class="p">,</span> <span class="nx">g</span><span class="p">,</span> <span class="nx">f</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">safe_add</span><span class="p">(</span><span class="nx">bit_rol</span><span class="p">(</span><span class="nx">safe_add</span><span class="p">(</span><span class="nx">safe_add</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">h</span><span class="p">),</span> <span class="nx">safe_add</span><span class="p">(</span><span class="nx">c</span><span class="p">,</span> <span class="nx">f</span><span class="p">)),</span> <span class="nx">g</span><span class="p">),</span> <span class="nx">d</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">md5_ff</span><span class="p">(</span><span class="nx">g</span><span class="p">,</span> <span class="nx">f</span><span class="p">,</span> <span class="nx">k</span><span class="p">,</span> <span class="nx">j</span><span class="p">,</span> <span class="nx">e</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">h</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">md5_cmn</span><span class="p">((</span><span class="nx">f</span> <span class="o">&amp;</span> <span class="nx">k</span><span class="p">)</span> <span class="o">|</span> <span class="p">((</span><span class="o">~</span><span class="nx">f</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nx">j</span><span class="p">),</span> <span class="nx">g</span><span class="p">,</span> <span class="nx">f</span><span class="p">,</span> <span class="nx">e</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">h</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">md5_gg</span><span class="p">(</span><span class="nx">g</span><span class="p">,</span> <span class="nx">f</span><span class="p">,</span> <span class="nx">k</span><span class="p">,</span> <span class="nx">j</span><span class="p">,</span> <span class="nx">e</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">h</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">md5_cmn</span><span class="p">((</span><span class="nx">f</span> <span class="o">&amp;</span> <span class="nx">j</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="nx">k</span> <span class="o">&amp;</span> <span class="p">(</span><span class="o">~</span><span class="nx">j</span><span class="p">)),</span> <span class="nx">g</span><span class="p">,</span> <span class="nx">f</span><span class="p">,</span> <span class="nx">e</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">h</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">md5_hh</span><span class="p">(</span><span class="nx">g</span><span class="p">,</span> <span class="nx">f</span><span class="p">,</span> <span class="nx">k</span><span class="p">,</span> <span class="nx">j</span><span class="p">,</span> <span class="nx">e</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">h</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">md5_cmn</span><span class="p">(</span><span class="nx">f</span> <span class="o">^</span> <span class="nx">k</span> <span class="o">^</span> <span class="nx">j</span><span class="p">,</span> <span class="nx">g</span><span class="p">,</span> <span class="nx">f</span><span class="p">,</span> <span class="nx">e</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">h</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">md5_ii</span><span class="p">(</span><span class="nx">g</span><span class="p">,</span> <span class="nx">f</span><span class="p">,</span> <span class="nx">k</span><span class="p">,</span> <span class="nx">j</span><span class="p">,</span> <span class="nx">e</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">h</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">md5_cmn</span><span class="p">(</span><span class="nx">k</span> <span class="o">^</span> <span class="p">(</span><span class="nx">f</span> <span class="o">|</span> <span class="p">(</span><span class="o">~</span><span class="nx">j</span><span class="p">)),</span> <span class="nx">g</span><span class="p">,</span> <span class="nx">f</span><span class="p">,</span> <span class="nx">e</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">h</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">core_hmac_md5</span><span class="p">(</span><span class="nx">c</span><span class="p">,</span> <span class="nx">f</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">e</span> <span class="o">=</span> <span class="nx">str2binl</span><span class="p">(</span><span class="nx">c</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">16</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">e</span> <span class="o">=</span> <span class="nx">core_md5</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span> <span class="nx">c</span><span class="p">.</span><span class="nx">length</span> <span class="o">*</span> <span class="nx">chrsz</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">16</span><span class="p">),</span> <span class="nx">d</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">b</span> <span class="o">&lt;</span> <span class="mi">16</span><span class="p">;</span> <span class="nx">b</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">]</span> <span class="o">=</span> <span class="nx">e</span><span class="p">[</span><span class="nx">b</span><span class="p">]</span> <span class="o">^</span> <span class="mi">909522486</span><span class="p">;</span>
+        <span class="nx">d</span><span class="p">[</span><span class="nx">b</span><span class="p">]</span> <span class="o">=</span> <span class="nx">e</span><span class="p">[</span><span class="nx">b</span><span class="p">]</span> <span class="o">^</span> <span class="mi">1549556828</span>
+    <span class="p">}</span>
+    <span class="kd">var</span> <span class="nx">g</span> <span class="o">=</span> <span class="nx">core_md5</span><span class="p">(</span><span class="nx">a</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">str2binl</span><span class="p">(</span><span class="nx">f</span><span class="p">)),</span> <span class="mi">512</span> <span class="o">+</span> <span class="nx">f</span><span class="p">.</span><span class="nx">length</span> <span class="o">*</span> <span class="nx">chrsz</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">core_md5</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">g</span><span class="p">),</span> <span class="mi">512</span> <span class="o">+</span> <span class="mi">128</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">safe_add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span> <span class="o">&amp;</span> <span class="mi">65535</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="nx">d</span> <span class="o">&amp;</span> <span class="mi">65535</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span> <span class="o">&gt;&gt;</span> <span class="mi">16</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="nx">d</span> <span class="o">&gt;&gt;</span> <span class="mi">16</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="nx">c</span> <span class="o">&gt;&gt;</span> <span class="mi">16</span><span class="p">);</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nx">b</span> <span class="o">&lt;&lt;</span> <span class="mi">16</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="nx">c</span> <span class="o">&amp;</span> <span class="mi">65535</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">bit_rol</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nx">a</span> <span class="o">&lt;&lt;</span> <span class="nx">b</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="nx">a</span> <span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="mi">32</span> <span class="o">-</span> <span class="nx">b</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">str2binl</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="nx">chrsz</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">b</span> <span class="o">&lt;</span> <span class="nx">d</span><span class="p">.</span><span class="nx">length</span> <span class="o">*</span> <span class="nx">chrsz</span><span class="p">;</span> <span class="nx">b</span> <span class="o">+=</span> <span class="nx">chrsz</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">c</span><span class="p">[</span><span class="nx">b</span> <span class="o">&gt;&gt;</span> <span class="mi">5</span><span class="p">]</span> <span class="o">|=</span> <span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">charCodeAt</span><span class="p">(</span><span class="nx">b</span> <span class="o">/</span> <span class="nx">chrsz</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nx">a</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="nx">b</span> <span class="o">%</span> <span class="mi">32</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">c</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">binl2str</span><span class="p">(</span><span class="nx">c</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="nx">chrsz</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">b</span> <span class="o">&lt;</span> <span class="nx">c</span><span class="p">.</span><span class="nx">length</span> <span class="o">*</span> <span class="mi">32</span><span class="p">;</span> <span class="nx">b</span> <span class="o">+=</span> <span class="nx">chrsz</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">d</span> <span class="o">+=</span> <span class="nb">String</span><span class="p">.</span><span class="nx">fromCharCode</span><span class="p">((</span><span class="nx">c</span><span class="p">[</span><span class="nx">b</span> <span class="o">&gt;&gt;</span> <span class="mi">5</span><span class="p">]</span> <span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="nx">b</span> <span class="o">%</span> <span class="mi">32</span><span class="p">))</span> <span class="o">&amp;</span> <span class="nx">a</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">d</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">binl2hex</span><span class="p">(</span><span class="nx">c</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="nx">hexcase</span> <span class="o">?</span> <span class="s2">&#34;0123456789ABCDEF&#34;</span> <span class="o">:</span> <span class="s2">&#34;0123456789abcdef&#34;</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">d</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">a</span> <span class="o">&lt;</span> <span class="nx">c</span><span class="p">.</span><span class="nx">length</span> <span class="o">*</span> <span class="mi">4</span><span class="p">;</span> <span class="nx">a</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">d</span> <span class="o">+=</span> <span class="nx">b</span><span class="p">.</span><span class="nx">charAt</span><span class="p">((</span><span class="nx">c</span><span class="p">[</span><span class="nx">a</span> <span class="o">&gt;&gt;</span> <span class="mi">2</span><span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="p">((</span><span class="nx">a</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="mi">8</span> <span class="o">+</span> <span class="mi">4</span><span class="p">))</span> <span class="o">&amp;</span> <span class="mi">15</span><span class="p">)</span> <span class="o">+</span> <span class="nx">b</span><span class="p">.</span><span class="nx">charAt</span><span class="p">((</span><span class="nx">c</span><span class="p">[</span><span class="nx">a</span> <span class="o">&gt;&gt;</span> <span class="mi">2</span><span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="p">((</span><span class="nx">a</span> <span class="o">%</span> <span class="mi">4</span><span class="p">)</span> <span class="o">*</span> <span class="mi">8</span><span class="p">))</span> <span class="o">&amp;</span> <span class="mi">15</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">d</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">binl2b64</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="s2">&#34;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&#34;</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">f</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">b</span> <span class="o">&lt;</span> <span class="nx">d</span><span class="p">.</span><span class="nx">length</span> <span class="o">*</span> <span class="mi">4</span><span class="p">;</span> <span class="nx">b</span> <span class="o">+=</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">e</span> <span class="o">=</span> <span class="p">(((</span><span class="nx">d</span><span class="p">[</span><span class="nx">b</span> <span class="o">&gt;&gt;</span> <span class="mi">2</span><span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span> <span class="o">*</span> <span class="p">(</span><span class="nx">b</span> <span class="o">%</span> <span class="mi">4</span><span class="p">))</span> <span class="o">&amp;</span> <span class="mi">255</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">16</span><span class="p">)</span> <span class="o">|</span> <span class="p">(((</span><span class="nx">d</span><span class="p">[</span><span class="nx">b</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&gt;&gt;</span> <span class="mi">2</span><span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span> <span class="o">*</span> <span class="p">((</span><span class="nx">b</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">4</span><span class="p">))</span> <span class="o">&amp;</span> <span class="mi">255</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">|</span> <span class="p">((</span><span class="nx">d</span><span class="p">[</span><span class="nx">b</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">&gt;&gt;</span> <span class="mi">2</span><span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span> <span class="o">*</span> <span class="p">((</span><span class="nx">b</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">%</span> <span class="mi">4</span><span class="p">))</span> <span class="o">&amp;</span> <span class="mi">255</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">a</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">;</span> <span class="nx">a</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">b</span> <span class="o">*</span> <span class="mi">8</span> <span class="o">+</span> <span class="nx">a</span> <span class="o">*</span> <span class="mi">6</span> <span class="o">&gt;</span> <span class="nx">d</span><span class="p">.</span><span class="nx">length</span> <span class="o">*</span> <span class="mi">32</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">f</span> <span class="o">+=</span> <span class="nx">b64pad</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">f</span> <span class="o">+=</span> <span class="nx">c</span><span class="p">.</span><span class="nx">charAt</span><span class="p">((</span><span class="nx">e</span> <span class="o">&gt;&gt;</span> <span class="mi">6</span> <span class="o">*</span> <span class="p">(</span><span class="mi">3</span> <span class="o">-</span> <span class="nx">a</span><span class="p">))</span> <span class="o">&amp;</span> <span class="mi">63</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">f</span>
+<span class="p">};</span>
+<span class="kd">function</span> <span class="nx">yanzheng</span><span class="p">(){</span>
+	 <span class="kd">var</span> <span class="nx">timestamp</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">())</span> <span class="o">+</span><span class="mi">100000000</span> <span class="p">;</span>
+    <span class="nx">timestamp</span> <span class="o">+=</span><span class="s1">&#39;&#39;</span><span class="p">;</span>
+    <span class="nx">f</span> <span class="o">=</span> <span class="nx">hex_md5</span><span class="p">(</span><span class="nx">timestamp</span><span class="p">);</span>
+    <span class="nx">m</span> <span class="o">=</span> <span class="nx">f</span> <span class="o">+</span> <span class="s1">&#39;丨&#39;</span> <span class="o">+</span> <span class="nx">timestamp</span> <span class="o">/</span> <span class="mi">1000</span>
+    <span class="k">return</span> <span class="nx">m</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="爬虫代码">爬虫代码</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">execjs</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+
+<span class="k">def</span> <span class="nf">get_psd_m</span><span class="p">():</span>
+    <span class="c1">#导入js文件</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;get_m.js&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">JsData</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="c1"># 加载js文件,使用call()函数执行,传入需要执行函数即可获取返回值</span>
+    <span class="n">psd</span> <span class="o">=</span> <span class="n">execjs</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">JsData</span><span class="p">)</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s1">&#39;yanzheng&#39;</span><span class="p">)</span>
+    <span class="n">psd</span> <span class="o">=</span> <span class="n">psd</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;丨&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">%E</span><span class="s1">4%B8%A8&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">psd</span>
+
+<span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">page</span><span class="p">,</span><span class="n">psd</span><span class="p">):</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;http://match.yuanrenxue.com/api/match/1?page=</span><span class="si">{}</span><span class="s2">&amp;m=</span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">page</span><span class="p">,</span> <span class="n">psd</span><span class="p">)</span>
+    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span><span class="s1">&#39;yuanrenxue.project&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Referer&#39;</span><span class="p">:</span> <span class="s1">&#39;http://match.yuanrenxue.com/match/1&#39;</span>
+    <span class="p">}</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="c1"># 初始化每页数据的总和，数据的个数</span>
+    <span class="n">sum_list</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">):</span>
+        <span class="n">info</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">page</span><span class="p">,</span><span class="n">get_psd_m</span><span class="p">())</span>
+        <span class="n">price_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="s2">&#34;value&#34;</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">info</span><span class="p">[</span><span class="s2">&#34;data&#34;</span><span class="p">]]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;这是第</span><span class="si">{}</span><span class="s2">页的价格列表</span><span class="se">\n</span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">page</span><span class="p">,</span><span class="n">price_list</span><span class="p">))</span>
+        <span class="c1"># 自加操作</span>
+        <span class="n">sum_list</span> <span class="o">+=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">price_list</span><span class="p">)</span>
+        <span class="n">index</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">price_list</span><span class="p">)</span>
+        <span class="c1"># 防止爬取太快</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">avg</span> <span class="o">=</span> <span class="n">sum_list</span> <span class="o">/</span> <span class="n">index</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;平均价格为</span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">avg</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>运行结果：
+<img src="https://gitee.com/lonercci/picbed/raw/master/img/20210126000219.png" style="zoom:80%;" /></p>
+<h2 id="题目总结">题目总结</h2>
+<p>这是整个比赛题中的第一题，题目难度标注为简单。但是对我这个菜鸟来说，一上来就被卡在了前几步。阅读几位大佬的博客之后，对这道题有了一个大致的把握。在JS的逆向方面，一步一步的去分析代码，思考通过什么关键词去定位函数，注意是否在调用时发生了变化。
+本题名字叫JS混淆，我也不知道具体混淆的意思。但是在对JS的分析当中，似乎在<code>eval()</code>部分用到了很简单的混淆，把某些函数名和参数使用它自己的js加密，成为一个个看似毫无里头的字符串，我们要做的就是把它翻译回去。
+最后，非常感谢 <a href="https://syjun.vip/archives/278.html" target="_blank" rel="noopener noreffer"><code>Java_S</code></a> 大佬的博客，参考了很多内容。他的分析思路非常清晰，步骤详细，代码干净简洁，看着太舒了，，，，向大佬学习。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-01-23</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/js/">js</a>,&nbsp;<a href="/tags/python/">python</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/%E8%A3%85%E9%A5%B0%E5%99%A8-%E8%BF%AD%E4%BB%A3%E5%99%A8-%E7%94%9F%E6%88%90%E5%99%A8/" class="prev" rel="prev" title="装饰器 迭代器 生成器"><i class="fas fa-angle-left fa-fw"></i>装饰器 迭代器 生成器</a>
+            <a href="/js%E6%B7%B7%E6%B7%86-%E5%8A%A8%E6%80%81cookie/" class="next" rel="next" title="Js混淆-动态cookie">Js混淆-动态cookie<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="tcomment"></div>
+        <script src="https://cdn.jsdelivr.net/npm/twikoo@1.3.1/dist/twikoo.all.min.js"></script>
+        <script>
+        twikoo.init({
+          envId: 'blog-data-0gc3ets7c557f7fd',
+          
+          el: '#tcomment',
+          
+          
+        })
+        </script>
+
+    </div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"></br></br></br></br></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.84.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Lone</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.77eb6ae63c63c88c5e7a10b6c9570c54.css" integrity="md5-d&#43;tq5jxjyIxeehC2yVcMVA=="><link rel="stylesheet" href="/lib/katex/katex.min.ef3c395634e43fe45f5332bfca2287b3.css" integrity="md5-7zw5VjTkP&#43;RfUzK/yiKHsw=="><link rel="stylesheet" href="/lib/katex/copy-tex.min.622133ef544b0f203604a52bebba29f4.css" integrity="md5-YiEz71RLDyA2BKUr67op9A=="><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.dd4e1772a44268dd6e27f193695067fc.js" integrity="md5-3U4XcqRCaN1uJ/GTaVBn/A=="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.10321080d79e27ee01ff36859c02acd3.js" integrity="md5-EDIQgNeeJ&#43;4B/zaFnAKs0w=="></script><script type="text/javascript" src="/lib/lunr/lunr.min.f2eea188dc4939c55ff8f55569a4e87c.js" integrity="md5-8u6hiNxJOcVf&#43;PVVaaTofA=="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.76a9898754052993cab798a24f45d94e.js" integrity="md5-dqmJh1QFKZPKt5iiT0XZTg=="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.afbe35f35a427dd563d97cbdc9eb85d5.js" integrity="md5-r74181pCfdVj2Xy9yeuF1Q=="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.40c0bfc764764587555c066d46fe6071.js" integrity="md5-QMC/x2R2RYdVXAZtRv5gcQ=="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.c6a5b6b1db8980fdc42cd3456fe1ec74.js" integrity="md5-xqW2sduJgP3ELNNFb&#43;HsdA=="></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.ba38a712df31c778e10e8211f8cb891b.js" integrity="md5-ujinEt8xx3jhDoIR&#43;MuJGw=="></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.fa56076f9d071729612c4849acae1ce5.js" integrity="md5-&#43;lYHb50HFylhLEhJrK4c5Q=="></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.4f0896a2ff5ef76f0dd00f5c5de65abb.js" integrity="md5-TwiWov9e928N0A9cXeZauw=="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.221393f48062472d1e72960fda7db7a3.js" integrity="md5-IhOT9IBiRy0ecpYP2n23ow=="></script><script type="text/javascript" src="/lib/katex/katex.min.c158c9e823b681cf535f46596b5e4eac.js" integrity="md5-wVjJ6CO2gc9TX0ZZa15OrA=="></script><script type="text/javascript" src="/lib/katex/auto-render.min.28cd0b98cd3f4fa37d52f3ffe47ad9d4.js" integrity="md5-KM0LmM0/T6N9UvP/5HrZ1A=="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.bfaec7d1dea915d74a7a6d833f0ff62e.js" integrity="md5-v67H0d6pFddKem2DPw/2Lg=="></script><script type="text/javascript" src="/lib/katex/mhchem.min.1bbb252363e83547d4b2186a41eaca28.js" integrity="md5-G7slI2PoNUfUshhqQerKKA=="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":15},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.8043ef4f5ae2d4fd302305ffd8316f55.js" integrity="md5-gEPvT1ri1P0wIwX/2DFvVQ=="></script></body>
+</html>

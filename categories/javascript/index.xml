@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>JavaScript - 分类 - Lone&#39;s Blog</title>
+        <link>http://example.org/categories/javascript/</link>
+        <description>JavaScript - 分类 - Lone&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chonee@qq.com (Lone)</managingEditor>
+            <webMaster>chonee@qq.com (Lone)</webMaster><lastBuildDate>Wed, 23 Dec 2020 23:27:25 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/javascript/" rel="self" type="application/rss+xml" /><item>
+    <title>jQuery实现座位选座</title>
+    <link>http://example.org/jquery%E5%AE%9E%E7%8E%B0%E5%BA%A7%E4%BD%8D%E9%80%89%E5%BA%A7/</link>
+    <pubDate>Wed, 23 Dec 2020 23:27:25 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/jquery%E5%AE%9E%E7%8E%B0%E5%BA%A7%E4%BD%8D%E9%80%89%E5%BA%A7/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://gitee.com/lonercci/picbed/raw/master/img/20201221221351.jpg" referrerpolicy="no-referrer">
+            </div>引言 快期末了，JS课要交一次大作业。从几个案例中挑选一个，我选的是一个座位预定程序。要求：单击要预定的座位，座位会以某种颜色标识，右侧显示计]]></description>
+</item></channel>
+</rss>

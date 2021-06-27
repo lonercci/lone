@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>某网站爬虫练习 - Lone&#39;s Blog</title><meta name="Description" content=""><meta property="og:title" content="某网站爬虫练习" />
+<meta property="og:description" content="关于 最近在吾爱破解论坛闲逛，发现有大佬发布了某网站爬虫题分析。很好奇，于是试了一下，发现我是真滴菜，好多类型的反爬措施都没见过，于是写篇博客" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/%E6%9F%90%E7%BD%91%E7%AB%99%E7%88%AC%E8%99%AB%E7%BB%83%E4%B9%A0/" /><meta property="og:image" content="http://example.org/"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-12-05T19:11:56&#43;08:00" />
+<meta property="article:modified_time" content="2020-12-05T19:11:56&#43;08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://example.org/"/>
+
+<meta name="twitter:title" content="某网站爬虫练习"/>
+<meta name="twitter:description" content="关于 最近在吾爱破解论坛闲逛，发现有大佬发布了某网站爬虫题分析。很好奇，于是试了一下，发现我是真滴菜，好多类型的反爬措施都没见过，于是写篇博客"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="https://gitee.com/lonercci/picbed/raw/master/img/20210626110236.jpg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/%E6%9F%90%E7%BD%91%E7%AB%99%E7%88%AC%E8%99%AB%E7%BB%83%E4%B9%A0/" /><link rel="prev" href="http://example.org/%E5%85%A8%E6%B0%91k%E6%AD%8C%E4%B8%8B%E8%BD%BD%E5%99%A8/" /><link rel="next" href="http://example.org/%E5%AD%A6%E6%A0%A1%E6%95%99%E5%8A%A1%E7%B3%BB%E7%BB%9F%E6%A8%A1%E6%8B%9F%E7%99%BB%E9%99%86/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.a12cacf4b5b41234196cb89042b24a70.css" integrity="md5-oSys9LW0EjQZbLiQQrJKcA=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.26386564b5cf1594be24059af1cd0db9.css" integrity="md5-JjhlZLXPFZS&#43;JAWa8c0NuQ=="><link rel="stylesheet" href="/lib/animate/animate.min.43d6b8fdf324505f0ceb7ea698d0b7a5.css" integrity="md5-Q9a4/fMkUF8M636mmNC3pQ=="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "某网站爬虫练习",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/%E6%9F%90%E7%BD%91%E7%AB%99%E7%88%AC%E8%99%AB%E7%BB%83%E4%B9%A0\/"
+        },"genre": "posts","keywords": "js, python ","wordcount":  1071 ,
+        "url": "http:\/\/example.org\/%E6%9F%90%E7%BD%91%E7%AB%99%E7%88%AC%E8%99%AB%E7%BB%83%E4%B9%A0\/","datePublished": "2020-12-05T19:11:56+08:00","dateModified": "2020-12-05T19:11:56+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Lone"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Lone&#39;s Blog">Lone&#39;s Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 全部文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Lone&#39;s Blog">Lone&#39;s Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">全部文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">某网站爬虫练习</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Lone</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E7%88%AC%E8%99%AB/"><i class="far fa-folder fa-fw"></i>爬虫</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-12-05">2020-12-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1071 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lonercci/picbed/raw/master/img/20201221221352.jpg"
+        data-srcset="https://gitee.com/lonercci/picbed/raw/master/img/20201221221352.jpg, https://gitee.com/lonercci/picbed/raw/master/img/20201221221352.jpg 1.5x, https://gitee.com/lonercci/picbed/raw/master/img/20201221221352.jpg 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lonercci/picbed/raw/master/img/20201221221352.jpg"
+        title="https://gitee.com/lonercci/picbed/raw/master/img/20201221221352.jpg" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#关于">关于</a></li>
+        <li><a href="#第十二题入门级js">第十二题（入门级js）</a></li>
+        <li><a href="#第十三题入门级cookie">第十三题（入门级cookie）</a></li>
+        <li><a href="#第一题js混淆源码乱码">第一题（js混淆源码乱码）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="关于">关于</h3>
+<ul>
+<li>最近在吾爱破解论坛闲逛，发现有大佬发布了某网站爬虫题分析。很好奇，于是试了一下，发现我是真滴菜，好多类型的反爬措施都没见过，于是写篇博客来记录一些学习的思路过程。</li>
+<li>网站链接：http://match.yuanrenxue.com/list</li>
+</ul>
+<h3 id="第十二题入门级js">第十二题（入门级js）</h3>
+<p>题目链接：http://match.yuanrenxue.com/match/12
+F12抓包找到json接口数据：
+<code>http://match.yuanrenxue.com/api/match/12?page=1&amp;m=eXVhbnJlbnh1ZTE%3D</code>
+<code>http://match.yuanrenxue.com/api/match/12?page=2&amp;m=eXVhbnJlbnh1ZTI%3D</code>
+<code>http://match.yuanrenxue.com/api/match/12?page=3&amp;m=eXVhbnJlbnh1ZTM%3D</code>
+对<code>url</code>进行解码，发现<code>%3D</code>就是<code>=</code>。
+两个参数，<code>page</code>：页数，<code>m</code>：不知道
+找参数<code>m</code>，发现太多了。想到以前爬全民k歌的时候在当前html中页找到的js部分，试试看。果然，，，可行。
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lonercci/picbed/raw/master/img/20201205200601.png"
+        data-srcset="https://gitee.com/lonercci/picbed/raw/master/img/20201205200601.png, https://gitee.com/lonercci/picbed/raw/master/img/20201205200601.png 1.5x, https://gitee.com/lonercci/picbed/raw/master/img/20201205200601.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lonercci/picbed/raw/master/img/20201205200601.png"
+        title="https://gitee.com/lonercci/picbed/raw/master/img/20201205200601.png" />
+<code>btoa()</code>方法用于创建一个<code>base-64</code>编码的字符串。
+<code>base-64</code> 解码使用方法是 <code>atob()</code> 。
+即<code>yuanrenxue+str(page)</code>的<code>base64</code>加密
+找个<code>base64</code>加密的网站测试,第一个<code>yuanrenxue1</code>加密后为   <code>eXVhbnJlbnh1ZTE=</code>，比对，成功。
+代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">base64</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;User-Agent&#34;</span><span class="p">:</span><span class="s2">&#34;yuanrenxue.project&#34;</span><span class="p">}</span>
+<span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">):</span>
+  <span class="n">m</span><span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">((</span><span class="s2">&#34;yuanrenxue&#34;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+  <span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;http://match.yuanrenxue.com/api/match/12?page=</span><span class="si">{}</span><span class="s2">&amp;m=</span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">m</span><span class="p">)</span>
+  <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">each</span> <span class="ow">in</span> <span class="n">response</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]:</span>
+      <span class="nb">sum</span> <span class="o">+=</span> <span class="n">each</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="第十三题入门级cookie">第十三题（入门级cookie）</h3>
+<p>题目链接：http://match.yuanrenxue.com/match/13
+这题目我百思不得其解，为什么请求的数据都是空的，加了<code>cookie</code>还是无法显示。
+后来询问大佬，才知道这是一道典型的<code>cookie</code>反爬类型题目。如果访问页面第一次出现明显的卡顿感，之后浏览器自动刷新了。很有可能就是这种类型。很多的<code>cookie</code>处理思路都是，服务器先返回<code>js</code>,浏览器自动执行，之后刷新页面再访问。
+果不其然，观察了一下，刚开始所有数据数值都是500，之后数据自动刷新，数值才发生的改变。F12发现有两个名为<code>13</code>的数据包先后发送。另外还有一个是名为<code>13</code>的数据包是<code>api</code>接口数据。观察数据包发现请求<code>url</code>都是<code>http://match.yuanrenxue.com/match/13</code>，但是<code>cookie</code>处发生了改变，增加了<code>yaunrenxue_cookie</code>字段，所以，很明显，打开<code>url</code>后，返回<code>js</code>代码，运行生成<code>cookie</code>，给接口<code>api</code>使用。
+使用接口测试一下，拿到<code>js</code>部分
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lonercci/picbed/raw/master/img/20201206123148.png"
+        data-srcset="https://gitee.com/lonercci/picbed/raw/master/img/20201206123148.png, https://gitee.com/lonercci/picbed/raw/master/img/20201206123148.png 1.5x, https://gitee.com/lonercci/picbed/raw/master/img/20201206123148.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lonercci/picbed/raw/master/img/20201206123148.png"
+        title="https://gitee.com/lonercci/picbed/raw/master/img/20201206123148.png" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;u&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;u&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;o&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;o&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;6&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;7&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;9&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;7&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;3&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;|&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;W&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;o&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;j&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;J&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;u&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;K&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;u&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;Y&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;s&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;4&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;8&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;u&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;X&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;9&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;R&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;r&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;q&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;8&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;s&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;o&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;R&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;V&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;u&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;l&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;O&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;l&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;Q&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;K&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;l&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;o&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;J&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;9&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;J&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;W&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;N&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;q&#39;</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;;path=/&#39;</span><span class="p">;</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="o">=</span><span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span><span class="o">+</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>字段为这些字符串相加，用正则，找到<code>cookie</code>了,使用<code>session</code>来实现,<code>cookie.set()</code>方法用来添加<code>cookie</code>。</p>
+<p>代码实现：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;User-Agent&#34;</span><span class="p">:</span> <span class="s2">&#34;yuanrenxue.project&#34;</span><span class="p">}</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;http://match.yuanrenxue.com/match/13&#34;</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+<span class="c1"># print(r)</span>
+
+<span class="n">reg</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&#34;&#39;([a-zA-Z0-9=|_])&#39;&#34;</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="c1"># print(results)</span>
+<span class="n">cookie</span> <span class="o">=</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+<span class="n">key</span><span class="p">,</span><span class="n">value</span> <span class="o">=</span> <span class="n">cookie</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)</span>
+<span class="c1"># print(key,value)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">cookies</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="n">value</span><span class="p">)</span>
+<span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">):</span>
+ <span class="n">api_url</span> <span class="o">=</span><span class="s2">&#34;http://match.yuanrenxue.com/api/match/13?page=</span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+ <span class="n">r</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">api_url</span><span class="p">,</span><span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+ <span class="n">data</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+ <span class="c1"># print(data)</span>
+ <span class="n">values</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&#34;data&#34;</span><span class="p">]</span>
+ <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+     <span class="nb">sum</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="s2">&#34;value&#34;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="第一题js混淆源码乱码">第一题（js混淆源码乱码）</h3>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-12-05</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/js/">js</a>,&nbsp;<a href="/tags/python/">python</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/%E5%85%A8%E6%B0%91k%E6%AD%8C%E4%B8%8B%E8%BD%BD%E5%99%A8/" class="prev" rel="prev" title="全民K歌下载器"><i class="fas fa-angle-left fa-fw"></i>全民K歌下载器</a>
+            <a href="/%E5%AD%A6%E6%A0%A1%E6%95%99%E5%8A%A1%E7%B3%BB%E7%BB%9F%E6%A8%A1%E6%8B%9F%E7%99%BB%E9%99%86/" class="next" rel="next" title="学校教务系统模拟登陆">学校教务系统模拟登陆<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="tcomment"></div>
+        <script src="https://cdn.jsdelivr.net/npm/twikoo@1.3.1/dist/twikoo.all.min.js"></script>
+        <script>
+        twikoo.init({
+          envId: 'blog-data-0gc3ets7c557f7fd',
+          
+          el: '#tcomment',
+          
+          
+        })
+        </script>
+
+    </div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"></br></br></br></br></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.84.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Lone</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.77eb6ae63c63c88c5e7a10b6c9570c54.css" integrity="md5-d&#43;tq5jxjyIxeehC2yVcMVA=="><link rel="stylesheet" href="/lib/katex/katex.min.ef3c395634e43fe45f5332bfca2287b3.css" integrity="md5-7zw5VjTkP&#43;RfUzK/yiKHsw=="><link rel="stylesheet" href="/lib/katex/copy-tex.min.622133ef544b0f203604a52bebba29f4.css" integrity="md5-YiEz71RLDyA2BKUr67op9A=="><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.dd4e1772a44268dd6e27f193695067fc.js" integrity="md5-3U4XcqRCaN1uJ/GTaVBn/A=="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.10321080d79e27ee01ff36859c02acd3.js" integrity="md5-EDIQgNeeJ&#43;4B/zaFnAKs0w=="></script><script type="text/javascript" src="/lib/lunr/lunr.min.f2eea188dc4939c55ff8f55569a4e87c.js" integrity="md5-8u6hiNxJOcVf&#43;PVVaaTofA=="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.76a9898754052993cab798a24f45d94e.js" integrity="md5-dqmJh1QFKZPKt5iiT0XZTg=="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.afbe35f35a427dd563d97cbdc9eb85d5.js" integrity="md5-r74181pCfdVj2Xy9yeuF1Q=="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.40c0bfc764764587555c066d46fe6071.js" integrity="md5-QMC/x2R2RYdVXAZtRv5gcQ=="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.c6a5b6b1db8980fdc42cd3456fe1ec74.js" integrity="md5-xqW2sduJgP3ELNNFb&#43;HsdA=="></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.ba38a712df31c778e10e8211f8cb891b.js" integrity="md5-ujinEt8xx3jhDoIR&#43;MuJGw=="></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.fa56076f9d071729612c4849acae1ce5.js" integrity="md5-&#43;lYHb50HFylhLEhJrK4c5Q=="></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.4f0896a2ff5ef76f0dd00f5c5de65abb.js" integrity="md5-TwiWov9e928N0A9cXeZauw=="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.221393f48062472d1e72960fda7db7a3.js" integrity="md5-IhOT9IBiRy0ecpYP2n23ow=="></script><script type="text/javascript" src="/lib/katex/katex.min.c158c9e823b681cf535f46596b5e4eac.js" integrity="md5-wVjJ6CO2gc9TX0ZZa15OrA=="></script><script type="text/javascript" src="/lib/katex/auto-render.min.28cd0b98cd3f4fa37d52f3ffe47ad9d4.js" integrity="md5-KM0LmM0/T6N9UvP/5HrZ1A=="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.bfaec7d1dea915d74a7a6d833f0ff62e.js" integrity="md5-v67H0d6pFddKem2DPw/2Lg=="></script><script type="text/javascript" src="/lib/katex/mhchem.min.1bbb252363e83547d4b2186a41eaca28.js" integrity="md5-G7slI2PoNUfUshhqQerKKA=="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":15},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.8043ef4f5ae2d4fd302305ffd8316f55.js" integrity="md5-gEPvT1ri1P0wIwX/2DFvVQ=="></script></body>
+</html>

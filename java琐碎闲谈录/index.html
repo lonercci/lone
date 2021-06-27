@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Java琐碎闲谈录 - Lone&#39;s Blog</title><meta name="Description" content=""><meta property="og:title" content="Java琐碎闲谈录" />
+<meta property="og:description" content="琐碎闲谈录: 记录一些零零散散，日常遇到的一些问题和知识点。 关于构造函数 在 Idea 中，如果有一个类，类中定义了几个属性，那么想要生成构造函数太简单了" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/java%E7%90%90%E7%A2%8E%E9%97%B2%E8%B0%88%E5%BD%95/" /><meta property="og:image" content="http://example.org/"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-06-24T09:31:44&#43;08:00" />
+<meta property="article:modified_time" content="2021-06-24T09:31:44&#43;08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://example.org/"/>
+
+<meta name="twitter:title" content="Java琐碎闲谈录"/>
+<meta name="twitter:description" content="琐碎闲谈录: 记录一些零零散散，日常遇到的一些问题和知识点。 关于构造函数 在 Idea 中，如果有一个类，类中定义了几个属性，那么想要生成构造函数太简单了"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="https://gitee.com/lonercci/picbed/raw/master/img/20210626110236.jpg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/java%E7%90%90%E7%A2%8E%E9%97%B2%E8%B0%88%E5%BD%95/" /><link rel="prev" href="http://example.org/spring5-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" /><link rel="next" href="http://example.org/%E4%BB%8Ehexo%E5%88%B0hugo%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E8%84%9A%E6%9C%ACdemo/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.a12cacf4b5b41234196cb89042b24a70.css" integrity="md5-oSys9LW0EjQZbLiQQrJKcA=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.26386564b5cf1594be24059af1cd0db9.css" integrity="md5-JjhlZLXPFZS&#43;JAWa8c0NuQ=="><link rel="stylesheet" href="/lib/animate/animate.min.43d6b8fdf324505f0ceb7ea698d0b7a5.css" integrity="md5-Q9a4/fMkUF8M636mmNC3pQ=="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Java琐碎闲谈录",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/java%E7%90%90%E7%A2%8E%E9%97%B2%E8%B0%88%E5%BD%95\/"
+        },"genre": "posts","keywords": "java, note","wordcount":  2454 ,
+        "url": "http:\/\/example.org\/java%E7%90%90%E7%A2%8E%E9%97%B2%E8%B0%88%E5%BD%95\/","datePublished": "2021-06-24T09:31:44+08:00","dateModified": "2021-06-24T09:31:44+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Lone"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Lone&#39;s Blog">Lone&#39;s Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 全部文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Lone&#39;s Blog">Lone&#39;s Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">全部文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Java琐碎闲谈录</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Lone</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/java/"><i class="far fa-folder fa-fw"></i>Java</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-06-24">2021-06-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2454 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#关于构造函数">关于构造函数</a></li>
+        <li><a href="#浅谈-gettersetter-方法">浅谈 Getter/Setter 方法</a>
+          <ul>
+            <li><a href="#gettersetter-是对属性访问的封装">getter/setter 是对“属性访问”的封装</a></li>
+            <li><a href="#其它语言里的-gettersetter">其它语言里的 getter/setter</a></li>
+            <li><a href="#社区与约定">社区与约定</a></li>
+            <li><a href="#写在最后">写在最后</a></li>
+          </ul>
+        </li>
+        <li><a href="#组合优于继承原则">组合优于继承原则</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lonercci/picbed/raw/master/img/20210620111253.jpg"
+        data-srcset="https://gitee.com/lonercci/picbed/raw/master/img/20210620111253.jpg, https://gitee.com/lonercci/picbed/raw/master/img/20210620111253.jpg 1.5x, https://gitee.com/lonercci/picbed/raw/master/img/20210620111253.jpg 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lonercci/picbed/raw/master/img/20210620111253.jpg"
+        title="https://gitee.com/lonercci/picbed/raw/master/img/20210620111253.jpg" /></p>
+<blockquote>
+<p>琐碎闲谈录:
+记录一些零零散散，日常遇到的一些问题和知识点。</p>
+</blockquote>
+<h3 id="关于构造函数">关于构造函数</h3>
+<p>在 Idea 中，如果有一个类，类中定义了几个属性，那么想要生成构造函数太简单了。快捷键一按，有参构造，无参构造，选中直接生成。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">Cat</span> <span class="n">cat</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">Dog</span> <span class="n">dog</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+	
+    <span class="c1">//无参构造
+</span><span class="c1"></span>    <span class="kd">public</span> <span class="nf">Person</span><span class="o">()</span> <span class="o">{</span>
+        
+    <span class="o">}</span>
+    
+    <span class="c1">//有参构造
+</span><span class="c1"></span>    <span class="kd">public</span> <span class="nf">Person</span><span class="o">(</span><span class="n">Cat</span> <span class="n">cat</span><span class="o">,</span> <span class="n">Dog</span> <span class="n">dog</span><span class="o">,</span> <span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">cat</span> <span class="o">=</span> <span class="n">cat</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">dog</span> <span class="o">=</span> <span class="n">dog</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+    
+    <span class="c1">//普通函数
+</span><span class="c1"></span>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">Method</span><span class="o">(){</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;我太普通了....&#34;</span><span class="o">);</span>
+    <span class="o">}</span>
+
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这时，我们会发现，</p>
+<p>与普通函数相比，构造出来的函数竟然不需要返回类型。</p>
+<p>再仔细研究研究，</p>
+<p>发现无参构造里面是空的，似乎我们可以往里面写内容？</p>
+<p>事实上，<strong>在 JVM 的运行机制里，如果我们在一个类中不声明构造函数， JVM 会帮我们默认生成一个空参数的构造函数（无参构造函数），我们把它称为 隐式构造。如果我们在类中声明了带参数列表的构造函数（有参构造函数），那么 JVM 就不会帮我们默认生成一个无参构造。所以，我们如果想要使用无参构造，那么就必须 显式的声明一个无参构造器。</strong>（即在无参构造器里面自己写内容），这样上面的代码就变成了下面的：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">Person</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;这是一个无参构造器&#34;</span><span class="o">)</span>
+    <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>紧接着问题又来了，这些构造函数有什么用？</p>
+<ul>
+<li>创建对象。任何一个对象创建时，都需要初始化才能使用，所以任何类想要创建实例对象就必须具有构造函数。</li>
+<li>对象初始化。构造函数可以对对象进行初始化，并且是给与之格式（参数列表）相符合的对象初始化，是具有一定针对性的初始化函数。</li>
+</ul>
+<p>好家伙，我看不懂，但我大受震撼。<strong>初始化是什么？为啥要初始化？</strong></p>
+<p>java规定，变量没有初始化不能使用，全局变量也就是类的属性，java会在编译的时候，自动将他们初始化，所以可以不进行变量初始化的操作，但是（局部）变量必须初始化。<strong>初始化就是在最开始定义成员变量时给它一个初始的值，为了防止程序运行时候出现未知的错误，或者bug，总之一句话，为了安全。</strong></p>
+<blockquote>
+<p>闲谈：初学Java的时候，对这些理解迷迷糊糊的。后来在写程序的时候，还是迷迷糊糊的，经常会对这些基础的东西感到困惑，为什么要用到构造函数，构造函数究竟在代码中实现了怎样的功能。</p>
+<p>文章参考：</p>
+<p><a href="https://juejin.cn/post/6844903478234447886" target="_blank" rel="noopener noreffer">谈谈 java 中的构造函数</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/102637985" target="_blank" rel="noopener noreffer">Java构造函数，初始化，this关键字</a></p>
+</blockquote>
+<h3 id="浅谈-gettersetter-方法">浅谈 Getter/Setter 方法</h3>
+<p>java 有一个不成文的规定，如果要访问一个类的 private 字段，就需要写 getter/setter 方法。但我们在其它语言却很少见到类似的约定，为什么？</p>
+<ul>
+<li>它是“封装”的体现，对外隐藏了具体实现，允许之后对属性的访问注入新的逻辑（如验证逻辑）。</li>
+<li>一些语言，如 python，提供了机制允许我们更改访问属性的逻辑，因此不需要手工写 getter/setter。</li>
+</ul>
+<h4 id="gettersetter-是对属性访问的封装">getter/setter 是对“属性访问”的封装</h4>
+<p>假设我们写了下面这段代码，直接访问类的 public 字段：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="c1">// caller
+</span><span class="c1"></span><span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">person</span><span class="o">.</span><span class="na">name</span><span class="o">;</span>
+<span class="n">person</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="s">&#34;Java&#34;</span><span class="o">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>之后我们认为 <code>name</code> 属性只能是字母，不能包含其它的字符，上面这种实现中，我们就需要更改所有 caller 调用 <code>person.name = ...</code> 的代码。换句话说，类 <code>Person</code> 暴露了实现的细节（即字段 person）。</p>
+<p>那么如果一开始就使用了 getter/setter，则我们不需要改变任何 caller，只需要在 <code>setName</code> 函数里增加相应的逻辑即可。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">
+<span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">name</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">validate_name</span><span class="o">(</span><span class="n">name</span><span class="o">);</span>  <span class="c1">// the newly added validation logic
+</span><span class="c1"></span>        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// caller
+</span><span class="c1"></span><span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">person</span><span class="o">.</span><span class="na">getName</span><span class="o">();</span>
+<span class="n">person</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="s">&#34;Java&#34;</span><span class="o">);</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>所以，通过这层封装，之后如果有需要，我们甚至可以更改字段的名字，类型等等。这就是封装的好处，而 getter/setter 这种写法能让我们为将来可能的修改做好准备。</p>
+<h4 id="其它语言里的-gettersetter">其它语言里的 getter/setter</h4>
+<p>getter/setter 的作用是为“属性的访问”（即 <code>x.field</code> 与 <code>x.field = ...</code>）提供日后修改的可能。一些“比较新”的语言就默认提供了这种能力。</p>
+<p>Python 中提供了 <a href="https://docs.python.org/3/howto/descriptor.html" target="_blank" rel="noopener noreffer">Descriptor</a> 的机制。在 Python 中，可以认为当访问对象的属性时，等价于调用对象的 <code>__get__()</code> 和 <code>__set__()</code> 方法，因此我们可以覆盖这两个方法来修改访问的逻辑。</p>
+<p>同样的，Kotlin 在定义 <a href="https://kotlinlang.org/docs/reference/properties.html" target="_blank" rel="noopener noreffer">properties</a> 也可以自定义的 getter/setter 方法来修改属性访问的逻辑。</p>
+<p>这里想说明的是，getter/setter 其实应该是默认实现，然后有需要时再覆盖，而不是每次都手工实现。</p>
+<h4 id="社区与约定">社区与约定</h4>
+<p>也许你会问，封装其实叫什么名字都行，为什么非要叫 <code>getXXX</code> 及 <code>setXXX</code> 呢？这其实是 <a href="http://download.oracle.com/otn-pub/jcp/7224-javabeans-1.01-fr-spec-oth-JSpec/beans.101.pdf?AuthParam=1522674989_0d7c790344741da888ed8c0e890ea7d5" target="_blank" rel="noopener noreffer">JavaBeans</a> 里约定的（7.1 节）。甚至从某种角度来说 getter/setter 的目的也不是为了封装，而只是一个约定，使框架能识别 JavaBeans 中的 property。</p>
+<p>在实际工作中你会发现，90% 以上的 getter/setter 在未来并不会被用来增加逻辑什么的。所以“封装”的作用理论上是好的，但实际被使用到的频率特别低，反而增加了许多无用的代码。</p>
+<p>另一方面，随着使用 getter/setter 使用的增加，且由于绝大多数 getter/setter 并不会增加额外的逻辑，使得人们开始习惯于假设 getter/setter 不会有额外逻辑。所以如果你想在 setter 里加一些额外的逻辑时，反而要注意会不会让使用的人感到吃惊。</p>
+<h4 id="写在最后">写在最后</h4>
+<p>Getter/Setter 这个话题看上去似乎很简单，它的背后却有很多可以深究和思考的内容的。有人说 Getter 没关系，可怕的是 Setter；也有说现在lombok 这么方便，用 Getter/Setter 有利无害；也有人说尽量避免使用 Getter/Setter。这些观点背后都藏着一些软件的设计思维。例如怎样设计类的接口，如何实现封装，这些都是后续需要学习思考的内容。</p>
+<p><img src="https://gitee.com/lonercci/picbed/raw/master/img/20210620211420.png" style="zoom:80%;" /></p>
+<blockquote>
+<p>闲谈：跟上面一样，学的时候不太懂，反正跟着视频敲就对了，也不知道有什么意义。后来get/set方法出现频率越来越高（学Spring的时候，控制反转），突然就有点明白了，隐隐约约跟bean有点关系，嗯，回过头重新记录一下。
+文章参考：<a href="https://lotabout.me/2018/QQA-why-use-getters-and-setters/" target="_blank" rel="noopener noreffer">为什么 java 中要写 getter/setter？</a>  （直接搬运了，写的很好）</p>
+</blockquote>
+<h3 id="组合优于继承原则">组合优于继承原则</h3>
+<p>面向对象编程中，有一条非常经典的设计原则，那就是：组合优于继承，多用组合少用继承。因为大多数继承都可以利用组合（composition）、接口、委托（delegation）三个技术手段来实现。从而降低继承的层次和复杂的继承关系。</p>
+<blockquote>
+<p>闲谈：以前用过，但是从未思考过还有这个概念。在学静态代理的时候，有这样个例子，关于房东，租客，中介三者之间的关系，房东有Rent方法，中介这个代理想要使用Rent()，可以使用继承，但是不建议。组合可以实现更多的独属于代理这个类的方法。</p>
+<p>文章参考 ：<a href="https://blog.csdn.net/fuzhongmin05/article/details/108646872" target="_blank" rel="noopener noreffer">为什么组合先于继承</a></p>
+</blockquote>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-06-24</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/java/">java</a>,&nbsp;<a href="/tags/note/">note</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/spring5-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="prev" rel="prev" title="Spring5 学习笔记"><i class="fas fa-angle-left fa-fw"></i>Spring5 学习笔记</a>
+            <a href="/%E4%BB%8Ehexo%E5%88%B0hugo%E7%9A%84%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E8%84%9A%E6%9C%ACdemo/" class="next" rel="next" title="从Hexo到Hugo的博客迁移脚本Demo">从Hexo到Hugo的博客迁移脚本Demo<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="tcomment"></div>
+        <script src="https://cdn.jsdelivr.net/npm/twikoo@1.3.1/dist/twikoo.all.min.js"></script>
+        <script>
+        twikoo.init({
+          envId: 'blog-data-0gc3ets7c557f7fd',
+          
+          el: '#tcomment',
+          
+          
+        })
+        </script>
+
+    </div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"></br></br></br></br></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.84.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Lone</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.77eb6ae63c63c88c5e7a10b6c9570c54.css" integrity="md5-d&#43;tq5jxjyIxeehC2yVcMVA=="><link rel="stylesheet" href="/lib/katex/katex.min.ef3c395634e43fe45f5332bfca2287b3.css" integrity="md5-7zw5VjTkP&#43;RfUzK/yiKHsw=="><link rel="stylesheet" href="/lib/katex/copy-tex.min.622133ef544b0f203604a52bebba29f4.css" integrity="md5-YiEz71RLDyA2BKUr67op9A=="><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.dd4e1772a44268dd6e27f193695067fc.js" integrity="md5-3U4XcqRCaN1uJ/GTaVBn/A=="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.10321080d79e27ee01ff36859c02acd3.js" integrity="md5-EDIQgNeeJ&#43;4B/zaFnAKs0w=="></script><script type="text/javascript" src="/lib/lunr/lunr.min.f2eea188dc4939c55ff8f55569a4e87c.js" integrity="md5-8u6hiNxJOcVf&#43;PVVaaTofA=="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.76a9898754052993cab798a24f45d94e.js" integrity="md5-dqmJh1QFKZPKt5iiT0XZTg=="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.afbe35f35a427dd563d97cbdc9eb85d5.js" integrity="md5-r74181pCfdVj2Xy9yeuF1Q=="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.40c0bfc764764587555c066d46fe6071.js" integrity="md5-QMC/x2R2RYdVXAZtRv5gcQ=="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.c6a5b6b1db8980fdc42cd3456fe1ec74.js" integrity="md5-xqW2sduJgP3ELNNFb&#43;HsdA=="></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.ba38a712df31c778e10e8211f8cb891b.js" integrity="md5-ujinEt8xx3jhDoIR&#43;MuJGw=="></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.fa56076f9d071729612c4849acae1ce5.js" integrity="md5-&#43;lYHb50HFylhLEhJrK4c5Q=="></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.4f0896a2ff5ef76f0dd00f5c5de65abb.js" integrity="md5-TwiWov9e928N0A9cXeZauw=="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.221393f48062472d1e72960fda7db7a3.js" integrity="md5-IhOT9IBiRy0ecpYP2n23ow=="></script><script type="text/javascript" src="/lib/katex/katex.min.c158c9e823b681cf535f46596b5e4eac.js" integrity="md5-wVjJ6CO2gc9TX0ZZa15OrA=="></script><script type="text/javascript" src="/lib/katex/auto-render.min.28cd0b98cd3f4fa37d52f3ffe47ad9d4.js" integrity="md5-KM0LmM0/T6N9UvP/5HrZ1A=="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.bfaec7d1dea915d74a7a6d833f0ff62e.js" integrity="md5-v67H0d6pFddKem2DPw/2Lg=="></script><script type="text/javascript" src="/lib/katex/mhchem.min.1bbb252363e83547d4b2186a41eaca28.js" integrity="md5-G7slI2PoNUfUshhqQerKKA=="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":15},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.8043ef4f5ae2d4fd302305ffd8316f55.js" integrity="md5-gEPvT1ri1P0wIwX/2DFvVQ=="></script></body>
+</html>

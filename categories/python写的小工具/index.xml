@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>python写的小工具 - 分类 - Lone&#39;s Blog</title>
+        <link>http://example.org/categories/python%E5%86%99%E7%9A%84%E5%B0%8F%E5%B7%A5%E5%85%B7/</link>
+        <description>python写的小工具 - 分类 - Lone&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chonee@qq.com (Lone)</managingEditor>
+            <webMaster>chonee@qq.com (Lone)</webMaster><lastBuildDate>Sun, 07 Feb 2021 12:03:06 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/python%E5%86%99%E7%9A%84%E5%B0%8F%E5%B7%A5%E5%85%B7/" rel="self" type="application/rss+xml" /><item>
+    <title>CSDN图片一键下载去水印</title>
+    <link>http://example.org/csdn%E5%9B%BE%E7%89%87%E4%B8%80%E9%94%AE%E4%B8%8B%E8%BD%BD%E5%8E%BB%E6%B0%B4%E5%8D%B0/</link>
+    <pubDate>Sun, 07 Feb 2021 12:03:06 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/csdn%E5%9B%BE%E7%89%87%E4%B8%80%E9%94%AE%E4%B8%8B%E8%BD%BD%E5%8E%BB%E6%B0%B4%E5%8D%B0/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://gitee.com/lonercci/picbed/raw/master/img/20210207131411.png" referrerpolicy="no-referrer">
+            </div>前言 在吾爱论坛上逛逛，看到有个悬赏贴下载CSDN去水印。好像不难，就去试试看。于是今天又可以水一篇博客了， 代码实现 代码实现很简单。贴主说了，]]></description>
+</item></channel>
+</rss>

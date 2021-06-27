@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>使用Pandas合并表格 - Lone&#39;s Blog</title><meta name="Description" content=""><meta property="og:title" content="使用Pandas合并表格" />
+<meta property="og:description" content="背景 室友因工作需要，要导出大创网的互联网&#43;项目后台学校里面的详细数据。在官网只能导出当前页面的所有项目，一页只显示20个项目。学校总共有18" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/%E4%BD%BF%E7%94%A8pandas%E5%90%88%E5%B9%B6%E8%A1%A8%E6%A0%BC/" /><meta property="og:image" content="http://example.org/"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-12-27T20:40:53&#43;08:00" />
+<meta property="article:modified_time" content="2020-12-27T20:40:53&#43;08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://example.org/"/>
+
+<meta name="twitter:title" content="使用Pandas合并表格"/>
+<meta name="twitter:description" content="背景 室友因工作需要，要导出大创网的互联网&#43;项目后台学校里面的详细数据。在官网只能导出当前页面的所有项目，一页只显示20个项目。学校总共有18"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="https://gitee.com/lonercci/picbed/raw/master/img/20210626110236.jpg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/%E4%BD%BF%E7%94%A8pandas%E5%90%88%E5%B9%B6%E8%A1%A8%E6%A0%BC/" /><link rel="prev" href="http://example.org/jquery%E5%AE%9E%E7%8E%B0%E5%BA%A7%E4%BD%8D%E9%80%89%E5%BA%A7/" /><link rel="next" href="http://example.org/%E8%A3%85%E9%A5%B0%E5%99%A8-%E8%BF%AD%E4%BB%A3%E5%99%A8-%E7%94%9F%E6%88%90%E5%99%A8/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.a12cacf4b5b41234196cb89042b24a70.css" integrity="md5-oSys9LW0EjQZbLiQQrJKcA=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.26386564b5cf1594be24059af1cd0db9.css" integrity="md5-JjhlZLXPFZS&#43;JAWa8c0NuQ=="><link rel="stylesheet" href="/lib/animate/animate.min.43d6b8fdf324505f0ceb7ea698d0b7a5.css" integrity="md5-Q9a4/fMkUF8M636mmNC3pQ=="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "使用Pandas合并表格",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/%E4%BD%BF%E7%94%A8pandas%E5%90%88%E5%B9%B6%E8%A1%A8%E6%A0%BC\/"
+        },"genre": "posts","keywords": "迁移","wordcount":  1960 ,
+        "url": "http:\/\/example.org\/%E4%BD%BF%E7%94%A8pandas%E5%90%88%E5%B9%B6%E8%A1%A8%E6%A0%BC\/","datePublished": "2020-12-27T20:40:53+08:00","dateModified": "2020-12-27T20:40:53+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Lone"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Lone&#39;s Blog">Lone&#39;s Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 全部文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Lone&#39;s Blog">Lone&#39;s Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">全部文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">使用Pandas合并表格</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Lone</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python/"><i class="far fa-folder fa-fw"></i>Python</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-12-27">2020-12-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1960 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lonercci/picbed/raw/master/img/20201203213823.jpg"
+        data-srcset="https://gitee.com/lonercci/picbed/raw/master/img/20201203213823.jpg, https://gitee.com/lonercci/picbed/raw/master/img/20201203213823.jpg 1.5x, https://gitee.com/lonercci/picbed/raw/master/img/20201203213823.jpg 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lonercci/picbed/raw/master/img/20201203213823.jpg"
+        title="https://gitee.com/lonercci/picbed/raw/master/img/20201203213823.jpg" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#背景">背景</a></li>
+        <li><a href="#分析流程">分析流程</a></li>
+        <li><a href="#代码">代码</a></li>
+        <li><a href="#总结">总结</a></li>
+        <li><a href="#资料参考">资料参考</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="背景">背景</h3>
+<p>室友因工作需要，要导出大创网的互联网+项目后台学校里面的详细数据。在官网只能导出当前页面的所有项目，一页只显示20个项目。学校总共有1842个，93页的数据，如果一页一页点击导出不太现实。所以想到使用Python来实现。（小声bb）那么大的一个网站，竟然没有考虑一键导出全部详细数据的功能，，，绝了。</p>
+<h3 id="分析流程">分析流程</h3>
+<p>1、打开大创网后台，发现页面内容是通过js动态加载的。网址不会随着页码的变化而变化。
+果断抓包，通过url寻找接口
+第一页：<code>https://cy.ncss.cn/contestmanage/contestCount?provinceCode=&amp;schoolCode=&amp;schoolType=&amp;provinceAward=&amp;keyWord=&amp;trackCode=&amp;stage=-9&amp;award=&amp;industryCode=&amp;groupCode=&amp;progress=&amp;isInvest=&amp;pageIndex=0&amp;pageSize=20&amp;diplomaLevelCode=&amp;_=1603205904460</code></p>
+<p>第二页：<code>https://cy.ncss.cn/contestmanage/contestList?provinceCode=&amp;schoolCode=&amp;schoolType=&amp;provinceAward=&amp;keyWord=&amp;trackCode=&amp;stage=-9&amp;award=&amp;industryCode=&amp;groupCode=&amp;progress=&amp;isInvest=&amp;pageIndex=1&amp;pageSize=20&amp;diplomaLevelCode=&amp;_=1603205904463</code></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://s1.ax1x.com/2020/10/20/B9ElnK.png"
+        data-srcset="https://s1.ax1x.com/2020/10/20/B9ElnK.png, https://s1.ax1x.com/2020/10/20/B9ElnK.png 1.5x, https://s1.ax1x.com/2020/10/20/B9ElnK.png 2x"
+        data-sizes="auto"
+        alt="https://s1.ax1x.com/2020/10/20/B9ElnK.png"
+        title="https://s1.ax1x.com/2020/10/20/B9ElnK.png" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://s1.ax1x.com/2020/10/20/B9Eu11.png"
+        data-srcset="https://s1.ax1x.com/2020/10/20/B9Eu11.png, https://s1.ax1x.com/2020/10/20/B9Eu11.png 1.5x, https://s1.ax1x.com/2020/10/20/B9Eu11.png 2x"
+        data-sizes="auto"
+        alt="https://s1.ax1x.com/2020/10/20/B9Eu11.png"
+        title="https://s1.ax1x.com/2020/10/20/B9Eu11.png" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://s1.ax1x.com/2020/10/20/B9EnpR.png"
+        data-srcset="https://s1.ax1x.com/2020/10/20/B9EnpR.png, https://s1.ax1x.com/2020/10/20/B9EnpR.png 1.5x, https://s1.ax1x.com/2020/10/20/B9EnpR.png 2x"
+        data-sizes="auto"
+        alt="https://s1.ax1x.com/2020/10/20/B9EnpR.png"
+        title="https://s1.ax1x.com/2020/10/20/B9EnpR.png" /></p>
+<p>2、经过对url删减测试，发现pageSize用于控制页面显示项目数量。pageIndex用于显示页数。后面其余参数都可省略。</p>
+<p>最终拿到url为<code>https://cy.ncss.cn/contestmanage/contestList?provinceCode=&amp;schoolCode=&amp;schoolType=&amp;provinceAward=&amp;keyWord=&amp;trackCode=&amp;stage=-9&amp;award=&amp;industryCode=&amp;groupCode=&amp;progress=&amp;isInvest=&amp;pageIndex={}&amp;pageSize=20</code></p>
+<p>3、在审查元素中，发现下载页面的url很有意思，下载直接就是.xlsx的文件。<code>https://cy.ncss.cn/contestmanage/exportcontestdetails?contestIds=</code>后面跟了很多串特定规格字符串，<code>contestIds=</code>这个很像是项目的<code>id</code>。果不其然，通过审查元素，<code>xpath</code>定位，每一个<code>tr</code>标签里的值就是<code>id</code>。而这个网址传入多少<code>id</code>，那么下载的文件里面就有<code>id</code>对应的项目。经过测试，60个<code>id</code>为最大上限，不然就直接报错。
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://s1.ax1x.com/2020/10/20/B9EK6x.png"
+        data-srcset="https://s1.ax1x.com/2020/10/20/B9EK6x.png, https://s1.ax1x.com/2020/10/20/B9EK6x.png 1.5x, https://s1.ax1x.com/2020/10/20/B9EK6x.png 2x"
+        data-sizes="auto"
+        alt="https://s1.ax1x.com/2020/10/20/B9EK6x.png"
+        title="https://s1.ax1x.com/2020/10/20/B9EK6x.png" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://s1.ax1x.com/2020/10/20/B9EMX6.png"
+        data-srcset="https://s1.ax1x.com/2020/10/20/B9EMX6.png, https://s1.ax1x.com/2020/10/20/B9EMX6.png 1.5x, https://s1.ax1x.com/2020/10/20/B9EMX6.png 2x"
+        data-sizes="auto"
+        alt="https://s1.ax1x.com/2020/10/20/B9EMX6.png"
+        title="https://s1.ax1x.com/2020/10/20/B9EMX6.png" />
+4、拿到下载地址，写个循环，结束下载，可是下载完成后由93个表格数据。
+5、使用<code>os</code>对文件夹下的93个表格进行循环，拿到每个数据的路径，再通过<code>pandas</code>库合并其余表格到一个新表格,结束。</p>
+<h3 id="代码">代码</h3>
+<p>1、下载全部数据表格</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">etree</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&#34;cookie&#34;</span><span class="p">:</span><span class="s2">&#34;&#34;</span><span class="p">,</span>
+    <span class="s2">&#34;User-Agent&#34;</span><span class="p">:</span><span class="s2">&#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36&#34;</span><span class="p">}</span>
+
+<span class="n">path</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&#34;C:\Users\lenovo\Desktop&#34;</span>
+<span class="n">PATH</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="s1">&#39;css&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">,</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">PATH</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">PATH</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">PATH</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&#34;下载路径：&#34;</span><span class="o">+</span><span class="n">PATH</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">93</span><span class="p">):</span>
+    <span class="n">idss</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+    <span class="n">url</span>  <span class="o">=</span> <span class="s2">&#34;https://cy.ncss.cn/contestmanage/contestList?provinceCode=&amp;schoolCode=&amp;schoolType=&amp;provinceAward=&amp;keyWord=&amp;trackCode=&amp;stage=-9&amp;award=&amp;industryCode=&amp;groupCode=&amp;progress=&amp;isInvest=&amp;pageIndex=</span><span class="si">{}</span><span class="s2">&amp;pageSize=20&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+    <span class="n">ids</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">HTML</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s2">&#34;/html/body/table/tbody//tr/@data-value&#34;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">ids</span><span class="p">:</span>
+        <span class="n">idss</span> <span class="o">=</span> <span class="n">idss</span> <span class="o">+</span> <span class="n">a</span> <span class="o">+</span><span class="s2">&#34;,&#34;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">data_url</span> <span class="o">=</span> <span class="s2">&#34;https://cy.ncss.cn/contestmanage/exportcontestdetails?contestIds=&#34;</span> <span class="o">+</span> <span class="n">idss</span>
+        <span class="c1"># print(data_url)</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">data_url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span><span class="o">.</span><span class="n">content</span>
+        <span class="c1"># time.sleep(0.5)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="k">pass</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;开始下载第</span><span class="si">{}</span><span class="s2">页&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;完成&#34;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">PATH</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">.xlsx&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span><span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;下载失败&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>2、合并表格</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="nb">list</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;C:\Users\lenovo\Desktop\css&#39;</span><span class="p">)</span>
+<span class="c1"># print(list)</span>
+<span class="n">ov_xlsx</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">info</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">:</span>
+    <span class="n">domain</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;C:\Users\lenovo\Desktop\css&#39;</span><span class="p">)</span>
+    <span class="n">info</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span><span class="n">info</span><span class="p">)</span>
+    <span class="c1"># print(info)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
+    <span class="n">ov_xlsx</span> <span class="o">=</span> <span class="n">ov_xlsx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">writer</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">ExcelWriter</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;C:\Users\lenovo\Desktop\处理后数据.xlsx&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
+<span class="n">ov_xlsx</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="总结">总结</h3>
+<p>总体思路不复杂，当时测试接口数据花了一部分时间，主要是查询pandas库的用法。</p>
+<h3 id="资料参考">资料参考</h3>
+<p>参考知乎大佬： <a href="https://zhuanlan.zhihu.com/p/97869613">https://zhuanlan.zhihu.com/p/97869613</a></p>
+<p>（此文章由老博客迁移，原链接：http://www.desky2020.xyz/index.php/2020/10/20/22-50/）</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-12-27</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E8%BF%81%E7%A7%BB/">迁移</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/jquery%E5%AE%9E%E7%8E%B0%E5%BA%A7%E4%BD%8D%E9%80%89%E5%BA%A7/" class="prev" rel="prev" title="jQuery实现座位选座"><i class="fas fa-angle-left fa-fw"></i>jQuery实现座位选座</a>
+            <a href="/%E8%A3%85%E9%A5%B0%E5%99%A8-%E8%BF%AD%E4%BB%A3%E5%99%A8-%E7%94%9F%E6%88%90%E5%99%A8/" class="next" rel="next" title="装饰器 迭代器 生成器">装饰器 迭代器 生成器<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="tcomment"></div>
+        <script src="https://cdn.jsdelivr.net/npm/twikoo@1.3.1/dist/twikoo.all.min.js"></script>
+        <script>
+        twikoo.init({
+          envId: 'blog-data-0gc3ets7c557f7fd',
+          
+          el: '#tcomment',
+          
+          
+        })
+        </script>
+
+    </div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"></br></br></br></br></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.84.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Lone</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.77eb6ae63c63c88c5e7a10b6c9570c54.css" integrity="md5-d&#43;tq5jxjyIxeehC2yVcMVA=="><link rel="stylesheet" href="/lib/katex/katex.min.ef3c395634e43fe45f5332bfca2287b3.css" integrity="md5-7zw5VjTkP&#43;RfUzK/yiKHsw=="><link rel="stylesheet" href="/lib/katex/copy-tex.min.622133ef544b0f203604a52bebba29f4.css" integrity="md5-YiEz71RLDyA2BKUr67op9A=="><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.dd4e1772a44268dd6e27f193695067fc.js" integrity="md5-3U4XcqRCaN1uJ/GTaVBn/A=="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.10321080d79e27ee01ff36859c02acd3.js" integrity="md5-EDIQgNeeJ&#43;4B/zaFnAKs0w=="></script><script type="text/javascript" src="/lib/lunr/lunr.min.f2eea188dc4939c55ff8f55569a4e87c.js" integrity="md5-8u6hiNxJOcVf&#43;PVVaaTofA=="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.76a9898754052993cab798a24f45d94e.js" integrity="md5-dqmJh1QFKZPKt5iiT0XZTg=="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.afbe35f35a427dd563d97cbdc9eb85d5.js" integrity="md5-r74181pCfdVj2Xy9yeuF1Q=="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.40c0bfc764764587555c066d46fe6071.js" integrity="md5-QMC/x2R2RYdVXAZtRv5gcQ=="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.c6a5b6b1db8980fdc42cd3456fe1ec74.js" integrity="md5-xqW2sduJgP3ELNNFb&#43;HsdA=="></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.ba38a712df31c778e10e8211f8cb891b.js" integrity="md5-ujinEt8xx3jhDoIR&#43;MuJGw=="></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.fa56076f9d071729612c4849acae1ce5.js" integrity="md5-&#43;lYHb50HFylhLEhJrK4c5Q=="></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.4f0896a2ff5ef76f0dd00f5c5de65abb.js" integrity="md5-TwiWov9e928N0A9cXeZauw=="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.221393f48062472d1e72960fda7db7a3.js" integrity="md5-IhOT9IBiRy0ecpYP2n23ow=="></script><script type="text/javascript" src="/lib/katex/katex.min.c158c9e823b681cf535f46596b5e4eac.js" integrity="md5-wVjJ6CO2gc9TX0ZZa15OrA=="></script><script type="text/javascript" src="/lib/katex/auto-render.min.28cd0b98cd3f4fa37d52f3ffe47ad9d4.js" integrity="md5-KM0LmM0/T6N9UvP/5HrZ1A=="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.bfaec7d1dea915d74a7a6d833f0ff62e.js" integrity="md5-v67H0d6pFddKem2DPw/2Lg=="></script><script type="text/javascript" src="/lib/katex/mhchem.min.1bbb252363e83547d4b2186a41eaca28.js" integrity="md5-G7slI2PoNUfUshhqQerKKA=="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":15},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.8043ef4f5ae2d4fd302305ffd8316f55.js" integrity="md5-gEPvT1ri1P0wIwX/2DFvVQ=="></script></body>
+</html>

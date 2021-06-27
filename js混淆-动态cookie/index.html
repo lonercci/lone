@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Js混淆-动态cookie - Lone&#39;s Blog</title><meta name="Description" content=""><meta property="og:title" content="Js混淆-动态cookie" />
+<meta property="og:description" content="题目 题目链接：http://match.yuanrenxue.com/match/2 提取全部5页发布日热度的值，计算所有值的加和,并提交答案" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/js%E6%B7%B7%E6%B7%86-%E5%8A%A8%E6%80%81cookie/" /><meta property="og:image" content="http://example.org/"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-01-27T22:15:36&#43;08:00" />
+<meta property="article:modified_time" content="2021-01-27T22:15:36&#43;08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://example.org/"/>
+
+<meta name="twitter:title" content="Js混淆-动态cookie"/>
+<meta name="twitter:description" content="题目 题目链接：http://match.yuanrenxue.com/match/2 提取全部5页发布日热度的值，计算所有值的加和,并提交答案"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="https://gitee.com/lonercci/picbed/raw/master/img/20210626110236.jpg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/js%E6%B7%B7%E6%B7%86-%E5%8A%A8%E6%80%81cookie/" /><link rel="prev" href="http://example.org/js%E6%B7%B7%E6%B7%86-%E6%BA%90%E7%A0%81%E4%B9%B1%E7%A0%81/" /><link rel="next" href="http://example.org/%E8%AE%BF%E9%97%AE%E9%80%BB%E8%BE%91-%E6%8E%A8%E5%BF%83%E7%BD%AE%E8%85%B9/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.a12cacf4b5b41234196cb89042b24a70.css" integrity="md5-oSys9LW0EjQZbLiQQrJKcA=="><link rel="stylesheet" href="/css/style.min.f03a2ec71b16efbe4f24352e542c93a9.css" integrity="md5-8DouxxsW775PJDUuVCyTqQ=="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.26386564b5cf1594be24059af1cd0db9.css" integrity="md5-JjhlZLXPFZS&#43;JAWa8c0NuQ=="><link rel="stylesheet" href="/lib/animate/animate.min.43d6b8fdf324505f0ceb7ea698d0b7a5.css" integrity="md5-Q9a4/fMkUF8M636mmNC3pQ=="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Js混淆-动态cookie",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/js%E6%B7%B7%E6%B7%86-%E5%8A%A8%E6%80%81cookie\/"
+        },"genre": "posts","keywords": "python, js","wordcount":  5587 ,
+        "url": "http:\/\/example.org\/js%E6%B7%B7%E6%B7%86-%E5%8A%A8%E6%80%81cookie\/","datePublished": "2021-01-27T22:15:36+08:00","dateModified": "2021-01-27T22:15:36+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Lone"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Lone&#39;s Blog">Lone&#39;s Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 全部文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Lone&#39;s Blog">Lone&#39;s Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">全部文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Js混淆-动态cookie</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Lone</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E7%88%AC%E8%99%AB/"><i class="far fa-folder fa-fw"></i>爬虫</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-01-27">2021-01-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5587 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 12 分钟&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lonercci/picbed/raw/master/img/20210123190226.jpg"
+        data-srcset="https://gitee.com/lonercci/picbed/raw/master/img/20210123190226.jpg, https://gitee.com/lonercci/picbed/raw/master/img/20210123190226.jpg 1.5x, https://gitee.com/lonercci/picbed/raw/master/img/20210123190226.jpg 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lonercci/picbed/raw/master/img/20210123190226.jpg"
+        title="https://gitee.com/lonercci/picbed/raw/master/img/20210123190226.jpg" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#题目">题目</a></li>
+    <li><a href="#分析网页">分析网页</a></li>
+    <li><a href="#寻找cookie来源">寻找cookie来源</a></li>
+    <li><a href="#使用fiddler抓包">使用Fiddler抓包</a></li>
+    <li><a href="#分析js代码">分析JS代码</a></li>
+    <li><a href="#分析w函数">分析W()函数</a></li>
+    <li><a href="#验证猜测">验证猜测</a></li>
+    <li><a href="#python爬取">Python爬取</a></li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="题目">题目</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/lonercci/picbed/raw/master/img/20210127222126.png"
+        data-srcset="https://gitee.com/lonercci/picbed/raw/master/img/20210127222126.png, https://gitee.com/lonercci/picbed/raw/master/img/20210127222126.png 1.5x, https://gitee.com/lonercci/picbed/raw/master/img/20210127222126.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/lonercci/picbed/raw/master/img/20210127222126.png"
+        title="https://gitee.com/lonercci/picbed/raw/master/img/20210127222126.png" /></p>
+<p>题目链接：http://match.yuanrenxue.com/match/2</p>
+<blockquote>
+<p>提取全部5页发布日热度的值，计算所有值的加和,并提交答案</p>
+</blockquote>
+<h2 id="分析网页">分析网页</h2>
+<p>本题题目已经写说明了是动态cookie，所以为了避免其余cookie的影响，直接在无痕模式下进行调试。</p>
+<p>老样子，试着看看XHR里面的内容。
+<img src="https://gitee.com/lonercci/picbed/raw/master/img/20210127222633.png" style="zoom: 50%;" />
+发现跟上一道题一样，数据都是在json里面，看下后面几页的网址。<br>
+第一页：http://match.yuanrenxue.com/api/match/2 点击访问一下看看。  不出所料，返回的不是正常的内容，而是<code>{&quot;error&quot;: &quot;出错啦~嘤嘤嘤&quot;}</code>。我们观察一下请求的cookie，貌似跟第一题的加密方法很像，<code>|</code>后面应该是个时间戳。
+<img src="https://gitee.com/lonercci/picbed/raw/master/img/20210127234155.png" style="zoom:50%;" />
+那么这个cookie是怎么生成的呢?</p>
+<h2 id="寻找cookie来源">寻找cookie来源</h2>
+<p>查看所有的请求信息，看看有没有别的东西。发现有两个请求都是<code>2</code>，有点可疑，点进去看看
+<img src="https://gitee.com/lonercci/picbed/raw/master/img/20210127235352.png" style="zoom:50%;" /></p>
+<p><img src="https://gitee.com/lonercci/picbed/raw/master/img/20210127235540.png" style="zoom:50%;" /></p>
+<p>可以发现,第一个请求是不带cookie的,而第二个请求带cookie，那么我们是不是可以猜测第一个请求完成后，执行了某些我们没有看到的操作，从而生成了cookie，给了第二个请求。</p>
+<h2 id="使用fiddler抓包">使用Fiddler抓包</h2>
+<p><img src="https://gitee.com/lonercci/picbed/raw/master/img/20210128000459.png" style="zoom: 67%;" /></p>
+<p>我们可以看到，第一次请求确实是返回了一些东西。是一段JS代码，但是这些看着全是乱七八糟的字符。这说明这段代码经过了一定的混淆，先不管其他，我们把它复制粘贴下来，格式化一下，
+<img src="https://gitee.com/lonercci/picbed/raw/master/img/20210128000948.png" style="zoom: 50%;" />
+代码太长了，就截取一部分。查阅资料，</p>
+<blockquote>
+<p>混淆后的样子，变量跟方法名已经完全替换，然后第一行可以看到明显的一个数组，这就是ob混淆的常见特性.</p>
+</blockquote>
+<p>而官网正好就有 <a href="http://tool.yuanrenxue.com/decode_obfuscator" target="_blank" rel="noopener noreffer">解混淆工具</a> 我们把代码解混淆之后的代码继续格式化
+<img src="https://gitee.com/lonercci/picbed/raw/master/img/20210128001721.png" style="zoom: 50%;" />
+整段代码差不多200多行代码,而且这些函数名和变量名都非常奇怪。后来查阅资料才知道，这是由于经过一些工具压缩了JS之后导致的，简化了变量名和方法名便于传输。那么我们下一步就很明确了，要分析这段js代码到底干了什么。</p>
+<h2 id="分析js代码">分析JS代码</h2>
+<p>大致的浏览一下,全部代码,可以发现,大多数都是定义的函数,但是真正执行的只有最后的<code>W(X());</code>
+<img src="https://gitee.com/lonercci/picbed/raw/master/img/20210128002158.png" style="zoom:50%;" /></p>
+<p>我们首先看看X()函数是什么</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js">  <span class="kd">function</span> <span class="nx">X</span><span class="p">(</span><span class="nx">Y</span><span class="p">,</span> <span class="nx">Z</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">Date</span><span class="p">[</span><span class="s2">&#34;parse&#34;</span><span class="p">](</span><span class="k">new</span> <span class="nb">Date</span><span class="p">());</span>
+  <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>在试工具里面执行X()函数就可以看到,返回的是一个时间戳,那么这个函数也会返回一个时间戳
+<img src="https://gitee.com/lonercci/picbed/raw/master/img/20210128002615.png" style="zoom: 67%;" /></p>
+<p>再来看W()函数是什么</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js">  <span class="kd">function</span> <span class="nx">W</span><span class="p">(</span><span class="nx">Y</span><span class="p">,</span> <span class="nx">Z</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">[</span><span class="s2">&#34;cookie&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&#34;m&#34;</span> <span class="o">+</span> <span class="nx">M</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&#34;=&#34;</span> <span class="o">+</span> <span class="nx">V</span><span class="p">(</span><span class="nx">Y</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&#34;|&#34;</span> <span class="o">+</span> <span class="nx">Y</span> <span class="o">+</span> <span class="s2">&#34;; path=/&#34;</span><span class="p">;</span>
+    <span class="nx">location</span><span class="p">[</span><span class="s2">&#34;reload&#34;</span><span class="p">]();</span>
+  <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>w()函数定义了两个形参,而执行的函数<code>W(X());</code>,是传入一个参数的，发现W()里面包含cookie等信息，那么肯定要研究一下W()干了什么</p>
+<h2 id="分析w函数">分析W()函数</h2>
+<p>我们来看一下W()函数的作用</p>
+<ul>
+<li><code>document[&quot;cookie&quot;] </code>就是设置cookie信息</li>
+<li><code>location[&quot;reload&quot;](); </code>非常关键！！这行代码的意思就是:刷新当前文档，也就是按了一下浏览器上的刷新页面按钮。
+这段代码解释了前面为何会出现两个相同的请求。我们整理一下。</li>
+</ul>
+<ol>
+<li>网页向服务器发送请求,返回了两个名为【2】的结果</li>
+<li>第一个没有Cookie,而第二个有Cookie</li>
+<li>第一个虽然没有Cookie,但是却执行了一段JS代码</li>
+<li>而这段JS代码给网页中的Cookie赋了值,接着刷新了整个页面</li>
+<li>最后,呈现在我们眼前的网页,也就是第二个名为【2】的结果,有了Cookie</li>
+</ol>
+<p>那么现在就是关键的<code>document[&quot;cookie&quot;]</code>部分，</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">m</span><span class="o">=</span><span class="mi">36674</span><span class="nx">c3718305e203ee914bf011045c5</span><span class="o">|</span><span class="mi">1609132022000</span>
+<span class="nb">document</span><span class="p">[</span><span class="s2">&#34;cookie&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&#34;m&#34;</span> <span class="o">+</span> <span class="nx">M</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&#34;=&#34;</span> <span class="o">+</span> <span class="nx">V</span><span class="p">(</span><span class="nx">Y</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&#34;|&#34;</span> <span class="o">+</span> <span class="nx">Y</span> <span class="o">+</span> <span class="s2">&#34;; path=/&#34;</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>最后面的<code>&quot;; path=/&quot;</code>字符串,是页面信息(第几页),在其他地方肯定是会处理的,这里我们可以省略。
+通过对比,赋值过程和赋值结果,我们可以发现赋值过程中的<code> M()</code>函数返回的一个应该是个空值。但是我们可以去稍微分析一下M()函数。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">M</span><span class="p">(</span><span class="nx">Y</span><span class="p">,</span> <span class="nx">Z</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">a4</span> <span class="o">=</span> <span class="nx">B</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">a5</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">a6</span> <span class="o">=</span> <span class="nx">a5</span><span class="p">[</span><span class="s2">&#34;constructor&#34;</span><span class="p">](</span><span class="s2">&#34;return /\&#34; + this + \&#34;/&#34;</span><span class="p">)()[</span><span class="s2">&#34;compile&#34;</span><span class="p">](</span><span class="s2">&#34;^([^ ]+( +[^ ]+)+)+[^ ]}&#34;</span><span class="p">);</span>
+                <span class="k">return</span> <span class="o">!</span><span class="nx">a6</span><span class="p">[</span><span class="s2">&#34;test&#34;</span><span class="p">](</span><span class="nx">a4</span><span class="p">);</span>
+            <span class="p">};</span>
+
+            <span class="k">return</span> <span class="nx">a5</span><span class="p">();</span>
+        <span class="p">});</span>
+        <span class="nx">a4</span><span class="p">();</span>
+        <span class="nx">K</span><span class="p">();</span>
+        <span class="nx">qz</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">119</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">106</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">117</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">119</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">114</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">114</span><span class="p">,</span> <span class="mi">121</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">112</span><span class="p">,</span> <span class="mi">117</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">114</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">106</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">106</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">114</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">402</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">114</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">118</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">10</span><span class="p">];</span>
+        <span class="nb">eval</span><span class="p">(</span><span class="nx">L</span><span class="p">(</span><span class="nx">qz</span><span class="p">));</span>
+
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">global</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">[</span><span class="s2">&#34;log&#34;</span><span class="p">](</span><span class="s2">&#34;\u4EBA\u751F\u82E6\u77ED\uFF0C\u4F55\u5FC5python\uFF1F&#34;</span><span class="p">);</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">console</span><span class="p">[</span><span class="s2">&#34;log&#34;</span><span class="p">](</span><span class="s2">&#34;\u4EBA\u751F\u82E6\u77ED\uFF0C\u4F55\u5FC5python\uFF1F&#34;</span><span class="p">);</span>
+                    <span class="kr">debugger</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">a5</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">navigator</span><span class="p">[</span><span class="s2">&#34;vendorSub&#34;</span><span class="p">];</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>首先,我们可以看到函数里面还包含着两个函数分别是【 a4() 】和【 K() 】
+而这个【 a4() 】函数,也定义在M()内,但是执行【 a4() 】函数的时候,并没有传入参数,所以说,这段代码是没用的</p>
+<p>接着,我们看一下K()函数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">K</span><span class="p">(</span><span class="nx">Y</span><span class="p">,</span> <span class="nx">Z</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">Z</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">J</span><span class="p">(</span><span class="nx">Y</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="nx">H</span><span class="p">(</span><span class="nx">Y</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>需要传入参数,而执行的时候,又没有传入,所有这段代码也是是没用的
+我们简化一下M()函数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">M</span><span class="p">(</span><span class="nx">Y</span><span class="p">,</span> <span class="nx">Z</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">qz</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">119</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">106</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">117</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">119</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">114</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">114</span><span class="p">,</span> <span class="mi">121</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">112</span><span class="p">,</span> <span class="mi">117</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">114</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">106</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">106</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">114</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">402</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">114</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">118</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">10</span><span class="p">];</span>
+        <span class="nb">eval</span><span class="p">(</span><span class="nx">L</span><span class="p">(</span><span class="nx">qz</span><span class="p">));</span>
+
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">global</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">[</span><span class="s2">&#34;log&#34;</span><span class="p">](</span><span class="s2">&#34;\u4EBA\u751F\u82E6\u77ED\uFF0C\u4F55\u5FC5python\uFF1F&#34;</span><span class="p">);</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">console</span><span class="p">[</span><span class="s2">&#34;log&#34;</span><span class="p">](</span><span class="s2">&#34;\u4EBA\u751F\u82E6\u77ED\uFF0C\u4F55\u5FC5python\uFF1F&#34;</span><span class="p">);</span>
+                    <span class="kr">debugger</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">a5</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">navigator</span><span class="p">[</span><span class="s2">&#34;vendorSub&#34;</span><span class="p">];</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>eval()函数又出现了,做过第一道题的时候,我们知道eval()可以间接的改变一些变量的值,那么这里的eval()是否对cookie有所改变呢?
+我们来看看eval()中的L()函数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">L</span><span class="p">(</span><span class="nx">Y</span><span class="p">,</span> <span class="nx">Z</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">a0</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="p">;</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">a1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">a1</span> <span class="o">&lt;</span> <span class="nx">Y</span><span class="p">[</span><span class="s2">&#34;length&#34;</span><span class="p">];</span> <span class="nx">a1</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">a0</span> <span class="o">+=</span> <span class="nb">String</span><span class="p">[</span><span class="s2">&#34;fromCharCode&#34;</span><span class="p">](</span><span class="nx">Y</span><span class="p">[</span><span class="nx">a1</span><span class="p">]);</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="nx">a0</span><span class="p">;</span>
+    <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>L()函数可以传入两个参数,eval()执行的时候确实是传入一个参数的,这个参数是一个数组,正好用于L()函数中的for循环
+for循环里面的内容就是将,传入的数组中的每一个值,通过【 String[&ldquo;fromCharCode&rdquo;] 】这个方法翻译拼接着成一个字符串并返回
+尝试着运行了这个函数,结果并没有什么卵用,就是一串字符串而已,这种就是典型的开发者挖坑,我们去踩</p>
+<p>我们继续读下面的代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js">        <span class="k">try</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">global</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">[</span><span class="s2">&#34;log&#34;</span><span class="p">](</span><span class="s2">&#34;\u4EBA\u751F\u82E6\u77ED\uFF0C\u4F55\u5FC5python\uFF1F&#34;</span><span class="p">);</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">console</span><span class="p">[</span><span class="s2">&#34;log&#34;</span><span class="p">](</span><span class="s2">&#34;\u4EBA\u751F\u82E6\u77ED\uFF0C\u4F55\u5FC5python\uFF1F&#34;</span><span class="p">);</span>
+                    <span class="kr">debugger</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">a5</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">navigator</span><span class="p">[</span><span class="s2">&#34;vendorSub&#34;</span><span class="p">];</span>
+        <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>try里面的内容,直接进来就报错。是因为,global这个变量根本就没有定义,所有会直接报错,进入catch里面,虽然说传入了a5变量,但是在下面的代码并没有引用,可以不管
+最后,直接return navigator[&ldquo;vendorSub&rdquo;]
+而这个navigator主要是包含有关浏览器的信息,它通过数组取值的方式取值,大概率返回的任然是空值.如果不是我们可以回来继续分析</p>
+<p>判断M()八成是空值，于是我们可以吧代码简化一下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">cookie</span> <span class="o">=</span> <span class="s2">&#34;m&#34;</span> <span class="o">+</span> <span class="s2">&#34;=&#34;</span> <span class="o">+</span> <span class="nx">V</span><span class="p">(</span><span class="nx">Y</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&#34;|&#34;</span> <span class="o">+</span> <span class="nx">Y</span><span class="p">;</span>
+          <span class="nx">m</span><span class="o">=</span><span class="mi">36674</span><span class="nx">c3718305e203ee914bf011045c5</span><span class="o">|</span><span class="mi">1609132022000</span>
+<span class="nx">V</span><span class="p">(</span><span class="nx">Y</span><span class="p">)</span> <span class="o">=</span> <span class="mi">36674</span><span class="nx">c3718305e203ee914bf011045c5</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>我们现在就知道了,加密的值来源于<code>V(Y)</code>
+<code>V(Y)</code>具体怎么实现的，我们可以直接先验证一下，看能不能得到结果。</p>
+<h2 id="验证猜测">验证猜测</h2>
+<p>我们要改写JS，做出以下调整。</p>
+<ul>
+<li>删除第一行代码和最后一行代码，去掉最外面一层，方便调试</li>
+<li>发现定义时变量报错，把循环内部局部变量改成全局的，即代码中的let改为var</li>
+<li>尝试运行时是会某明奇妙的卡住，退出。删除104行左右的<code>setInterval(M(), 500);</code>这行代码,而这行代码的主要作用就是:每500毫秒,执行M(),而这个函数,我们在上面的推断是返回空所有没什么用,可以直接删掉,否则会一直卡住。</li>
+<li>显示未定义navigator，那么在代码的开头定义 <code>var navigator = {}; </code>（这个navigator包含有关浏览器的信息）</li>
+<li>M()函数中,qz上面的多余代码直接删除,并没有什么卵用</li>
+<li>改写W()函数中的内容,添加新的函数<code>get_chipher</code>执行结果
+<img src="https://gitee.com/lonercci/picbed/raw/master/img/20210128112158.png" style="zoom: 50%;" /></li>
+</ul>
+<p>我们可以看到，运行之后拿到了值<code>m=ac27a113166d13b2d6964bd9657f9020|1611801060000</code>
+再看看原本的cookie是什么
+<img src="https://gitee.com/lonercci/picbed/raw/master/img/20210128112553.png" style="zoom: 50%;" /></p>
+<p>比对成功，我们把js文件那个时间戳改成正常的调用方法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">X</span><span class="p">(</span><span class="nx">Y</span><span class="p">,</span> <span class="nx">Z</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">Date</span><span class="p">[</span><span class="s2">&#34;parse&#34;</span><span class="p">](</span><span class="k">new</span> <span class="nb">Date</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这样，我们对JS部分解决完毕。此处，附上JS部分的代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span><span class="lnt">212
+</span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
+</span><span class="lnt">219
+</span><span class="lnt">220
+</span><span class="lnt">221
+</span><span class="lnt">222
+</span><span class="lnt">223
+</span><span class="lnt">224
+</span><span class="lnt">225
+</span><span class="lnt">226
+</span><span class="lnt">227
+</span><span class="lnt">228
+</span><span class="lnt">229
+</span><span class="lnt">230
+</span><span class="lnt">231
+</span><span class="lnt">232
+</span><span class="lnt">233
+</span><span class="lnt">234
+</span><span class="lnt">235
+</span><span class="lnt">236
+</span><span class="lnt">237
+</span><span class="lnt">238
+</span><span class="lnt">239
+</span><span class="lnt">240
+</span><span class="lnt">241
+</span><span class="lnt">242
+</span><span class="lnt">243
+</span><span class="lnt">244
+</span><span class="lnt">245
+</span><span class="lnt">246
+</span><span class="lnt">247
+</span><span class="lnt">248
+</span><span class="lnt">249
+</span><span class="lnt">250
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">navigator</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="kd">var</span> <span class="nx">B</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">Y</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">Z</span><span class="p">,</span> <span class="nx">a0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">a1</span> <span class="o">=</span> <span class="nx">Y</span> <span class="o">?</span>
+            <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">a0</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="kd">var</span> <span class="nx">a2</span> <span class="o">=</span> <span class="nx">a0</span><span class="p">[</span><span class="s2">&#34;apply&#34;</span><span class="p">](</span><span class="nx">Z</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span>
+                    <span class="nx">a0</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+                    <span class="k">return</span> <span class="nx">a2</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span> <span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="p">};</span>
+        <span class="nx">Y</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nx">a1</span><span class="p">;</span>
+    <span class="p">};</span>
+<span class="p">}();</span>
+
+<span class="kd">function</span> <span class="nx">C</span><span class="p">(</span><span class="nx">Y</span><span class="p">,</span> <span class="nx">Z</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">a0</span> <span class="o">=</span> <span class="p">(</span><span class="mi">65535</span> <span class="o">&amp;</span> <span class="nx">Y</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">65535</span> <span class="o">&amp;</span> <span class="nx">Z</span><span class="p">);</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nx">Y</span> <span class="o">&gt;&gt;</span> <span class="mi">16</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="nx">Z</span> <span class="o">&gt;&gt;</span> <span class="mi">16</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="nx">a0</span> <span class="o">&gt;&gt;</span> <span class="mi">16</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">16</span> <span class="o">|</span> <span class="mi">65535</span> <span class="o">&amp;</span> <span class="nx">a0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">D</span><span class="p">(</span><span class="nx">Y</span><span class="p">,</span> <span class="nx">Z</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">Y</span> <span class="o">&lt;&lt;</span> <span class="nx">Z</span> <span class="o">|</span> <span class="nx">Y</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">32</span> <span class="o">-</span> <span class="nx">Z</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">E</span><span class="p">(</span><span class="nx">Y</span><span class="p">,</span> <span class="nx">Z</span><span class="p">,</span> <span class="nx">a0</span><span class="p">,</span> <span class="nx">a1</span><span class="p">,</span> <span class="nx">a2</span><span class="p">,</span> <span class="nx">a3</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">C</span><span class="p">(</span><span class="nx">D</span><span class="p">(</span><span class="nx">C</span><span class="p">(</span><span class="nx">C</span><span class="p">(</span><span class="nx">Z</span><span class="p">,</span> <span class="nx">Y</span><span class="p">),</span> <span class="nx">C</span><span class="p">(</span><span class="nx">a1</span><span class="p">,</span> <span class="nx">a3</span><span class="p">)),</span> <span class="nx">a2</span><span class="p">),</span> <span class="nx">a0</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">F</span><span class="p">(</span><span class="nx">Y</span><span class="p">,</span> <span class="nx">Z</span><span class="p">,</span> <span class="nx">a0</span><span class="p">,</span> <span class="nx">a1</span><span class="p">,</span> <span class="nx">a2</span><span class="p">,</span> <span class="nx">a3</span><span class="p">,</span> <span class="nx">a4</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">E</span><span class="p">(</span><span class="nx">Z</span> <span class="o">&amp;</span> <span class="nx">a0</span> <span class="o">|</span> <span class="o">~</span><span class="nx">Z</span> <span class="o">&amp;</span> <span class="nx">a1</span><span class="p">,</span> <span class="nx">Y</span><span class="p">,</span> <span class="nx">Z</span><span class="p">,</span> <span class="nx">a2</span><span class="p">,</span> <span class="nx">a3</span><span class="p">,</span> <span class="nx">a4</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">G</span><span class="p">(</span><span class="nx">Y</span><span class="p">,</span> <span class="nx">Z</span><span class="p">,</span> <span class="nx">a0</span><span class="p">,</span> <span class="nx">a1</span><span class="p">,</span> <span class="nx">a2</span><span class="p">,</span> <span class="nx">a3</span><span class="p">,</span> <span class="nx">a4</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">E</span><span class="p">(</span><span class="nx">Z</span> <span class="o">&amp;</span> <span class="nx">a1</span> <span class="o">|</span> <span class="nx">a0</span> <span class="o">&amp;</span> <span class="o">~</span><span class="nx">a1</span><span class="p">,</span> <span class="nx">Y</span><span class="p">,</span> <span class="nx">Z</span><span class="p">,</span> <span class="nx">a2</span><span class="p">,</span> <span class="nx">a3</span><span class="p">,</span> <span class="nx">a4</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">H</span><span class="p">(</span><span class="nx">Y</span><span class="p">,</span> <span class="nx">Z</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">a0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">99</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">101</span><span class="p">];</span>
+    <span class="kd">var</span> <span class="nx">a1</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">a2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">a2</span> <span class="o">&lt;</span> <span class="nx">a0</span><span class="p">[</span><span class="s2">&#34;length&#34;</span><span class="p">];</span> <span class="nx">a2</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">a1</span> <span class="o">+=</span> <span class="nb">String</span><span class="p">[</span><span class="s2">&#34;fromCharCode&#34;</span><span class="p">](</span><span class="nx">a0</span><span class="p">[</span><span class="nx">a2</span><span class="p">]);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">a1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">I</span><span class="p">(</span><span class="nx">Y</span><span class="p">,</span> <span class="nx">Z</span><span class="p">,</span> <span class="nx">a0</span><span class="p">,</span> <span class="nx">a1</span><span class="p">,</span> <span class="nx">a2</span><span class="p">,</span> <span class="nx">a3</span><span class="p">,</span> <span class="nx">a4</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">E</span><span class="p">(</span><span class="nx">Z</span> <span class="o">^</span> <span class="nx">a0</span> <span class="o">^</span> <span class="nx">a1</span><span class="p">,</span> <span class="nx">Y</span><span class="p">,</span> <span class="nx">Z</span><span class="p">,</span> <span class="nx">a2</span><span class="p">,</span> <span class="nx">a3</span><span class="p">,</span> <span class="nx">a4</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">J</span><span class="p">(</span><span class="nx">Y</span><span class="p">,</span> <span class="nx">Z</span><span class="p">,</span> <span class="nx">a0</span><span class="p">,</span> <span class="nx">a1</span><span class="p">,</span> <span class="nx">a2</span><span class="p">,</span> <span class="nx">a3</span><span class="p">,</span> <span class="nx">a4</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">E</span><span class="p">(</span><span class="nx">a0</span> <span class="o">^</span> <span class="p">(</span><span class="nx">Z</span> <span class="o">|</span> <span class="o">~</span><span class="nx">a1</span><span class="p">),</span> <span class="nx">Y</span><span class="p">,</span> <span class="nx">Z</span><span class="p">,</span> <span class="nx">a2</span><span class="p">,</span> <span class="nx">a3</span><span class="p">,</span> <span class="nx">a4</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">K</span><span class="p">(</span><span class="nx">Y</span><span class="p">,</span> <span class="nx">Z</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">Z</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">J</span><span class="p">(</span><span class="nx">Y</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">H</span><span class="p">(</span><span class="nx">Y</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">L</span><span class="p">(</span><span class="nx">Y</span><span class="p">,</span> <span class="nx">Z</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">a0</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">a1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">a1</span> <span class="o">&lt;</span> <span class="nx">Y</span><span class="p">[</span><span class="s2">&#34;length&#34;</span><span class="p">];</span> <span class="nx">a1</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">a0</span> <span class="o">+=</span> <span class="nb">String</span><span class="p">[</span><span class="s2">&#34;fromCharCode&#34;</span><span class="p">](</span><span class="nx">Y</span><span class="p">[</span><span class="nx">a1</span><span class="p">]);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">a0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">M</span><span class="p">(</span><span class="nx">Y</span><span class="p">,</span> <span class="nx">Z</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">qz</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">119</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">106</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">117</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">119</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">114</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">114</span><span class="p">,</span> <span class="mi">121</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">112</span><span class="p">,</span> <span class="mi">117</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">114</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">106</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">79</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">106</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">108</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">114</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">402</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">83</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">114</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">123</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">118</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">93</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">10</span><span class="p">];</span>
+    <span class="nb">eval</span><span class="p">(</span><span class="nx">L</span><span class="p">(</span><span class="nx">qz</span><span class="p">));</span>
+
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">global</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">[</span><span class="s2">&#34;log&#34;</span><span class="p">](</span><span class="s2">&#34;\u4EBA\u751F\u82E6\u77ED\uFF0C\u4F55\u5FC5python\uFF1F&#34;</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">[</span><span class="s2">&#34;log&#34;</span><span class="p">](</span><span class="s2">&#34;\u4EBA\u751F\u82E6\u77ED\uFF0C\u4F55\u5FC5python\uFF1F&#34;</span><span class="p">);</span>
+                <span class="kr">debugger</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">a5</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">navigator</span><span class="p">[</span><span class="s2">&#34;vendorSub&#34;</span><span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">N</span><span class="p">(</span><span class="nx">Y</span><span class="p">,</span> <span class="nx">Z</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">Y</span><span class="p">[</span><span class="nx">Z</span> <span class="o">&gt;&gt;</span> <span class="mi">5</span><span class="p">]</span> <span class="o">|=</span> <span class="mi">128</span> <span class="o">&lt;&lt;</span> <span class="nx">Z</span> <span class="o">%</span> <span class="mi">32</span><span class="p">,</span>
+        <span class="nx">Y</span><span class="p">[</span><span class="mi">14</span> <span class="o">+</span> <span class="p">(</span><span class="nx">Z</span> <span class="o">+</span> <span class="mi">64</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">9</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span><span class="p">)]</span> <span class="o">=</span> <span class="nx">Z</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">qz</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">a0</span><span class="p">,</span> <span class="nx">a1</span><span class="p">,</span> <span class="nx">a2</span><span class="p">,</span> <span class="nx">a3</span><span class="p">,</span> <span class="nx">a4</span><span class="p">,</span> <span class="nx">a5</span> <span class="o">=</span> <span class="mi">1732584193</span><span class="p">,</span>
+            <span class="nx">a6</span> <span class="o">=</span> <span class="o">-</span><span class="mi">271733879</span><span class="p">,</span>
+            <span class="nx">a7</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1732584194</span><span class="p">,</span>
+            <span class="nx">a8</span> <span class="o">=</span> <span class="mi">271733878</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">a0</span><span class="p">,</span> <span class="nx">a1</span><span class="p">,</span> <span class="nx">a2</span><span class="p">,</span> <span class="nx">a3</span><span class="p">,</span> <span class="nx">a4</span><span class="p">,</span> <span class="nx">a5</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nx">a6</span> <span class="o">=</span> <span class="o">-</span><span class="mi">0</span><span class="p">,</span>
+            <span class="nx">a7</span> <span class="o">=</span> <span class="o">-</span><span class="mi">0</span><span class="p">,</span>
+            <span class="nx">a8</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="nx">a0</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">a0</span> <span class="o">&lt;</span> <span class="nx">Y</span><span class="p">[</span><span class="s2">&#34;length&#34;</span><span class="p">];</span> <span class="nx">a0</span> <span class="o">+=</span> <span class="mi">16</span><span class="p">)</span> <span class="nx">a1</span> <span class="o">=</span> <span class="nx">a5</span><span class="p">,</span>
+        <span class="nx">a2</span> <span class="o">=</span> <span class="nx">a6</span><span class="p">,</span>
+        <span class="nx">a3</span> <span class="o">=</span> <span class="nx">a7</span><span class="p">,</span>
+        <span class="nx">a4</span> <span class="o">=</span> <span class="nx">a8</span><span class="p">,</span>
+        <span class="nx">a5</span> <span class="o">=</span> <span class="nx">F</span><span class="p">(</span><span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span><span class="p">],</span> <span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">680876936</span><span class="p">),</span>
+        <span class="nx">a8</span> <span class="o">=</span> <span class="nx">F</span><span class="p">(</span><span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">389564586</span><span class="p">),</span>
+        <span class="nx">a7</span> <span class="o">=</span> <span class="nx">F</span><span class="p">(</span><span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">606105819</span><span class="p">),</span>
+        <span class="nx">a6</span> <span class="o">=</span> <span class="nx">F</span><span class="p">(</span><span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">22</span><span class="p">,</span> <span class="o">-</span><span class="mi">1044525330</span><span class="p">),</span>
+        <span class="nx">a5</span> <span class="o">=</span> <span class="nx">F</span><span class="p">(</span><span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">4</span><span class="p">],</span> <span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">176418897</span><span class="p">),</span>
+        <span class="nx">a8</span> <span class="o">=</span> <span class="nx">F</span><span class="p">(</span><span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">5</span><span class="p">],</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1200080426</span><span class="p">),</span>
+        <span class="nx">a7</span> <span class="o">=</span> <span class="nx">F</span><span class="p">(</span><span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">6</span><span class="p">],</span> <span class="mi">17</span><span class="p">,</span> <span class="o">-</span><span class="mi">1473231341</span><span class="p">),</span>
+        <span class="nx">a6</span> <span class="o">=</span> <span class="nx">F</span><span class="p">(</span><span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">7</span><span class="p">],</span> <span class="mi">22</span><span class="p">,</span> <span class="o">-</span><span class="mi">45705983</span><span class="p">),</span>
+        <span class="nx">a5</span> <span class="o">=</span> <span class="nx">F</span><span class="p">(</span><span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">8</span><span class="p">],</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1770010416</span><span class="p">),</span>
+        <span class="nx">a8</span> <span class="o">=</span> <span class="nx">F</span><span class="p">(</span><span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">9</span><span class="p">],</span> <span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">1958414417</span><span class="p">),</span>
+        <span class="nx">a7</span> <span class="o">=</span> <span class="nx">F</span><span class="p">(</span><span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">10</span><span class="p">],</span> <span class="mi">17</span><span class="p">,</span> <span class="o">-</span><span class="mi">42063</span><span class="p">),</span>
+        <span class="nx">a6</span> <span class="o">=</span> <span class="nx">F</span><span class="p">(</span><span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">11</span><span class="p">],</span> <span class="mi">22</span><span class="p">,</span> <span class="o">-</span><span class="mi">1990404162</span><span class="p">),</span>
+        <span class="nx">a5</span> <span class="o">=</span> <span class="nx">F</span><span class="p">(</span><span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">12</span><span class="p">],</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1804603682</span><span class="p">),</span>
+        <span class="nx">a8</span> <span class="o">=</span> <span class="nx">F</span><span class="p">(</span><span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">13</span><span class="p">],</span> <span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">40341101</span><span class="p">),</span>
+        <span class="nx">a7</span> <span class="o">=</span> <span class="nx">F</span><span class="p">(</span><span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">14</span><span class="p">],</span> <span class="mi">17</span><span class="p">,</span> <span class="o">-</span><span class="mi">1502882290</span><span class="p">),</span>
+        <span class="nx">a6</span> <span class="o">=</span> <span class="nx">F</span><span class="p">(</span><span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">15</span><span class="p">],</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">1236535329</span><span class="p">),</span>
+        <span class="nx">a5</span> <span class="o">=</span> <span class="nx">G</span><span class="p">(</span><span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">165796510</span><span class="p">),</span>
+        <span class="nx">a8</span> <span class="o">=</span> <span class="nx">G</span><span class="p">(</span><span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">6</span><span class="p">],</span> <span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">1069501632</span><span class="p">),</span>
+        <span class="nx">a7</span> <span class="o">=</span> <span class="nx">G</span><span class="p">(</span><span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">11</span><span class="p">],</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">643717713</span><span class="p">),</span>
+        <span class="nx">a6</span> <span class="o">=</span> <span class="nx">G</span><span class="p">(</span><span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span><span class="p">],</span> <span class="mi">20</span><span class="p">,</span> <span class="o">-</span><span class="mi">373897302</span><span class="p">),</span>
+        <span class="nx">a5</span> <span class="o">=</span> <span class="nx">G</span><span class="p">(</span><span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">5</span><span class="p">],</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">701558691</span><span class="p">),</span>
+        <span class="nx">a8</span> <span class="o">=</span> <span class="nx">G</span><span class="p">(</span><span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">10</span><span class="p">],</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">38016083</span><span class="p">),</span>
+        <span class="nx">a7</span> <span class="o">=</span> <span class="nx">G</span><span class="p">(</span><span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">15</span><span class="p">],</span> <span class="mi">14</span><span class="p">,</span> <span class="o">-</span><span class="mi">660478335</span><span class="p">),</span>
+        <span class="nx">a6</span> <span class="o">=</span> <span class="nx">G</span><span class="p">(</span><span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">4</span><span class="p">],</span> <span class="mi">20</span><span class="p">,</span> <span class="o">-</span><span class="mi">405537848</span><span class="p">),</span>
+        <span class="nx">a5</span> <span class="o">=</span> <span class="nx">G</span><span class="p">(</span><span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">9</span><span class="p">],</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">568446438</span><span class="p">),</span>
+        <span class="nx">a8</span> <span class="o">=</span> <span class="nx">G</span><span class="p">(</span><span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">14</span><span class="p">],</span> <span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">1019803690</span><span class="p">),</span>
+        <span class="nx">a7</span> <span class="o">=</span> <span class="nx">G</span><span class="p">(</span><span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">14</span><span class="p">,</span> <span class="o">-</span><span class="mi">187363961</span><span class="p">),</span>
+        <span class="nx">a6</span> <span class="o">=</span> <span class="nx">G</span><span class="p">(</span><span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">8</span><span class="p">],</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">1163531501</span><span class="p">),</span>
+        <span class="nx">a5</span> <span class="o">=</span> <span class="nx">G</span><span class="p">(</span><span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">13</span><span class="p">],</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1444681467</span><span class="p">),</span>
+        <span class="nx">a8</span> <span class="o">=</span> <span class="nx">G</span><span class="p">(</span><span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">51403784</span><span class="p">),</span>
+        <span class="nx">a7</span> <span class="o">=</span> <span class="nx">G</span><span class="p">(</span><span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">7</span><span class="p">],</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">1735328473</span><span class="p">),</span>
+        <span class="nx">a6</span> <span class="o">=</span> <span class="nx">G</span><span class="p">(</span><span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">12</span><span class="p">],</span> <span class="mi">20</span><span class="p">,</span> <span class="o">-</span><span class="mi">1926607734</span><span class="p">),</span>
+        <span class="nx">a5</span> <span class="o">=</span> <span class="nx">I</span><span class="p">(</span><span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">5</span><span class="p">],</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">378558</span><span class="p">),</span>
+        <span class="nx">a8</span> <span class="o">=</span> <span class="nx">I</span><span class="p">(</span><span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">8</span><span class="p">],</span> <span class="mi">11</span><span class="p">,</span> <span class="o">-</span><span class="mi">2022574463</span><span class="p">),</span>
+        <span class="nx">a7</span> <span class="o">=</span> <span class="nx">I</span><span class="p">(</span><span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">11</span><span class="p">],</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">1839030562</span><span class="p">),</span>
+        <span class="nx">a6</span> <span class="o">=</span> <span class="nx">I</span><span class="p">(</span><span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">14</span><span class="p">],</span> <span class="mi">23</span><span class="p">,</span> <span class="o">-</span><span class="mi">35309556</span><span class="p">),</span>
+        <span class="nx">a5</span> <span class="o">=</span> <span class="nx">I</span><span class="p">(</span><span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1530992060</span><span class="p">),</span>
+        <span class="nx">a8</span> <span class="o">=</span> <span class="nx">I</span><span class="p">(</span><span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">4</span><span class="p">],</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">1272893353</span><span class="p">),</span>
+        <span class="nx">a7</span> <span class="o">=</span> <span class="nx">I</span><span class="p">(</span><span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">7</span><span class="p">],</span> <span class="mi">16</span><span class="p">,</span> <span class="o">-</span><span class="mi">155497632</span><span class="p">),</span>
+        <span class="nx">a6</span> <span class="o">=</span> <span class="nx">I</span><span class="p">(</span><span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">10</span><span class="p">],</span> <span class="mi">23</span><span class="p">,</span> <span class="o">-</span><span class="mi">1094730640</span><span class="p">),</span>
+        <span class="nx">a5</span> <span class="o">=</span> <span class="nx">I</span><span class="p">(</span><span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">13</span><span class="p">],</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">681279174</span><span class="p">),</span>
+        <span class="nx">a8</span> <span class="o">=</span> <span class="nx">I</span><span class="p">(</span><span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span><span class="p">],</span> <span class="mi">11</span><span class="p">,</span> <span class="o">-</span><span class="mi">358537222</span><span class="p">),</span>
+        <span class="nx">a7</span> <span class="o">=</span> <span class="nx">I</span><span class="p">(</span><span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">16</span><span class="p">,</span> <span class="o">-</span><span class="mi">722521979</span><span class="p">),</span>
+        <span class="nx">a6</span> <span class="o">=</span> <span class="nx">I</span><span class="p">(</span><span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">6</span><span class="p">],</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">76029189</span><span class="p">),</span>
+        <span class="nx">a5</span> <span class="o">=</span> <span class="nx">I</span><span class="p">(</span><span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">9</span><span class="p">],</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">640364487</span><span class="p">),</span>
+        <span class="nx">a8</span> <span class="o">=</span> <span class="nx">I</span><span class="p">(</span><span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">12</span><span class="p">],</span> <span class="mi">11</span><span class="p">,</span> <span class="o">-</span><span class="mi">421815835</span><span class="p">),</span>
+        <span class="nx">a7</span> <span class="o">=</span> <span class="nx">I</span><span class="p">(</span><span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">15</span><span class="p">],</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">530742520</span><span class="p">),</span>
+        <span class="nx">a6</span> <span class="o">=</span> <span class="nx">I</span><span class="p">(</span><span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">23</span><span class="p">,</span> <span class="o">-</span><span class="mi">995338651</span><span class="p">),</span>
+        <span class="nx">a5</span> <span class="o">=</span> <span class="nx">J</span><span class="p">(</span><span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span><span class="p">],</span> <span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">198630844</span><span class="p">),</span>
+        <span class="nx">a8</span> <span class="o">=</span> <span class="nx">J</span><span class="p">(</span><span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">7</span><span class="p">],</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1126891415</span><span class="p">),</span>
+        <span class="nx">a7</span> <span class="o">=</span> <span class="nx">J</span><span class="p">(</span><span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">14</span><span class="p">],</span> <span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">1416354905</span><span class="p">),</span>
+        <span class="nx">a6</span> <span class="o">=</span> <span class="nx">J</span><span class="p">(</span><span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">5</span><span class="p">],</span> <span class="mi">21</span><span class="p">,</span> <span class="o">-</span><span class="mi">57434055</span><span class="p">),</span>
+        <span class="nx">a5</span> <span class="o">=</span> <span class="nx">J</span><span class="p">(</span><span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">12</span><span class="p">],</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1700485571</span><span class="p">),</span>
+        <span class="nx">a8</span> <span class="o">=</span> <span class="nx">J</span><span class="p">(</span><span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">1894986606</span><span class="p">),</span>
+        <span class="nx">a7</span> <span class="o">=</span> <span class="nx">J</span><span class="p">(</span><span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">10</span><span class="p">],</span> <span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">1051523</span><span class="p">),</span>
+        <span class="nx">a6</span> <span class="o">=</span> <span class="nx">J</span><span class="p">(</span><span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span> <span class="mi">21</span><span class="p">,</span> <span class="o">-</span><span class="mi">2054922799</span><span class="p">),</span>
+        <span class="nx">a5</span> <span class="o">=</span> <span class="nx">J</span><span class="p">(</span><span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">8</span><span class="p">],</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1873313359</span><span class="p">),</span>
+        <span class="nx">a8</span> <span class="o">=</span> <span class="nx">J</span><span class="p">(</span><span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">15</span><span class="p">],</span> <span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">30611744</span><span class="p">),</span>
+        <span class="nx">a7</span> <span class="o">=</span> <span class="nx">J</span><span class="p">(</span><span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">6</span><span class="p">],</span> <span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">1560198380</span><span class="p">),</span>
+        <span class="nx">a6</span> <span class="o">=</span> <span class="nx">J</span><span class="p">(</span><span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">13</span><span class="p">],</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">1309151649</span><span class="p">),</span>
+        <span class="nx">a5</span> <span class="o">=</span> <span class="nx">J</span><span class="p">(</span><span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">4</span><span class="p">],</span> <span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">145523070</span><span class="p">),</span>
+        <span class="nx">a8</span> <span class="o">=</span> <span class="nx">J</span><span class="p">(</span><span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">11</span><span class="p">],</span> <span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">1120210379</span><span class="p">),</span>
+        <span class="nx">a7</span> <span class="o">=</span> <span class="nx">J</span><span class="p">(</span><span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">718787259</span><span class="p">),</span>
+        <span class="nx">a6</span> <span class="o">=</span> <span class="nx">J</span><span class="p">(</span><span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">,</span> <span class="nx">a5</span><span class="p">,</span> <span class="nx">Y</span><span class="p">[</span><span class="nx">a0</span> <span class="o">+</span> <span class="mi">9</span><span class="p">],</span> <span class="mi">21</span><span class="p">,</span> <span class="o">-</span><span class="mi">343485441</span><span class="p">),</span>
+        <span class="nx">a5</span> <span class="o">=</span> <span class="nx">C</span><span class="p">(</span><span class="nx">a5</span><span class="p">,</span> <span class="nx">a1</span><span class="p">),</span>
+        <span class="nx">a6</span> <span class="o">=</span> <span class="nx">C</span><span class="p">(</span><span class="nx">a6</span><span class="p">,</span> <span class="nx">a2</span><span class="p">),</span>
+        <span class="nx">a7</span> <span class="o">=</span> <span class="nx">C</span><span class="p">(</span><span class="nx">a7</span><span class="p">,</span> <span class="nx">a3</span><span class="p">),</span>
+        <span class="nx">a8</span> <span class="o">=</span> <span class="nx">C</span><span class="p">(</span><span class="nx">a8</span><span class="p">,</span> <span class="nx">a4</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="p">[</span><span class="nx">a5</span><span class="p">,</span> <span class="nx">a6</span><span class="p">,</span> <span class="nx">a7</span><span class="p">,</span> <span class="nx">a8</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">O</span><span class="p">(</span><span class="nx">Y</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">Z</span><span class="p">,</span> <span class="nx">a0</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="p">,</span>
+        <span class="nx">a1</span> <span class="o">=</span> <span class="mi">32</span> <span class="o">*</span> <span class="nx">Y</span><span class="p">[</span><span class="s2">&#34;length&#34;</span><span class="p">];</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="nx">Z</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">Z</span> <span class="o">&lt;</span> <span class="nx">a1</span><span class="p">;</span> <span class="nx">Z</span> <span class="o">+=</span> <span class="mi">8</span><span class="p">)</span> <span class="nx">a0</span> <span class="o">+=</span> <span class="nb">String</span><span class="p">[</span><span class="s2">&#34;fromCharCode&#34;</span><span class="p">](</span><span class="nx">Y</span><span class="p">[</span><span class="nx">Z</span> <span class="o">&gt;&gt;</span> <span class="mi">5</span><span class="p">]</span> <span class="o">&gt;&gt;&gt;</span> <span class="nx">Z</span> <span class="o">%</span> <span class="mi">32</span> <span class="o">&amp;</span> <span class="mi">255</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="nx">a0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">P</span><span class="p">(</span><span class="nx">Y</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">Z</span><span class="p">,</span> <span class="nx">a0</span> <span class="o">=</span> <span class="p">[];</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="nx">a0</span><span class="p">[(</span><span class="nx">Y</span><span class="p">[</span><span class="s2">&#34;length&#34;</span><span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">,</span> <span class="nx">Z</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">Z</span> <span class="o">&lt;</span> <span class="nx">a0</span><span class="p">[</span><span class="s2">&#34;length&#34;</span><span class="p">];</span> <span class="nx">Z</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span> <span class="nx">a0</span><span class="p">[</span><span class="nx">Z</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="kd">var</span> <span class="nx">a1</span> <span class="o">=</span> <span class="mi">8</span> <span class="o">*</span> <span class="nx">Y</span><span class="p">[</span><span class="s2">&#34;length&#34;</span><span class="p">];</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="nx">Z</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">Z</span> <span class="o">&lt;</span> <span class="nx">a1</span><span class="p">;</span> <span class="nx">Z</span> <span class="o">+=</span> <span class="mi">8</span><span class="p">)</span> <span class="nx">a0</span><span class="p">[</span><span class="nx">Z</span> <span class="o">&gt;&gt;</span> <span class="mi">5</span><span class="p">]</span> <span class="o">|=</span> <span class="p">(</span><span class="mi">255</span> <span class="o">&amp;</span> <span class="nx">Y</span><span class="p">[</span><span class="s2">&#34;charCodeAt&#34;</span><span class="p">](</span><span class="nx">Z</span> <span class="o">/</span> <span class="mi">8</span><span class="p">))</span> <span class="o">&lt;&lt;</span> <span class="nx">Z</span> <span class="o">%</span> <span class="mi">32</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="nx">a0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">Q</span><span class="p">(</span><span class="nx">Y</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">O</span><span class="p">(</span><span class="nx">N</span><span class="p">(</span><span class="nx">P</span><span class="p">(</span><span class="nx">Y</span><span class="p">),</span> <span class="mi">8</span> <span class="o">*</span> <span class="nx">Y</span><span class="p">[</span><span class="s2">&#34;length&#34;</span><span class="p">]));</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">R</span><span class="p">(</span><span class="nx">Y</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">Z</span><span class="p">,</span> <span class="nx">a0</span><span class="p">,</span> <span class="nx">a1</span> <span class="o">=</span> <span class="s2">&#34;0123456789abcdef&#34;</span><span class="p">,</span>
+        <span class="nx">a2</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="nx">a0</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">a0</span> <span class="o">&lt;</span> <span class="nx">Y</span><span class="p">[</span><span class="s2">&#34;length&#34;</span><span class="p">];</span> <span class="nx">a0</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span> <span class="nx">Z</span> <span class="o">=</span> <span class="nx">Y</span><span class="p">[</span><span class="s2">&#34;charCodeAt&#34;</span><span class="p">](</span><span class="nx">a0</span><span class="p">),</span>
+        <span class="nx">a2</span> <span class="o">+=</span> <span class="nx">a1</span><span class="p">[</span><span class="s2">&#34;charAt&#34;</span><span class="p">](</span><span class="nx">Z</span> <span class="o">&gt;&gt;&gt;</span> <span class="mi">4</span> <span class="o">&amp;</span> <span class="mi">15</span><span class="p">)</span> <span class="o">+</span> <span class="nx">a1</span><span class="p">[</span><span class="s2">&#34;charAt&#34;</span><span class="p">](</span><span class="mi">15</span> <span class="o">&amp;</span> <span class="nx">Z</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="nx">a2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">S</span><span class="p">(</span><span class="nx">Y</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">unescape</span><span class="p">(</span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">Y</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">T</span><span class="p">(</span><span class="nx">Y</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">Q</span><span class="p">(</span><span class="nx">S</span><span class="p">(</span><span class="nx">Y</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">U</span><span class="p">(</span><span class="nx">Y</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">R</span><span class="p">(</span><span class="nx">T</span><span class="p">(</span><span class="nx">Y</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">V</span><span class="p">(</span><span class="nx">Y</span><span class="p">,</span> <span class="nx">Z</span><span class="p">,</span> <span class="nx">a0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">M</span><span class="p">();</span>
+    <span class="k">return</span> <span class="nx">Z</span> <span class="o">?</span> <span class="nx">a0</span> <span class="o">?</span> <span class="nx">H</span><span class="p">(</span><span class="nx">Z</span><span class="p">,</span> <span class="nx">Y</span><span class="p">)</span> <span class="o">:</span> <span class="nx">y</span><span class="p">(</span><span class="nx">Z</span><span class="p">,</span> <span class="nx">Y</span><span class="p">)</span> <span class="o">:</span> <span class="nx">a0</span> <span class="o">?</span> <span class="nx">T</span><span class="p">(</span><span class="nx">Y</span><span class="p">)</span> <span class="o">:</span> <span class="nx">U</span><span class="p">(</span><span class="nx">Y</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">W</span><span class="p">(</span><span class="nx">Y</span><span class="p">,</span> <span class="nx">Z</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">cookie</span> <span class="o">=</span> <span class="s2">&#34;m&#34;</span> <span class="o">+</span> <span class="s2">&#34;=&#34;</span> <span class="o">+</span> <span class="nx">V</span><span class="p">(</span><span class="nx">Y</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&#34;|&#34;</span> <span class="o">+</span> <span class="nx">Y</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">cookie</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">X</span><span class="p">(</span><span class="nx">Y</span><span class="p">,</span> <span class="nx">Z</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">Date</span><span class="p">[</span><span class="s2">&#34;parse&#34;</span><span class="p">](</span><span class="k">new</span> <span class="nb">Date</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">get_chipher</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">W</span><span class="p">(</span><span class="nx">X</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="python爬取">Python爬取</h2>
+<p>加密部分解决，爬取部分就简单了。代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">execjs</span>
+
+<span class="k">def</span> <span class="nf">get_cookies</span><span class="p">():</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;1.1.js&#39;</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">JsData</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="n">ck</span><span class="o">=</span> <span class="n">execjs</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">JsData</span><span class="p">)</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s1">&#39;get_chipher&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;cookie是</span><span class="si">{</span><span class="n">ck</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ck</span>
+
+<span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">cookie</span><span class="p">):</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;user-agent&#39;</span><span class="p">:</span><span class="s1">&#39;yuanrenxue.project&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;cookie&#39;</span><span class="p">:</span><span class="n">cookie</span>
+    <span class="p">}</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">sum_all</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">):</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;http://match.yuanrenxue.com/api/match/2?page=</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">&#39;</span>
+        <span class="n">info</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">get_cookies</span><span class="p">())</span>
+        <span class="n">hot_list</span> <span class="o">=</span><span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="s2">&#34;value&#34;</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">info</span><span class="p">[</span><span class="s2">&#34;data&#34;</span><span class="p">]]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;第</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">页的数据为</span><span class="si">{</span><span class="n">hot_list</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="n">sum_all</span> <span class="o">+=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">hot_list</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;所有页数的热度加和为</span><span class="si">{</span><span class="n">sum_all</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p><img src="https://gitee.com/lonercci/picbed/raw/master/img/20210128122236.png" style="zoom: 50%;" /></p>
+<h2 id="总结">总结</h2>
+<p>本题的思路跟上一题稍有不同，上一题加密的部分是可以直接在js里面找到的，而本题却是在发送第一个请求的时候返回了一段ob混淆过的js代码。
+在谷歌浏览器自带的调试工具里，某些操作是看不到的，比如说刚刚的那段JS。使用fiddler可以抓到包，以前安装过fiddler，但是不怎么会用，现在发现还挺香的，嘿嘿。
+思路不难，跟第一题非常类似，分析JS。比较头疼的是JS的调试部分，开发者绕了很多圈子，写了不少类似死循环的东西误导你，拿到调试工具里面，一会就卡住了，所以对那些没有用的代码，精简删除很关键。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-01-27</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python/">python</a>,&nbsp;<a href="/tags/js/">js</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/js%E6%B7%B7%E6%B7%86-%E6%BA%90%E7%A0%81%E4%B9%B1%E7%A0%81/" class="prev" rel="prev" title="Js混淆-源码乱码"><i class="fas fa-angle-left fa-fw"></i>Js混淆-源码乱码</a>
+            <a href="/%E8%AE%BF%E9%97%AE%E9%80%BB%E8%BE%91-%E6%8E%A8%E5%BF%83%E7%BD%AE%E8%85%B9/" class="next" rel="next" title="访问逻辑-推心置腹">访问逻辑-推心置腹<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="tcomment"></div>
+        <script src="https://cdn.jsdelivr.net/npm/twikoo@1.3.1/dist/twikoo.all.min.js"></script>
+        <script>
+        twikoo.init({
+          envId: 'blog-data-0gc3ets7c557f7fd',
+          
+          el: '#tcomment',
+          
+          
+        })
+        </script>
+
+    </div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"></br></br></br></br></div><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.84.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Lone</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.77eb6ae63c63c88c5e7a10b6c9570c54.css" integrity="md5-d&#43;tq5jxjyIxeehC2yVcMVA=="><link rel="stylesheet" href="/lib/katex/katex.min.ef3c395634e43fe45f5332bfca2287b3.css" integrity="md5-7zw5VjTkP&#43;RfUzK/yiKHsw=="><link rel="stylesheet" href="/lib/katex/copy-tex.min.622133ef544b0f203604a52bebba29f4.css" integrity="md5-YiEz71RLDyA2BKUr67op9A=="><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.dd4e1772a44268dd6e27f193695067fc.js" integrity="md5-3U4XcqRCaN1uJ/GTaVBn/A=="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.10321080d79e27ee01ff36859c02acd3.js" integrity="md5-EDIQgNeeJ&#43;4B/zaFnAKs0w=="></script><script type="text/javascript" src="/lib/lunr/lunr.min.f2eea188dc4939c55ff8f55569a4e87c.js" integrity="md5-8u6hiNxJOcVf&#43;PVVaaTofA=="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.76a9898754052993cab798a24f45d94e.js" integrity="md5-dqmJh1QFKZPKt5iiT0XZTg=="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.afbe35f35a427dd563d97cbdc9eb85d5.js" integrity="md5-r74181pCfdVj2Xy9yeuF1Q=="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.40c0bfc764764587555c066d46fe6071.js" integrity="md5-QMC/x2R2RYdVXAZtRv5gcQ=="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.c6a5b6b1db8980fdc42cd3456fe1ec74.js" integrity="md5-xqW2sduJgP3ELNNFb&#43;HsdA=="></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.ba38a712df31c778e10e8211f8cb891b.js" integrity="md5-ujinEt8xx3jhDoIR&#43;MuJGw=="></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.fa56076f9d071729612c4849acae1ce5.js" integrity="md5-&#43;lYHb50HFylhLEhJrK4c5Q=="></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.4f0896a2ff5ef76f0dd00f5c5de65abb.js" integrity="md5-TwiWov9e928N0A9cXeZauw=="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.221393f48062472d1e72960fda7db7a3.js" integrity="md5-IhOT9IBiRy0ecpYP2n23ow=="></script><script type="text/javascript" src="/lib/katex/katex.min.c158c9e823b681cf535f46596b5e4eac.js" integrity="md5-wVjJ6CO2gc9TX0ZZa15OrA=="></script><script type="text/javascript" src="/lib/katex/auto-render.min.28cd0b98cd3f4fa37d52f3ffe47ad9d4.js" integrity="md5-KM0LmM0/T6N9UvP/5HrZ1A=="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.bfaec7d1dea915d74a7a6d833f0ff62e.js" integrity="md5-v67H0d6pFddKem2DPw/2Lg=="></script><script type="text/javascript" src="/lib/katex/mhchem.min.1bbb252363e83547d4b2186a41eaca28.js" integrity="md5-G7slI2PoNUfUshhqQerKKA=="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":15},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.8043ef4f5ae2d4fd302305ffd8316f55.js" integrity="md5-gEPvT1ri1P0wIwX/2DFvVQ=="></script></body>
+</html>

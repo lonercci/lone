@@ -1,0 +1,29 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>note - 标签 - Lone&#39;s Blog</title>
+        <link>http://example.org/tags/note/</link>
+        <description>note - 标签 - Lone&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chonee@qq.com (Lone)</managingEditor>
+            <webMaster>chonee@qq.com (Lone)</webMaster><lastBuildDate>Thu, 24 Jun 2021 09:31:44 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/note/" rel="self" type="application/rss+xml" /><item>
+    <title>Java琐碎闲谈录</title>
+    <link>http://example.org/java%E7%90%90%E7%A2%8E%E9%97%B2%E8%B0%88%E5%BD%95/</link>
+    <pubDate>Thu, 24 Jun 2021 09:31:44 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/java%E7%90%90%E7%A2%8E%E9%97%B2%E8%B0%88%E5%BD%95/</guid>
+    <description><![CDATA[琐碎闲谈录: 记录一些零零散散，日常遇到的一些问题和知识点。 关于构造函数 在 Idea 中，如果有一个类，类中定义了几个属性，那么想要生成构造函数太简单了]]></description>
+</item><item>
+    <title>Spring5 学习笔记</title>
+    <link>http://example.org/spring5-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+    <pubDate>Sun, 20 Jun 2021 11:08:20 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/spring5-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+    <description><![CDATA[Spring 简介 Spring ——&gt; 春天，为开源软件带来了春天 2002，首次推出了Spring框架的雏形：interface21框架！ Spring框架以in]]></description>
+</item><item>
+    <title>Mybatis笔记</title>
+    <link>http://example.org/mybatis%E7%AC%94%E8%AE%B0/</link>
+    <pubDate>Wed, 28 Apr 2021 14:29:27 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/mybatis%E7%AC%94%E8%AE%B0/</guid>
+    <description><![CDATA[Mybatis-9.28 环境： JDK1.8 Mysql 5.7 maven 3.6.1 IDEA 回顾： JDBC Mysql Java基础 Maven Junit SSM框架：配置文件的。 最好的方式：看官网文档； 1、简介 1.1、什么是Mybatis MyBatis 是一款优]]></description>
+</item></channel>
+</rss>

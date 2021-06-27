@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>软考笔记 - 分类 - Lone&#39;s Blog</title>
+        <link>http://example.org/categories/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0/</link>
+        <description>软考笔记 - 分类 - Lone&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chonee@qq.com (Lone)</managingEditor>
+            <webMaster>chonee@qq.com (Lone)</webMaster><lastBuildDate>Sun, 28 Mar 2021 21:57:20 &#43;0800</lastBuildDate><atom:link href="http://example.org/categories/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0/" rel="self" type="application/rss+xml" /><item>
+    <title>软考笔记</title>
+    <link>http://example.org/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0/</link>
+    <pubDate>Sun, 28 Mar 2021 21:57:20 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/%E8%BD%AF%E8%80%83%E7%AC%94%E8%AE%B0/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://gitee.com/lonercci/picbed/raw/master/img/20210329150853.jpg" referrerpolicy="no-referrer">
+            </div>软考笔记 计算机基础理论与安全 网络安全 MAcro.xxx，表明是宏病毒，主要感染目标是Word或Excel文件。 Worm. xxx，蠕虫病毒，通过网络或]]></description>
+</item></channel>
+</rss>

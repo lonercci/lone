@@ -1,0 +1,29 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>MyBatis - 标签 - Lone&#39;s Blog</title>
+        <link>http://example.org/tags/mybatis/</link>
+        <description>MyBatis - 标签 - Lone&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chonee@qq.com (Lone)</managingEditor>
+            <webMaster>chonee@qq.com (Lone)</webMaster><lastBuildDate>Thu, 13 May 2021 20:37:35 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/mybatis/" rel="self" type="application/rss+xml" /><item>
+    <title>MyBatis的一对多，多对一查询</title>
+    <link>http://example.org/mybatis%E7%9A%84%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%A4%9A%E5%AF%B9%E4%B8%80%E6%9F%A5%E8%AF%A2/</link>
+    <pubDate>Thu, 13 May 2021 20:37:35 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/mybatis%E7%9A%84%E4%B8%80%E5%AF%B9%E5%A4%9A%E5%A4%9A%E5%AF%B9%E4%B8%80%E6%9F%A5%E8%AF%A2/</guid>
+    <description><![CDATA[数据表 现在有两张表，分别是Student和Teacher。两张表的id均为主键，而Student表中的tid为外键关联到了Teacher表的]]></description>
+</item><item>
+    <title>Mybatis笔记</title>
+    <link>http://example.org/mybatis%E7%AC%94%E8%AE%B0/</link>
+    <pubDate>Wed, 28 Apr 2021 14:29:27 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/mybatis%E7%AC%94%E8%AE%B0/</guid>
+    <description><![CDATA[Mybatis-9.28 环境： JDK1.8 Mysql 5.7 maven 3.6.1 IDEA 回顾： JDBC Mysql Java基础 Maven Junit SSM框架：配置文件的。 最好的方式：看官网文档； 1、简介 1.1、什么是Mybatis MyBatis 是一款优]]></description>
+</item><item>
+    <title>MyBatis配置踩坑记</title>
+    <link>http://example.org/mybatis%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91%E8%AE%B0/</link>
+    <pubDate>Fri, 23 Apr 2021 19:35:32 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/mybatis%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91%E8%AE%B0/</guid>
+    <description><![CDATA[记录一下初学MyBatis的踩坑过程。。。。 鬼知道我经历了多少次绝望。。。调试了快三天，终于搞定了第一个MyBatis程序，都是配置惹的祸。]]></description>
+</item></channel>
+</rss>

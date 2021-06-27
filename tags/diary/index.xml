@@ -1,0 +1,26 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>diary - 标签 - Lone&#39;s Blog</title>
+        <link>http://example.org/tags/diary/</link>
+        <description>diary - 标签 - Lone&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>chonee@qq.com (Lone)</managingEditor>
+            <webMaster>chonee@qq.com (Lone)</webMaster><lastBuildDate>Sat, 20 Feb 2021 18:14:37 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/diary/" rel="self" type="application/rss+xml" /><item>
+    <title>文章--转载自知乎</title>
+    <link>http://example.org/%E6%96%87%E7%AB%A0%E8%BD%AC%E8%BD%BD/</link>
+    <pubDate>Sat, 20 Feb 2021 18:14:37 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/%E6%96%87%E7%AB%A0%E8%BD%AC%E8%BD%BD/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://gitee.com/lonercci/picbed/raw/master/img/20210220181336.jpg" referrerpolicy="no-referrer">
+            </div>有哪些让你醍醐灌顶的话？ 你学习一般，考上了现在的这所学校，成绩不算好，拿不到奖学金，上课不听讲，上自习不规律，考试靠突击，同学帮一把的话也能]]></description>
+</item><item>
+    <title>Last month</title>
+    <link>http://example.org/last-month/</link>
+    <pubDate>Mon, 30 Nov 2020 00:01:22 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>http://example.org/last-month/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://gitee.com/lonercci/picbed/raw/master/img/20201221221350.jpg" referrerpolicy="no-referrer">
+            </div>今天是30号，还有一个月就到2020年的年底了。这是个特殊而难忘的一年，疫情，战火，党争，世界各地都焦头烂额。 下半年几乎都在学校，经历了起起]]></description>
+</item></channel>
+</rss>
